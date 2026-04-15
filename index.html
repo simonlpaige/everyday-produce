@@ -1,0 +1,1187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Everyday Produce | Fresh Local Produce in Waldo, Kansas City</title>
+  <meta name="description" content="Everyday Produce - Waldo's favorite seasonal fruit and vegetable market. Hand-picked from KC's finest local farmers. 7300 Wornall Rd, Kansas City MO. Serving the Waldo area since 1985." />
+  <meta property="og:title" content="Everyday Produce | Waldo's Favorite Produce Stand" />
+  <meta property="og:description" content="Farm-fresh fruits, vegetables, flowers, and local preserves. Open 7 days a week in the heart of Waldo, Kansas City." />
+  <meta property="og:image" content="photos/hero.jpg" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://everyday-produce.com" />
+  <link rel="canonical" href="https://everyday-produce.com" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --cream: #faf7f2;
+      --white: #ffffff;
+      --dark: #2c2417;
+      --brown: #5c4a32;
+      --green: #3d7a4a;
+      --green-dark: #2d5e38;
+      --green-light: #e8f2e5;
+      --green-pale: #f0f7ee;
+      --gold: #d4a843;
+      --gold-light: #fdf6e3;
+      --warm-gray: #635b50;
+      --border: #e6e0d6;
+      --terracotta: #c26e4a;
+      --terracotta-light: #fdf0eb;
+      --shadow-sm: 0 1px 3px rgba(44,36,23,0.06);
+      --shadow-md: 0 4px 20px rgba(44,36,23,0.08);
+      --shadow-lg: 0 12px 40px rgba(44,36,23,0.12);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--cream);
+      color: var(--dark);
+      font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      font-weight: 400;
+      line-height: 1.6;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    img { display: block; max-width: 100%; }
+
+    a { transition: color 0.2s; }
+
+    /* ── SKIP LINK ── */
+    .skip-link {
+      position: absolute; left: -9999px; top: auto;
+      width: 1px; height: 1px; overflow: hidden;
+    }
+    .skip-link:focus {
+      position: static; width: auto; height: auto;
+      background: var(--green); color: white;
+      padding: 8px 16px; z-index: 9999;
+    }
+
+    /* ── SEASONAL BANNER ── */
+    .season-banner {
+      background: var(--green);
+      color: white;
+      text-align: center;
+      padding: 10px 20px;
+      font-size: 14px;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+    }
+    .season-banner.closed { background: var(--terracotta); }
+    .season-banner span { font-weight: 600; }
+
+    /* ── NAV ── */
+    .nav {
+      background: rgba(255,255,255,0.95);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      padding: 14px 48px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+    }
+
+    .nav-icon {
+      width: 40px; height: 40px;
+      background: var(--green-light);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 20px;
+    }
+
+    .nav-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 22px; font-weight: 700;
+      color: var(--dark);
+    }
+
+    .nav-links {
+      display: flex; gap: 28px;
+      list-style: none; align-items: center;
+    }
+
+    .nav-links a {
+      font-size: 14px; font-weight: 500;
+      color: var(--brown); text-decoration: none;
+      letter-spacing: 0.01em;
+    }
+    .nav-links a:hover { color: var(--green); }
+
+    .nav-cta {
+      background: var(--green) !important;
+      color: white !important;
+      padding: 8px 20px; border-radius: 6px;
+    }
+    .nav-cta:hover { background: var(--green-dark) !important; }
+
+    /* Mobile menu toggle */
+    .nav-toggle { display: none; background: none; border: none; font-size: 24px; cursor: pointer; padding: 4px; color: var(--dark); }
+
+    /* ── HERO ── */
+    .hero {
+      position: relative;
+      min-height: 85vh;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    .hero-bg {
+      position: absolute; inset: 0;
+      background: url('photos/hero.jpg') center/cover no-repeat;
+    }
+
+    .hero-bg::after {
+      content: '';
+      position: absolute; inset: 0;
+      background: linear-gradient(
+        135deg,
+        rgba(44,36,23,0.82) 0%,
+        rgba(44,36,23,0.55) 40%,
+        rgba(44,36,23,0.25) 70%,
+        rgba(44,36,23,0.1) 100%
+      );
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      padding: 100px 48px 80px;
+      max-width: 640px;
+    }
+
+    .hero-tag {
+      display: inline-flex;
+      align-items: center; gap: 8px;
+      background: rgba(255,255,255,0.15);
+      backdrop-filter: blur(8px);
+      color: white;
+      font-size: 12px; font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 6px 16px; border-radius: 20px;
+      margin-bottom: 24px;
+      border: 1px solid rgba(255,255,255,0.2);
+    }
+
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(40px, 5vw, 64px);
+      font-weight: 800;
+      line-height: 1.08;
+      color: white;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 .accent { color: var(--gold); }
+
+    .hero-desc {
+      font-size: 18px;
+      color: rgba(255,255,255,0.85);
+      line-height: 1.7;
+      margin-bottom: 36px;
+      max-width: 480px;
+    }
+
+    .hero-btns { display: flex; gap: 12px; flex-wrap: wrap; }
+
+    .btn {
+      display: inline-flex;
+      align-items: center; gap: 8px;
+      padding: 14px 28px; border-radius: 8px;
+      font-size: 14px; font-weight: 600;
+      text-decoration: none;
+      transition: all 0.25s;
+      border: none; cursor: pointer;
+    }
+
+    .btn-primary { background: var(--green); color: white; }
+    .btn-primary:hover { background: var(--green-dark); transform: translateY(-1px); box-shadow: var(--shadow-md); }
+
+    .btn-glass {
+      background: rgba(255,255,255,0.15);
+      backdrop-filter: blur(8px);
+      color: white;
+      border: 1px solid rgba(255,255,255,0.3);
+    }
+    .btn-glass:hover { background: rgba(255,255,255,0.25); }
+
+    /* ── INFO BAR ── */
+    .info-bar {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+      position: relative;
+      z-index: 3;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .info-item {
+      padding: 28px 32px; text-align: center;
+      border-right: 1px solid var(--border);
+    }
+    .info-item:last-child { border-right: none; }
+
+    .info-icon { font-size: 22px; margin-bottom: 6px; }
+    .info-label {
+      font-size: 10px; font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--green); margin-bottom: 4px;
+    }
+    .info-value { font-size: 15px; font-weight: 500; color: var(--dark); }
+    .info-value a { color: inherit; text-decoration: none; }
+    .info-value a:hover { color: var(--green); }
+
+    /* ── SECTION UTILITIES ── */
+    .section-tag {
+      display: inline-flex;
+      align-items: center; gap: 8px;
+      font-size: 11px; font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--green-dark);
+      margin-bottom: 16px;
+    }
+    .section-tag::before {
+      content: ''; width: 24px; height: 2px;
+      background: var(--green);
+    }
+
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(28px, 3.5vw, 40px);
+      font-weight: 700; line-height: 1.15;
+      color: var(--dark); margin-bottom: 16px;
+    }
+
+    /* ── ABOUT ── */
+    .about {
+      padding: 96px 48px;
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 72px;
+      align-items: center;
+    }
+
+    .about-mosaic {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: auto auto;
+      gap: 12px;
+    }
+
+    .about-img {
+      border-radius: 12px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .about-img img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+    .about-img:hover img { transform: scale(1.04); }
+
+    .about-img.span-2 {
+      grid-column: 1 / -1;
+      max-height: 280px;
+    }
+
+    .about-img:not(.span-2) { aspect-ratio: 1; }
+
+    .about-text p {
+      font-size: 16px;
+      color: var(--warm-gray);
+      line-height: 1.8;
+      margin-bottom: 16px;
+    }
+
+    .about-highlights {
+      display: flex; flex-direction: column;
+      gap: 14px; margin-top: 28px;
+    }
+
+    .highlight {
+      display: flex; align-items: center; gap: 14px;
+      font-size: 15px; font-weight: 500; color: var(--dark);
+    }
+
+    .highlight-icon {
+      width: 36px; height: 36px;
+      background: var(--green-light);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 16px; flex-shrink: 0;
+    }
+
+    /* ── FEATURED STRIP ── */
+    .featured-strip {
+      padding: 64px 0;
+      background: var(--white);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      overflow: hidden;
+    }
+
+    .featured-scroll {
+      display: flex;
+      gap: 16px;
+      padding: 0 48px;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+    }
+    .featured-scroll::-webkit-scrollbar { display: none; }
+
+    .featured-card {
+      flex: 0 0 260px;
+      scroll-snap-align: start;
+      background: var(--cream);
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .featured-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .featured-card img {
+      width: 100%; height: 200px;
+      object-fit: cover;
+    }
+
+    .featured-card-body {
+      padding: 16px 20px;
+    }
+
+    .featured-card-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 17px; font-weight: 600;
+      color: var(--dark); margin-bottom: 4px;
+    }
+
+    .featured-card-sub {
+      font-size: 13px; color: var(--warm-gray);
+    }
+
+    /* ── SEASONAL ── */
+    .seasonal {
+      background: var(--green);
+      padding: 96px 48px;
+      text-align: center;
+      color: white;
+    }
+
+    .seasonal .section-tag { color: rgba(255,255,255,0.8); }
+    .seasonal .section-tag::before { background: rgba(255,255,255,0.5); }
+
+    .seasonal .section-title { color: white; }
+
+    .seasonal-sub {
+      font-size: 16px; opacity: 0.8;
+      margin-bottom: 48px;
+      max-width: 520px;
+      margin-left: auto; margin-right: auto;
+    }
+
+    .season-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      max-width: 920px;
+      margin: 0 auto;
+    }
+
+    .season-card {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 16px;
+      padding: 36px 20px;
+      backdrop-filter: blur(4px);
+      transition: transform 0.25s, background 0.25s;
+    }
+    .season-card:hover {
+      transform: translateY(-6px);
+      background: rgba(255,255,255,0.14);
+    }
+
+    .season-emoji { font-size: 36px; margin-bottom: 14px; }
+    .season-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 18px; font-weight: 600;
+      margin-bottom: 10px;
+    }
+    .season-items { font-size: 13px; opacity: 0.8; line-height: 1.7; }
+
+    /* ── GALLERY ── */
+    .gallery {
+      padding: 96px 48px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .gallery-header {
+      text-align: center;
+      margin-bottom: 48px;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-auto-rows: 280px;
+      gap: 12px;
+    }
+
+    .gallery-item {
+      border-radius: 12px;
+      overflow: hidden;
+      position: relative;
+      cursor: pointer;
+    }
+
+    .gallery-item img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+    .gallery-item:hover img { transform: scale(1.06); }
+
+    .gallery-item::after {
+      content: '';
+      position: absolute; inset: 0;
+      background: linear-gradient(to top, rgba(44,36,23,0.4) 0%, transparent 50%);
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+    .gallery-item:hover::after { opacity: 1; }
+
+    .gallery-item.wide { grid-column: span 2; }
+    .gallery-item.tall { grid-row: span 2; }
+
+    /* ── LIGHTBOX ── */
+    .lightbox {
+      display: none;
+      position: fixed; inset: 0;
+      background: rgba(10,8,6,0.92);
+      backdrop-filter: blur(20px);
+      z-index: 9999;
+      align-items: center; justify-content: center;
+      cursor: zoom-out;
+    }
+    .lightbox.active { display: flex; }
+
+    .lightbox img {
+      max-width: 90vw; max-height: 90vh;
+      object-fit: contain;
+      border-radius: 8px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+    }
+
+    .lightbox-close {
+      position: absolute; top: 24px; right: 24px;
+      background: rgba(255,255,255,0.15);
+      border: none; color: white;
+      width: 44px; height: 44px;
+      border-radius: 50%; font-size: 20px;
+      cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      transition: background 0.2s;
+    }
+    .lightbox-close:hover { background: rgba(255,255,255,0.25); }
+
+    .lightbox-nav {
+      position: absolute;
+      top: 50%; transform: translateY(-50%);
+      background: rgba(255,255,255,0.12);
+      border: none; color: white;
+      width: 48px; height: 48px;
+      border-radius: 50%; font-size: 22px;
+      cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      transition: background 0.2s;
+    }
+    .lightbox-nav:hover { background: rgba(255,255,255,0.25); }
+    .lightbox-prev { left: 20px; }
+    .lightbox-next { right: 20px; }
+
+    /* ── REVIEWS ── */
+    .reviews {
+      padding: 96px 48px;
+      background: var(--white);
+      border-top: 1px solid var(--border);
+    }
+
+    .reviews-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .reviews-header {
+      text-align: center;
+      margin-bottom: 48px;
+    }
+
+    .reviews-stars {
+      color: var(--gold);
+      font-size: 24px;
+      letter-spacing: 3px;
+      margin-top: 8px;
+    }
+
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .review-card {
+      background: var(--cream);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 36px;
+      transition: box-shadow 0.25s, transform 0.25s;
+    }
+    .review-card:hover {
+      box-shadow: var(--shadow-md);
+      transform: translateY(-2px);
+    }
+
+    .review-stars { color: var(--gold); font-size: 14px; margin-bottom: 14px; letter-spacing: 1px; }
+    .review-text {
+      font-size: 15px; color: var(--warm-gray);
+      line-height: 1.75; font-style: italic;
+      margin-bottom: 20px;
+    }
+    .review-author { font-size: 14px; font-weight: 600; color: var(--dark); }
+    .review-source { font-size: 12px; color: var(--warm-gray); }
+
+    /* ── VISIT ── */
+    .visit {
+      padding: 96px 48px;
+    }
+
+    .visit-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 72px;
+      align-items: start;
+    }
+
+    .visit .section-title { margin-bottom: 32px; }
+
+    .visit-detail {
+      display: flex; gap: 16px;
+      margin-bottom: 22px;
+    }
+
+    .visit-detail-icon {
+      width: 44px; height: 44px;
+      background: var(--green-light);
+      border-radius: 12px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 18px; flex-shrink: 0;
+    }
+
+    .visit-detail-label {
+      font-size: 10px; font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--green); margin-bottom: 3px;
+    }
+
+    .visit-detail-value {
+      font-size: 15px; font-weight: 500;
+      color: var(--dark); line-height: 1.5;
+    }
+    .visit-detail-value a { color: inherit; text-decoration: none; }
+    .visit-detail-value a:hover { color: var(--green); }
+
+    .map-embed {
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      height: 400px;
+      box-shadow: var(--shadow-sm);
+    }
+    .map-embed iframe { width: 100%; height: 100%; border: 0; }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--dark);
+      color: rgba(255,255,255,0.6);
+      padding: 48px;
+    }
+
+    .footer-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr auto auto;
+      gap: 48px;
+      align-items: start;
+    }
+
+    .footer-brand-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 22px; font-weight: 700;
+      color: white; margin-bottom: 8px;
+    }
+
+    .footer-brand p { font-size: 13px; line-height: 1.7; max-width: 300px; }
+
+    .footer-col h4 {
+      font-size: 11px; font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.4);
+      margin-bottom: 16px;
+    }
+
+    .footer-col a {
+      display: block;
+      font-size: 14px;
+      color: rgba(255,255,255,0.6);
+      text-decoration: none;
+      margin-bottom: 10px;
+      transition: color 0.2s;
+    }
+    .footer-col a:hover { color: var(--gold); }
+
+    .footer-bottom {
+      max-width: 1200px;
+      margin: 32px auto 0;
+      padding-top: 24px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      font-size: 12px;
+      text-align: center;
+    }
+
+    /* ── ANIMATIONS ── */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .fade-up.visible { opacity: 1; transform: translateY(0); }
+
+    .fade-up-delay-1 { transition-delay: 0.1s; }
+    .fade-up-delay-2 { transition-delay: 0.2s; }
+    .fade-up-delay-3 { transition-delay: 0.3s; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      .nav { padding: 12px 20px; }
+      .nav-links { display: none; }
+      .nav-links.open {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 100%; left: 0; right: 0;
+        background: var(--white);
+        padding: 20px;
+        gap: 16px;
+        border-bottom: 1px solid var(--border);
+        box-shadow: var(--shadow-md);
+      }
+      .nav-toggle { display: block; }
+
+      .hero { min-height: 70vh; }
+      .hero-content { padding: 80px 24px 60px; }
+      .hero h1 { font-size: clamp(32px, 8vw, 48px); }
+
+      .info-bar { grid-template-columns: 1fr; }
+      .info-item { border-right: none; border-bottom: 1px solid var(--border); padding: 20px; }
+
+      .about { padding: 64px 24px; grid-template-columns: 1fr; gap: 40px; }
+
+      .featured-scroll { padding: 0 24px; }
+
+      .seasonal { padding: 64px 24px; }
+      .season-grid { grid-template-columns: 1fr 1fr; }
+
+      .gallery { padding: 64px 24px; }
+      .gallery-grid {
+        grid-template-columns: 1fr 1fr;
+        grid-auto-rows: 220px;
+      }
+      .gallery-item.wide { grid-column: span 2; }
+      .gallery-item.tall { grid-row: span 1; }
+
+      .reviews { padding: 64px 24px; }
+      .reviews-grid { grid-template-columns: 1fr; }
+
+      .visit { padding: 64px 24px; }
+      .visit-inner { grid-template-columns: 1fr; gap: 40px; }
+
+      footer { padding: 40px 24px; }
+      .footer-inner { grid-template-columns: 1fr; gap: 32px; }
+    }
+
+    @media (max-width: 500px) {
+      .season-grid { grid-template-columns: 1fr; }
+      .gallery-grid { grid-template-columns: 1fr; grid-auto-rows: 260px; }
+      .gallery-item.wide { grid-column: span 1; }
+      .hero-btns { flex-direction: column; }
+      .btn { justify-content: center; }
+    }
+  </style>
+</head>
+<body>
+  <a href="#about" class="skip-link">Skip to main content</a>
+
+  <!-- SEASONAL BANNER -->
+  <div class="season-banner">
+    🌷 <span>We're open for the season!</span> Fresh spring produce available daily. 🌷
+  </div>
+
+  <!-- NAV -->
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <a href="#" class="nav-brand">
+      <div class="nav-icon" aria-hidden="true">🍎</div>
+      <div class="nav-name">Everyday Produce</div>
+    </a>
+    <button class="nav-toggle" aria-label="Toggle menu" onclick="document.querySelector('.nav-links').classList.toggle('open')">☰</button>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#seasonal">What's Fresh</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#reviews">Reviews</a></li>
+      <li><a href="#visit" class="nav-cta">Visit Us</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-bg" role="img" aria-label="Everyday Produce market stand with fresh produce on a sunny day"></div>
+    <div class="hero-content">
+      <div class="hero-tag">🌿 Waldo's Favorite Since 1985</div>
+      <h1>Farm-Fresh Produce, <span class="accent">Picked&nbsp;for&nbsp;You</span></h1>
+      <p class="hero-desc">Hand-selected fruits, vegetables, and flowers from Kansas City's finest local growers. Taste the difference when quality comes first.</p>
+      <div class="hero-btns">
+        <a href="#visit" class="btn btn-primary">📍 Get Directions</a>
+        <a href="https://www.facebook.com/everydayproduce" target="_blank" rel="noopener" class="btn btn-glass">Follow on Facebook</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- INFO BAR -->
+  <div class="info-bar fade-up">
+    <div class="info-item">
+      <div class="info-icon">📍</div>
+      <div class="info-label">Location</div>
+      <div class="info-value">7300 Wornall Rd, Waldo</div>
+    </div>
+    <div class="info-item">
+      <div class="info-icon">🕐</div>
+      <div class="info-label">Open 7 Days</div>
+      <div class="info-value">8:30 AM - 6:30 PM</div>
+    </div>
+    <div class="info-item">
+      <div class="info-icon">📞</div>
+      <div class="info-label">Call Us</div>
+      <div class="info-value"><a href="tel:8169426344">(816) 942-6344</a></div>
+    </div>
+  </div>
+
+  <!-- ABOUT -->
+  <section class="about" id="about">
+    <div class="about-mosaic fade-up">
+      <div class="about-img span-2">
+        <img src="photos/about-customers.jpg" alt="Customers shopping at Everyday Produce under the tent canopy" loading="lazy" />
+      </div>
+      <div class="about-img">
+        <img src="photos/about-sign.jpg" alt="Everyday Produce - Home Grown Fruits and Vegetables sign" loading="lazy" />
+      </div>
+      <div class="about-img">
+        <img src="photos/about-interior.jpg" alt="Inside the market - wide view of produce displays and shoppers" loading="lazy" />
+      </div>
+    </div>
+    <div class="about-text fade-up fade-up-delay-1">
+      <div class="section-tag">Our Story</div>
+      <h2 class="section-title">Your Neighborhood Produce Stand Since 1985</h2>
+      <p>Everyday Produce is more than a market - it's a Waldo institution. Owner Konrad and the team hand-pick every piece of fruit, every bunch of greens, and every tomato from KC's best local farmers and trusted distributors.</p>
+      <p>We believe great produce shouldn't cost a fortune. That's why our loyal customers keep coming back, season after season.</p>
+      <div class="about-highlights">
+        <div class="highlight">
+          <div class="highlight-icon">🌱</div>
+          Locally sourced from KC-area farms
+        </div>
+        <div class="highlight">
+          <div class="highlight-icon">👋</div>
+          Taste before you buy - always
+        </div>
+        <div class="highlight">
+          <div class="highlight-icon">💐</div>
+          Fresh flowers, herbs, and hanging baskets
+        </div>
+        <div class="highlight">
+          <div class="highlight-icon">🎃</div>
+          Pumpkin patch and fall flowers every autumn
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURED STRIP -->
+  <section class="featured-strip">
+    <div class="featured-scroll fade-up">
+      <div class="featured-card">
+        <img src="photos/gallery-strawberries.jpg" alt="Fresh ripe strawberries" loading="lazy" />
+        <div class="featured-card-body">
+          <div class="featured-card-title">Strawberries</div>
+          <div class="featured-card-sub">Sweet, local, in season now</div>
+        </div>
+      </div>
+      <div class="featured-card">
+        <img src="photos/gallery-melons.jpg" alt="Watermelons and cantaloupes" loading="lazy" />
+        <div class="featured-card-body">
+          <div class="featured-card-title">Melons</div>
+          <div class="featured-card-sub">Cantaloupes and watermelons</div>
+        </div>
+      </div>
+      <div class="featured-card">
+        <img src="photos/gallery-tomatoes.jpg" alt="Vine-ripened tomatoes" loading="lazy" />
+        <div class="featured-card-body">
+          <div class="featured-card-title">Tomatoes</div>
+          <div class="featured-card-sub">Best in town - taste and see</div>
+        </div>
+      </div>
+      <div class="featured-card">
+        <img src="photos/gallery-avocados.jpg" alt="Premium avocados" loading="lazy" />
+        <div class="featured-card-body">
+          <div class="featured-card-title">Avocados</div>
+          <div class="featured-card-sub">Premium, perfectly ripe</div>
+        </div>
+      </div>
+      <div class="featured-card">
+        <img src="photos/gallery-flowers.jpg" alt="Vibrant fresh flowers" loading="lazy" />
+        <div class="featured-card-body">
+          <div class="featured-card-title">Fresh Flowers</div>
+          <div class="featured-card-sub">Gazanias, marigolds, and more</div>
+        </div>
+      </div>
+      <div class="featured-card">
+        <img src="photos/gallery-herbs.jpg" alt="Potted herb plants" loading="lazy" />
+        <div class="featured-card-body">
+          <div class="featured-card-title">Herb Plants</div>
+          <div class="featured-card-sub">Grow your own fresh herbs</div>
+        </div>
+      </div>
+      <div class="featured-card">
+        <img src="photos/gallery-jams.jpg" alt="Local jams and preserves" loading="lazy" />
+        <div class="featured-card-body">
+          <div class="featured-card-title">Local Preserves</div>
+          <div class="featured-card-sub">Handmade jams and salsa</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SEASONAL -->
+  <section class="seasonal" id="seasonal">
+    <div class="section-tag">What's Fresh</div>
+    <h2 class="section-title">Seasonal Favorites</h2>
+    <p class="seasonal-sub">Our selection changes with the seasons - that's how you know it's real. Here's what to expect throughout the year.</p>
+    <div class="season-grid fade-up">
+      <div class="season-card">
+        <div class="season-emoji">🌷</div>
+        <div class="season-name">Spring</div>
+        <div class="season-items">Strawberries<br>Asparagus<br>Fresh Herbs<br>Bedding Plants</div>
+      </div>
+      <div class="season-card">
+        <div class="season-emoji">☀️</div>
+        <div class="season-name">Summer</div>
+        <div class="season-items">Peaches &amp; Plums<br>Watermelons<br>Tomatoes<br>Sweet Corn</div>
+      </div>
+      <div class="season-card">
+        <div class="season-emoji">🍂</div>
+        <div class="season-name">Fall</div>
+        <div class="season-items">Pumpkins Galore<br>Apples &amp; Squash<br>Fall Flowers<br>Local Honey</div>
+      </div>
+      <div class="season-card">
+        <div class="season-emoji">❄️</div>
+        <div class="season-name">Winter</div>
+        <div class="season-items">Closed for Season<br><br>See you in spring! 💚</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section class="gallery" id="gallery">
+    <div class="gallery-header fade-up">
+      <div class="section-tag">Fresh Picks</div>
+      <h2 class="section-title">From Our Stand to Your Table</h2>
+    </div>
+    <div class="gallery-grid fade-up">
+      <div class="gallery-item wide" onclick="openLightbox(0)">
+        <img src="photos/gallery-fruit-cart.jpg" alt="Colorful fruit cart with lemons, limes, oranges, and pineapple" loading="lazy" />
+      </div>
+      <div class="gallery-item" onclick="openLightbox(1)">
+        <img src="photos/gallery-corn.jpg" alt="Checker-board super sweet corn sign" loading="lazy" />
+      </div>
+      <div class="gallery-item" onclick="openLightbox(2)">
+        <img src="photos/gallery-grapefruit.jpg" alt="Ruby red grapefruit display" loading="lazy" />
+      </div>
+      <div class="gallery-item" onclick="openLightbox(3)">
+        <img src="photos/gallery-mangoes.jpg" alt="Fresh ripe mangoes" loading="lazy" />
+      </div>
+      <div class="gallery-item" onclick="openLightbox(4)">
+        <img src="photos/gallery-cucumbers.jpg" alt="Cucumbers and onions display" loading="lazy" />
+      </div>
+      <div class="gallery-item" onclick="openLightbox(5)">
+        <img src="photos/gallery-hanging-baskets.jpg" alt="Beautiful hanging flower baskets" loading="lazy" />
+      </div>
+      <div class="gallery-item wide" onclick="openLightbox(6)">
+        <img src="photos/gallery-preserves-stand.jpg" alt="Local jams, preserves, and salsa booth" loading="lazy" />
+      </div>
+      <div class="gallery-item wide" onclick="openLightbox(7)">
+        <img src="photos/gallery-flower-rack.jpg" alt="Outdoor flower and plant display rack" loading="lazy" />
+      </div>
+      <div class="gallery-item" onclick="openLightbox(8)">
+        <img src="photos/gallery-onions.jpg" alt="Fresh onions and zucchini" loading="lazy" />
+      </div>
+      <div class="gallery-item" onclick="openLightbox(9)">
+        <img src="photos/gallery-pineapple.jpg" alt="Golden pineapple with oranges" loading="lazy" />
+      </div>
+      <div class="gallery-item" onclick="openLightbox(10)">
+        <img src="photos/gallery-citrus-variety.jpg" alt="Variety of citrus fruits and melons" loading="lazy" />
+      </div>
+      <div class="gallery-item wide" onclick="openLightbox(11)">
+        <img src="photos/gallery-billboard.jpg" alt="Everyday Produce Market billboard - Serving the Waldo Area Since 1985" loading="lazy" />
+      </div>
+    </div>
+  </section>
+
+  <!-- LIGHTBOX -->
+  <div class="lightbox" id="lightbox" onclick="closeLightbox(event)">
+    <button class="lightbox-close" onclick="closeLightbox()" aria-label="Close">✕</button>
+    <button class="lightbox-nav lightbox-prev" onclick="navLightbox(-1, event)" aria-label="Previous">‹</button>
+    <img id="lightbox-img" src="" alt="" />
+    <button class="lightbox-nav lightbox-next" onclick="navLightbox(1, event)" aria-label="Next">›</button>
+  </div>
+
+  <!-- REVIEWS -->
+  <section class="reviews" id="reviews">
+    <div class="reviews-inner">
+      <div class="reviews-header fade-up">
+        <div class="section-tag">What Folks Are Saying</div>
+        <h2 class="section-title">Loved by the Neighborhood</h2>
+        <div class="reviews-stars">★★★★★</div>
+      </div>
+      <div class="reviews-grid fade-up">
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">"Nice people, nice prices and delicious fruits and veggies! Ended up with cucumbers, tomatoes, oranges and corn all for under $15. The box was even carried to my car!"</p>
+          <div class="review-author">Happy Customer</div>
+          <div class="review-source">Yelp Review</div>
+        </div>
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">"The best peaches in Kansas City, hands down. We've been coming here every summer for years. Konrad always has the freshest stuff and the prices can't be beat."</p>
+          <div class="review-author">Waldo Regular</div>
+          <div class="review-source">Google Review</div>
+        </div>
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">"Love that you can taste before you buy. Their watermelons are incredible - ice cold and sweet. Worth it every time."</p>
+          <div class="review-author">Loyal Customer</div>
+          <div class="review-source">Facebook</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VISIT -->
+  <section class="visit" id="visit">
+    <div class="visit-inner">
+      <div class="fade-up">
+        <div class="section-tag">Come See Us</div>
+        <h2 class="section-title">Visit Everyday Produce</h2>
+        <div class="visit-detail">
+          <div class="visit-detail-icon">📍</div>
+          <div>
+            <div class="visit-detail-label">Address</div>
+            <div class="visit-detail-value">
+              <a href="https://maps.google.com/?q=7300+Wornall+Rd+Kansas+City+MO+64114" target="_blank" rel="noopener">7300 Wornall Rd<br>Kansas City, MO 64114</a>
+            </div>
+          </div>
+        </div>
+        <div class="visit-detail">
+          <div class="visit-detail-icon">🕐</div>
+          <div>
+            <div class="visit-detail-label">Hours (In Season)</div>
+            <div class="visit-detail-value">Monday - Sunday<br>8:30 AM - 6:30 PM</div>
+          </div>
+        </div>
+        <div class="visit-detail">
+          <div class="visit-detail-icon">📞</div>
+          <div>
+            <div class="visit-detail-label">Phone</div>
+            <div class="visit-detail-value"><a href="tel:8169426344">(816) 942-6344</a></div>
+          </div>
+        </div>
+        <div class="visit-detail">
+          <div class="visit-detail-icon">🅿️</div>
+          <div>
+            <div class="visit-detail-label">Parking</div>
+            <div class="visit-detail-value">Free parking available</div>
+          </div>
+        </div>
+        <div class="visit-detail">
+          <div class="visit-detail-icon">📱</div>
+          <div>
+            <div class="visit-detail-label">Follow Us</div>
+            <div class="visit-detail-value"><a href="https://www.facebook.com/everydayproduce" target="_blank" rel="noopener">Facebook - @EverydayProduce</a></div>
+          </div>
+        </div>
+      </div>
+      <div class="map-embed fade-up fade-up-delay-1">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3100.0!2d-94.5935!3d38.9935!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87c0ead8f1a4f33d%3A0x2d6e1a8c6e7a2f3e!2s7300%20Wornall%20Rd%2C%20Kansas%20City%2C%20MO%2064114!5e0!3m2!1sen!2sus!4v1700000000000!5m2!1sen!2sus"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="Everyday Produce location on Google Maps">
+        </iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="footer-brand-name">🍎 Everyday Produce</div>
+        <p>7300 Wornall Rd, Waldo, Kansas City, MO 64114. Featuring seasonal produce from KC's finest farmers since 1985.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Navigate</h4>
+        <a href="#about">About</a>
+        <a href="#seasonal">What's Fresh</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#visit">Visit Us</a>
+      </div>
+      <div class="footer-col">
+        <h4>Connect</h4>
+        <a href="https://www.facebook.com/everydayproduce" target="_blank" rel="noopener">Facebook</a>
+        <a href="https://www.yelp.com/biz/everyday-produce-market-kansas-city-2" target="_blank" rel="noopener">Yelp</a>
+        <a href="https://maps.google.com/?q=Everyday+Produce+Market+Kansas+City" target="_blank" rel="noopener">Google Maps</a>
+        <a href="tel:8169426344">(816) 942-6344</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; 2026 Everyday Produce Market. All rights reserved.
+    </div>
+  </footer>
+
+  <script>
+    // Intersection Observer for fade-up animations
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.fade-up').forEach(el => obs.observe(el));
+
+    // Lightbox
+    const galleryImages = document.querySelectorAll('.gallery-item img');
+    let currentIdx = 0;
+
+    function openLightbox(idx) {
+      currentIdx = idx;
+      const img = galleryImages[idx];
+      document.getElementById('lightbox-img').src = img.src;
+      document.getElementById('lightbox-img').alt = img.alt;
+      document.getElementById('lightbox').classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox(e) {
+      if (e && e.target.classList.contains('lightbox-nav')) return;
+      if (e && e.target.id === 'lightbox-img') return;
+      document.getElementById('lightbox').classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    function navLightbox(dir, e) {
+      e.stopPropagation();
+      currentIdx = (currentIdx + dir + galleryImages.length) % galleryImages.length;
+      const img = galleryImages[currentIdx];
+      document.getElementById('lightbox-img').src = img.src;
+      document.getElementById('lightbox-img').alt = img.alt;
+    }
+
+    // Keyboard nav for lightbox
+    document.addEventListener('keydown', (e) => {
+      const lb = document.getElementById('lightbox');
+      if (!lb.classList.contains('active')) return;
+      if (e.key === 'Escape') closeLightbox();
+      if (e.key === 'ArrowLeft') navLightbox(-1, e);
+      if (e.key === 'ArrowRight') navLightbox(1, e);
+    });
+  </script>
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Everyday Produce Market",
+    "image": "https://everyday-produce.com/photos/hero.jpg",
+    "url": "https://everyday-produce.com",
+    "telephone": "+18169426344",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "7300 Wornall Rd",
+      "addressLocality": "Kansas City",
+      "addressRegion": "MO",
+      "postalCode": "64114",
+      "addressCountry": "US"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 38.9935,
+      "longitude": -94.5935
+    },
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+      "opens": "08:30",
+      "closes": "18:30"
+    },
+    "sameAs": [
+      "https://www.facebook.com/everydayproduce",
+      "https://www.yelp.com/biz/everyday-produce-market-kansas-city-2"
+    ],
+    "description": "Waldo's favorite seasonal fruit and vegetable market. Hand-picked produce from KC's finest local farmers since 1985."
+  }
+  </script>
+</body>
+</html>
