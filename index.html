@@ -62,6 +62,8 @@
       position: static; width: auto; height: auto;
       background: var(--green); color: white;
       padding: 8px 16px; z-index: 9999;
+      outline: 3px solid var(--gold);
+      outline-offset: 2px;
     }
 
     /* ── SEASONAL BANNER ── */
@@ -259,7 +261,7 @@
       font-size: 11px; font-weight: 600;
       letter-spacing: 0.12em;
       text-transform: uppercase;
-      color: var(--green-dark);
+      color: #1a4a24;
       margin-bottom: 16px;
     }
     .section-tag::before {
@@ -404,7 +406,7 @@
     .seasonal .section-title { color: white; }
 
     .seasonal-sub {
-      font-size: 16px; opacity: 0.8;
+      font-size: 16px; color: rgba(255,255,255,0.9);
       margin-bottom: 48px;
       max-width: 520px;
       margin-left: auto; margin-right: auto;
@@ -463,6 +465,9 @@
       overflow: hidden;
       position: relative;
       cursor: pointer;
+      border: none;
+      padding: 0;
+      background: none;
     }
 
     .gallery-item img {
@@ -657,11 +662,11 @@
 
     .footer-brand p { font-size: 13px; line-height: 1.7; max-width: 300px; }
 
-    .footer-col h4 {
+    .footer-heading {
       font-size: 11px; font-weight: 600;
       letter-spacing: 0.1em;
       text-transform: uppercase;
-      color: rgba(255,255,255,0.4);
+      color: rgba(255,255,255,0.65);
       margin-bottom: 16px;
     }
 
@@ -695,6 +700,26 @@
     .fade-up-delay-1 { transition-delay: 0.1s; }
     .fade-up-delay-2 { transition-delay: 0.2s; }
     .fade-up-delay-3 { transition-delay: 0.3s; }
+
+    /* ── REDUCED MOTION (ADA) ── */
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .fade-up { opacity: 1; transform: none; transition: none; }
+      .btn, .nav-links a, .about-img img, .featured-card, .review-card, .season-card,
+      .gallery-item img { transition: none; }
+    }
+
+    /* ── HIGH CONTRAST (ADA) ── */
+    @media (forced-colors: active) {
+      .btn, .season-card, .review-card, .card { border: 2px solid currentColor; }
+      .gallery-item { border: 2px solid currentColor; }
+    }
+
+    /* ── FOCUS VISIBLE (ADA) ── */
+    :focus-visible {
+      outline: 3px solid var(--gold);
+      outline-offset: 2px;
+    }
 
     /* ── RESPONSIVE ── */
     @media (max-width: 900px) {
@@ -755,7 +780,7 @@
   </style>
 </head>
 <body>
-  <a href="#about" class="skip-link">Skip to main content</a>
+  <a href="#main" class="skip-link">Skip to main content</a>
 
   <!-- SEASONAL BANNER -->
   <div class="season-banner">
@@ -768,8 +793,8 @@
       <div class="nav-icon" aria-hidden="true">🍎</div>
       <div class="nav-name">Everyday Produce</div>
     </a>
-    <button class="nav-toggle" aria-label="Toggle menu" onclick="document.querySelector('.nav-links').classList.toggle('open')">☰</button>
-    <ul class="nav-links">
+    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-menu" id="nav-toggle-btn">☰</button>
+    <ul class="nav-links" id="nav-menu">
       <li><a href="#about">About</a></li>
       <li><a href="#seasonal">What's Fresh</a></li>
       <li><a href="#gallery">Gallery</a></li>
@@ -810,6 +835,9 @@
       <div class="info-value"><a href="tel:8169426344">(816) 942-6344</a></div>
     </div>
   </div>
+
+  <!-- MAIN LANDMARK (ADA) -->
+  <main id="main">
 
   <!-- ABOUT -->
   <section class="about" id="about">
@@ -941,42 +969,42 @@
       <h2 class="section-title">From Our Stand to Your Table</h2>
     </div>
     <div class="gallery-grid fade-up">
-      <div class="gallery-item wide" onclick="openLightbox(0)">
+      <button class="gallery-item wide" data-idx="0" aria-label="View full image: Colorful fruit cart with lemons, limes, oranges, and pineapple">
         <img src="photos/gallery-fruit-cart.jpg" alt="Colorful fruit cart with lemons, limes, oranges, and pineapple" loading="lazy" />
-      </div>
-      <div class="gallery-item" onclick="openLightbox(1)">
+      </button>
+      <button class="gallery-item" data-idx="1" aria-label="View full image: Checker-board super sweet corn sign">
         <img src="photos/gallery-corn.jpg" alt="Checker-board super sweet corn sign" loading="lazy" />
-      </div>
-      <div class="gallery-item" onclick="openLightbox(2)">
+      </button>
+      <button class="gallery-item" data-idx="2" aria-label="View full image: Ruby red grapefruit display">
         <img src="photos/gallery-grapefruit.jpg" alt="Ruby red grapefruit display" loading="lazy" />
-      </div>
-      <div class="gallery-item" onclick="openLightbox(3)">
+      </button>
+      <button class="gallery-item" data-idx="3" aria-label="View full image: Fresh ripe mangoes">
         <img src="photos/gallery-mangoes.jpg" alt="Fresh ripe mangoes" loading="lazy" />
-      </div>
-      <div class="gallery-item" onclick="openLightbox(4)">
+      </button>
+      <button class="gallery-item" data-idx="4" aria-label="View full image: Cucumbers and onions display">
         <img src="photos/gallery-cucumbers.jpg" alt="Cucumbers and onions display" loading="lazy" />
-      </div>
-      <div class="gallery-item" onclick="openLightbox(5)">
+      </button>
+      <button class="gallery-item" data-idx="5" aria-label="View full image: Beautiful hanging flower baskets">
         <img src="photos/gallery-hanging-baskets.jpg" alt="Beautiful hanging flower baskets" loading="lazy" />
-      </div>
-      <div class="gallery-item wide" onclick="openLightbox(6)">
+      </button>
+      <button class="gallery-item wide" data-idx="6" aria-label="View full image: Local jams, preserves, and salsa booth">
         <img src="photos/gallery-preserves-stand.jpg" alt="Local jams, preserves, and salsa booth" loading="lazy" />
-      </div>
-      <div class="gallery-item wide" onclick="openLightbox(7)">
+      </button>
+      <button class="gallery-item wide" data-idx="7" aria-label="View full image: Outdoor flower and plant display rack">
         <img src="photos/gallery-flower-rack.jpg" alt="Outdoor flower and plant display rack" loading="lazy" />
-      </div>
-      <div class="gallery-item" onclick="openLightbox(8)">
+      </button>
+      <button class="gallery-item" data-idx="8" aria-label="View full image: Fresh onions and zucchini">
         <img src="photos/gallery-onions.jpg" alt="Fresh onions and zucchini" loading="lazy" />
-      </div>
-      <div class="gallery-item" onclick="openLightbox(9)">
+      </button>
+      <button class="gallery-item" data-idx="9" aria-label="View full image: Golden pineapple with oranges">
         <img src="photos/gallery-pineapple.jpg" alt="Golden pineapple with oranges" loading="lazy" />
-      </div>
-      <div class="gallery-item" onclick="openLightbox(10)">
+      </button>
+      <button class="gallery-item" data-idx="10" aria-label="View full image: Variety of citrus fruits and melons">
         <img src="photos/gallery-citrus-variety.jpg" alt="Variety of citrus fruits and melons" loading="lazy" />
-      </div>
-      <div class="gallery-item wide" onclick="openLightbox(11)">
+      </button>
+      <button class="gallery-item wide" data-idx="11" aria-label="View full image: Everyday Produce Market billboard">
         <img src="photos/gallery-billboard.jpg" alt="Everyday Produce Market billboard - Serving the Waldo Area Since 1985" loading="lazy" />
-      </div>
+      </button>
     </div>
   </section>
 
@@ -1075,6 +1103,8 @@
     </div>
   </section>
 
+  </main>
+
   <!-- FOOTER -->
   <footer>
     <div class="footer-inner">
@@ -1082,8 +1112,8 @@
         <div class="footer-brand-name">🍎 Everyday Produce</div>
         <p>7300 Wornall Rd, Waldo, Kansas City, MO 64114. Featuring seasonal produce from KC's finest farmers since 1985.</p>
       </div>
-      <div class="footer-col">
-        <h4>Navigate</h4>
+      <div class="footer-col" role="navigation" aria-label="Footer navigation">
+        <p class="footer-heading">Navigate</p>
         <a href="#about">About</a>
         <a href="#seasonal">What's Fresh</a>
         <a href="#gallery">Gallery</a>
@@ -1091,7 +1121,7 @@
         <a href="#visit">Visit Us</a>
       </div>
       <div class="footer-col">
-        <h4>Connect</h4>
+        <p class="footer-heading">Connect</p>
         <a href="https://www.facebook.com/everydayproduce" target="_blank" rel="noopener">Facebook</a>
         <a href="https://www.yelp.com/biz/everyday-produce-market-kansas-city-2" target="_blank" rel="noopener">Yelp</a>
         <a href="https://maps.google.com/?q=Everyday+Produce+Market+Kansas+City" target="_blank" rel="noopener">Google Maps</a>
@@ -1110,24 +1140,67 @@
     }, { threshold: 0.1 });
     document.querySelectorAll('.fade-up').forEach(el => obs.observe(el));
 
-    // Lightbox
+    // Nav toggle (ADA-compliant)
+    const navToggle = document.getElementById('nav-toggle-btn');
+    const navMenu = document.getElementById('nav-menu');
+    if (navToggle && navMenu) {
+      navToggle.addEventListener('click', function() {
+        const expanded = this.getAttribute('aria-expanded') === 'true';
+        this.setAttribute('aria-expanded', !expanded);
+        navMenu.classList.toggle('open');
+      });
+      navMenu.querySelectorAll('a').forEach(function(link) {
+        link.addEventListener('click', function() {
+          navToggle.setAttribute('aria-expanded', 'false');
+          navMenu.classList.remove('open');
+        });
+      });
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && navMenu.classList.contains('open')) {
+          navToggle.setAttribute('aria-expanded', 'false');
+          navMenu.classList.remove('open');
+          navToggle.focus();
+        }
+      });
+    }
+
+    // Lightbox (ADA-compliant with focus trap)
+    const galleryButtons = document.querySelectorAll('.gallery-item[data-idx]');
     const galleryImages = document.querySelectorAll('.gallery-item img');
     let currentIdx = 0;
+    let lastFocused = null;
+
+    galleryButtons.forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        lastFocused = this;
+        openLightbox(parseInt(this.dataset.idx));
+      });
+    });
 
     function openLightbox(idx) {
       currentIdx = idx;
       const img = galleryImages[idx];
-      document.getElementById('lightbox-img').src = img.src;
-      document.getElementById('lightbox-img').alt = img.alt;
-      document.getElementById('lightbox').classList.add('active');
+      const lb = document.getElementById('lightbox');
+      const lbImg = document.getElementById('lightbox-img');
+      lbImg.src = img.src;
+      lbImg.alt = img.alt;
+      lb.classList.add('active');
+      lb.setAttribute('role', 'dialog');
+      lb.setAttribute('aria-modal', 'true');
+      lb.setAttribute('aria-label', 'Image gallery viewer');
       document.body.style.overflow = 'hidden';
+      document.querySelector('.lightbox-close').focus();
     }
 
     function closeLightbox(e) {
       if (e && e.target.classList.contains('lightbox-nav')) return;
       if (e && e.target.id === 'lightbox-img') return;
-      document.getElementById('lightbox').classList.remove('active');
+      var lb = document.getElementById('lightbox');
+      lb.classList.remove('active');
+      lb.removeAttribute('role');
+      lb.removeAttribute('aria-modal');
       document.body.style.overflow = '';
+      if (lastFocused) lastFocused.focus();
     }
 
     function navLightbox(dir, e) {
@@ -1139,8 +1212,8 @@
     }
 
     // Keyboard nav for lightbox
-    document.addEventListener('keydown', (e) => {
-      const lb = document.getElementById('lightbox');
+    document.addEventListener('keydown', function(e) {
+      var lb = document.getElementById('lightbox');
       if (!lb.classList.contains('active')) return;
       if (e.key === 'Escape') closeLightbox();
       if (e.key === 'ArrowLeft') navLightbox(-1, e);
