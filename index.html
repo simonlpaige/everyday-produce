@@ -7,10 +7,16 @@
   <meta name="description" content="Everyday Produce - Waldo's favorite seasonal fruit and vegetable market. Hand-picked from KC's finest local farmers. 7300 Wornall Rd, Kansas City MO. Serving the Waldo area since 1985." />
   <meta property="og:title" content="Everyday Produce | Waldo's Favorite Produce Stand" />
   <meta property="og:description" content="Farm-fresh fruits, vegetables, flowers, and local preserves. Open 7 days a week in the heart of Waldo, Kansas City." />
-  <meta property="og:image" content="photos/hero.jpg" />
+  <meta property="og:image" content="https://everyday-produce.com/photos/hero.jpg" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://everyday-produce.com" />
+  <!-- Favicon: SVG emoji - works in all modern browsers, no file needed -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🍎</text></svg>" />
+  <!-- theme-color tints the mobile browser chrome to match our brand green -->
+  <meta name="theme-color" content="#3d7a4a" />
   <link rel="canonical" href="https://everyday-produce.com" />
+  <!-- Preload the hero image so the browser fetches it immediately (improves LCP) -->
+  <link rel="preload" as="image" href="photos/hero.jpg" fetchpriority="high" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet" />
@@ -457,6 +463,7 @@
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       grid-auto-rows: 280px;
+      grid-auto-flow: dense; /* fills gaps created by wide items - prevents lonely last item */
       gap: 12px;
     }
 
@@ -777,6 +784,76 @@
       .hero-btns { flex-direction: column; }
       .btn { justify-content: center; }
     }
+
+    /* ── VISUALLY HIDDEN (ADA utility) ── */
+    .visually-hidden {
+      position: absolute; width: 1px; height: 1px;
+      padding: 0; margin: -1px; overflow: hidden;
+      clip: rect(0,0,0,0); white-space: nowrap; border: 0;
+    }
+
+    /* ── MAP FALLBACK LINK ── */
+    .map-fallback {
+      margin-top: 10px;
+      font-size: 13px;
+      text-align: center;
+    }
+    .map-fallback a {
+      color: var(--green);
+      text-decoration: underline;
+    }
+    .map-fallback a:hover { color: var(--green-dark); }
+
+    /* ── FEATURED STRIP WRAPPER + SCROLL ARROWS ── */
+    .featured-strip-wrap {
+      position: relative;
+    }
+    /* Fade edges hint that more items exist off-screen */
+    .featured-strip-wrap::before,
+    .featured-strip-wrap::after {
+      content: '';
+      position: absolute;
+      top: 0; bottom: 0;
+      width: 60px;
+      pointer-events: none;
+      z-index: 5;
+    }
+    .featured-strip-wrap::before {
+      left: 0;
+      background: linear-gradient(to right, var(--white), transparent);
+    }
+    .featured-strip-wrap::after {
+      right: 0;
+      background: linear-gradient(to left, var(--white), transparent);
+    }
+    /* Prev/next arrow buttons - desktop only */
+    .featured-scroll-btn {
+      position: absolute;
+      top: 50%; transform: translateY(-50%);
+      width: 40px; height: 40px;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 50%;
+      box-shadow: var(--shadow-md);
+      font-size: 20px; line-height: 1;
+      cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      z-index: 10;
+      transition: background 0.2s, box-shadow 0.2s;
+      color: var(--dark);
+    }
+    .featured-scroll-btn:hover {
+      background: var(--green-light);
+      box-shadow: var(--shadow-lg);
+    }
+    .featured-scroll-btn.prev { left: 8px; }
+    .featured-scroll-btn.next { right: 8px; }
+    /* Hide on mobile - swipe is native there */
+    @media (max-width: 900px) {
+      .featured-scroll-btn { display: none; }
+      .featured-strip-wrap::before,
+      .featured-strip-wrap::after { display: none; }
+    }
   </style>
 </head>
 <body>
@@ -789,7 +866,7 @@
 
   <!-- NAV -->
   <nav class="nav" role="navigation" aria-label="Main navigation">
-    <a href="#" class="nav-brand">
+    <a href="/" class="nav-brand">
       <div class="nav-icon" aria-hidden="true">🍎</div>
       <div class="nav-name">Everyday Produce</div>
     </a>
@@ -818,11 +895,11 @@
   </section>
 
   <!-- INFO BAR -->
-  <div class="info-bar fade-up">
+  <div class="info-bar fade-up" role="region" aria-label="Store info">
     <div class="info-item">
       <div class="info-icon">📍</div>
       <div class="info-label">Location</div>
-      <div class="info-value">7300 Wornall Rd, Waldo</div>
+      <div class="info-value"><a href="https://maps.google.com/?q=7300+Wornall+Rd+Kansas+City+MO+64114" target="_blank" rel="noopener">7300 Wornall Rd, Waldo</a></div>
     </div>
     <div class="info-item">
       <div class="info-icon">🕐</div>
@@ -879,8 +956,10 @@
   </section>
 
   <!-- FEATURED STRIP -->
-  <section class="featured-strip">
-    <div class="featured-scroll fade-up">
+  <section class="featured-strip" aria-label="Featured products">
+    <div class="featured-strip-wrap">
+    <button class="featured-scroll-btn prev" onclick="scrollFeatured(-1)" aria-label="Scroll featured products left">&#8249;</button>
+    <div class="featured-scroll fade-up" id="featured-scroll">
       <div class="featured-card">
         <img src="photos/gallery-strawberries.jpg" alt="Fresh ripe strawberries" loading="lazy" />
         <div class="featured-card-body">
@@ -930,7 +1009,9 @@
           <div class="featured-card-sub">Handmade jams and salsa</div>
         </div>
       </div>
-    </div>
+    </div><!-- end featured-scroll -->
+    <button class="featured-scroll-btn next" onclick="scrollFeatured(1)" aria-label="Scroll featured products right">&#8250;</button>
+    </div><!-- end featured-strip-wrap -->
   </section>
 
   <!-- SEASONAL -->
@@ -972,38 +1053,38 @@
       <button class="gallery-item wide" data-idx="0" aria-label="View full image: Colorful fruit cart with lemons, limes, oranges, and pineapple">
         <img src="photos/gallery-fruit-cart.jpg" alt="Colorful fruit cart with lemons, limes, oranges, and pineapple" loading="lazy" />
       </button>
-      <button class="gallery-item" data-idx="1" aria-label="View full image: Checker-board super sweet corn sign">
+      <button class="gallery-item wide" data-idx="1" aria-label="View full image: Everyday Produce Market billboard">
+        <img src="photos/gallery-billboard.jpg" alt="Everyday Produce Market billboard - Serving the Waldo Area Since 1985" loading="lazy" />
+      </button>
+      <button class="gallery-item" data-idx="2" aria-label="View full image: Checker-board super sweet corn sign">
         <img src="photos/gallery-corn.jpg" alt="Checker-board super sweet corn sign" loading="lazy" />
       </button>
-      <button class="gallery-item" data-idx="2" aria-label="View full image: Ruby red grapefruit display">
+      <button class="gallery-item" data-idx="3" aria-label="View full image: Ruby red grapefruit display">
         <img src="photos/gallery-grapefruit.jpg" alt="Ruby red grapefruit display" loading="lazy" />
       </button>
-      <button class="gallery-item" data-idx="3" aria-label="View full image: Fresh ripe mangoes">
+      <button class="gallery-item" data-idx="4" aria-label="View full image: Fresh ripe mangoes">
         <img src="photos/gallery-mangoes.jpg" alt="Fresh ripe mangoes" loading="lazy" />
       </button>
-      <button class="gallery-item" data-idx="4" aria-label="View full image: Cucumbers and onions display">
+      <button class="gallery-item" data-idx="5" aria-label="View full image: Cucumbers and onions display">
         <img src="photos/gallery-cucumbers.jpg" alt="Cucumbers and onions display" loading="lazy" />
       </button>
-      <button class="gallery-item" data-idx="5" aria-label="View full image: Beautiful hanging flower baskets">
+      <button class="gallery-item" data-idx="6" aria-label="View full image: Beautiful hanging flower baskets">
         <img src="photos/gallery-hanging-baskets.jpg" alt="Beautiful hanging flower baskets" loading="lazy" />
       </button>
-      <button class="gallery-item wide" data-idx="6" aria-label="View full image: Local jams, preserves, and salsa booth">
+      <button class="gallery-item wide" data-idx="7" aria-label="View full image: Local jams, preserves, and salsa booth">
         <img src="photos/gallery-preserves-stand.jpg" alt="Local jams, preserves, and salsa booth" loading="lazy" />
       </button>
-      <button class="gallery-item wide" data-idx="7" aria-label="View full image: Outdoor flower and plant display rack">
+      <button class="gallery-item wide" data-idx="8" aria-label="View full image: Outdoor flower and plant display rack">
         <img src="photos/gallery-flower-rack.jpg" alt="Outdoor flower and plant display rack" loading="lazy" />
       </button>
-      <button class="gallery-item" data-idx="8" aria-label="View full image: Fresh onions and zucchini">
+      <button class="gallery-item" data-idx="9" aria-label="View full image: Fresh onions and zucchini">
         <img src="photos/gallery-onions.jpg" alt="Fresh onions and zucchini" loading="lazy" />
       </button>
-      <button class="gallery-item" data-idx="9" aria-label="View full image: Golden pineapple with oranges">
+      <button class="gallery-item" data-idx="10" aria-label="View full image: Golden pineapple with oranges">
         <img src="photos/gallery-pineapple.jpg" alt="Golden pineapple with oranges" loading="lazy" />
       </button>
-      <button class="gallery-item" data-idx="10" aria-label="View full image: Variety of citrus fruits and melons">
+      <button class="gallery-item" data-idx="11" aria-label="View full image: Variety of citrus fruits and melons">
         <img src="photos/gallery-citrus-variety.jpg" alt="Variety of citrus fruits and melons" loading="lazy" />
-      </button>
-      <button class="gallery-item wide" data-idx="11" aria-label="View full image: Everyday Produce Market billboard">
-        <img src="photos/gallery-billboard.jpg" alt="Everyday Produce Market billboard - Serving the Waldo Area Since 1985" loading="lazy" />
       </button>
     </div>
   </section>
@@ -1100,6 +1181,10 @@
           title="Everyday Produce location on Google Maps">
         </iframe>
       </div>
+      <!-- Text fallback for users who can't load the map iframe (VPNs, accessibility tools) -->
+      <p class="map-fallback">
+        <a href="https://maps.google.com/?q=7300+Wornall+Rd+Kansas+City+MO+64114" target="_blank" rel="noopener">Open in Google Maps - 7300 Wornall Rd, Kansas City, MO 64114</a>
+      </p>
     </div>
   </section>
 
@@ -1219,6 +1304,26 @@
       if (e.key === 'ArrowLeft') navLightbox(-1, e);
       if (e.key === 'ArrowRight') navLightbox(1, e);
     });
+
+    // Auto-set seasonal banner based on the current month.
+    // Edit CLOSED_MONTHS to adjust when the stand is closed.
+    // Months are 0-indexed: 0=Jan, 1=Feb, ..., 11=Dec
+    (function() {
+      var CLOSED_MONTHS = [11, 0, 1, 2]; // Dec, Jan, Feb, Mar
+      var month = new Date().getMonth();
+      var banner = document.querySelector('.season-banner');
+      if (!banner) return;
+      if (CLOSED_MONTHS.indexOf(month) !== -1) {
+        banner.classList.add('closed');
+        banner.innerHTML = '\u2744\ufe0f <span>We\'re closed for the winter.</span> See you in spring! \u2744\ufe0f';
+      }
+    })();
+
+    // Scroll the featured products strip left or right by one card width
+    function scrollFeatured(dir) {
+      var el = document.getElementById('featured-scroll');
+      if (el) el.scrollBy({ left: dir * 280, behavior: 'smooth' });
+    }
   </script>
 
   <!-- Structured Data -->
@@ -1240,8 +1345,8 @@
     },
     "geo": {
       "@type": "GeoCoordinates",
-      "latitude": 38.9935,
-      "longitude": -94.5935
+      "latitude": 38.9609,
+      "longitude": -94.5943
     },
     "openingHoursSpecification": {
       "@type": "OpeningHoursSpecification",
