@@ -1,0 +1,11 @@
+# Shoot working directories - raws + full processed tree stay local only.
+# Only the final selected photos in /photos/ ship to GitHub Pages.
+Media/
+
+# Previous versions of replaced photos - local backup, not for the live site.
+photos/_archive/
+
+# OS junk
+Thumbs.db
+.DS_Store
+desktop.ini
