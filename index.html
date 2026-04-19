@@ -85,6 +85,44 @@
     .season-banner.closed { background: var(--terracotta); }
     .season-banner span { font-weight: 600; }
 
+    /* ── HOUSE OFFER BANNER ── */
+    .house-banner {
+      background: linear-gradient(90deg, var(--gold) 0%, #e6bc5a 50%, var(--gold) 100%);
+      color: var(--dark);
+      text-align: center;
+      padding: 14px 20px;
+      font-size: 15px;
+      font-weight: 600;
+      letter-spacing: 0.01em;
+      box-shadow: inset 0 -2px 0 rgba(0,0,0,0.08);
+    }
+    .house-banner a.house-cta {
+      display: inline-block;
+      background: var(--dark);
+      color: var(--gold-light);
+      text-decoration: none;
+      padding: 6px 16px;
+      border-radius: 999px;
+      margin-left: 10px;
+      font-weight: 700;
+      font-size: 14px;
+      transition: transform 0.15s, background 0.15s;
+    }
+    .house-banner a.house-cta:hover {
+      background: var(--green-dark);
+      color: white;
+      transform: translateY(-1px);
+    }
+    .house-banner .house-emoji { font-size: 18px; }
+    @media (max-width: 640px) {
+      .house-banner { font-size: 13px; padding: 12px 14px; line-height: 1.5; }
+      .house-banner a.house-cta {
+        display: block;
+        margin: 8px auto 0;
+        width: fit-content;
+      }
+    }
+
     /* ── NAV ── */
     .nav {
       background: rgba(255,255,255,0.95);
@@ -858,6 +896,14 @@
 </head>
 <body>
   <a href="#main" class="skip-link">Skip to main content</a>
+
+  <!-- HOUSE OFFER BANNER -->
+  <div class="house-banner" role="region" aria-label="Special home buyer offer">
+    <span class="house-emoji">🏡</span>
+    <strong>Buy this house, get free produce all season.</strong>
+    801 W 56th St &middot; MLS #2613841
+    <a href="house.html" class="house-cta">See the offer →</a>
+  </div>
 
   <!-- SEASONAL BANNER -->
   <div class="season-banner">
