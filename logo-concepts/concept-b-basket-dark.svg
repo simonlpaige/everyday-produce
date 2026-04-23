@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Concept B — dark background variant. Cream wordmark, same fruit palette. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 340" role="img" aria-label="Everyday Produce basket, light-on-dark">
+  <defs>
+    <style>
+      .brand-name {
+        font-family: 'Playfair Display', Georgia, serif;
+        font-weight: 800;
+        font-size: 76px;
+        fill: #faf7f2;
+        letter-spacing: -0.01em;
+      }
+      .brand-accent {
+        font-family: 'Playfair Display', Georgia, serif;
+        font-weight: 600;
+        font-style: italic;
+        font-size: 52px;
+        fill: #d4a843;
+      }
+      .brand-sub {
+        font-family: 'DM Sans', sans-serif;
+        font-weight: 500;
+        font-size: 16px;
+        fill: #c8b693;
+        letter-spacing: 0.32em;
+      }
+      .basket-body { fill: #a47a4f; }
+      .basket-dark { fill: #7a5a38; }
+      .basket-rim { fill: #3a2d1c; }
+      .weave { fill: none; stroke: #3a2d1c; stroke-width: 4; stroke-linecap: round; }
+      .tomato { fill: #c26e4a; }
+      .leaf-a { fill: #3d7a4a; }
+      .leaf-b { fill: #2d5e38; }
+      .peach { fill: #d4a843; }
+      .grape { fill: #8b5a8c; }
+      .highlight { fill: rgba(255,255,255,0.45); }
+    </style>
+  </defs>
+
+  <g transform="translate(20, 30)">
+    <path class="leaf-b" d="M 110,30 Q 90,-8 140,-8 Q 160,18 135,35 Z"/>
+    <path class="leaf-a" d="M 80,20 Q 55,-5 30,10 Q 40,35 80,35 Z"/>
+
+    <circle class="tomato" cx="70" cy="70" r="38"/>
+    <path class="leaf-a" d="M 70,40 Q 63,28 76,24 Q 82,34 82,42 Q 76,48 70,40 Z"/>
+    <ellipse class="highlight" cx="58" cy="58" rx="9" ry="6"/>
+
+    <circle class="peach" cx="150" cy="82" r="36"/>
+    <path class="leaf-a" d="M 150,55 Q 158,42 170,48 Q 164,60 150,60 Z"/>
+    <ellipse class="highlight" cx="140" cy="72" rx="8" ry="5"/>
+
+    <circle class="tomato" cx="212" cy="76" r="28"/>
+    <ellipse class="highlight" cx="205" cy="69" rx="6" ry="4"/>
+
+    <g transform="translate(250, 90)">
+      <path class="leaf-b" d="M 0,-18 Q 12,-32 30,-22 Q 20,-6 0,-8 Z"/>
+      <circle class="grape" cx="0" cy="0" r="11"/>
+      <circle class="grape" cx="14" cy="8" r="11"/>
+      <circle class="grape" cx="-12" cy="14" r="11"/>
+      <circle class="grape" cx="6" cy="22" r="11"/>
+      <ellipse class="highlight" cx="-3" cy="-3" rx="3" ry="2"/>
+    </g>
+
+    <ellipse class="basket-rim" cx="140" cy="135" rx="150" ry="14"/>
+    <path class="basket-body" d="M -10,135 L 18,270 Q 140,290 262,270 L 290,135 Z"/>
+    <path class="basket-dark" d="M 5,200 L 18,270 Q 140,290 262,270 L 275,200 Q 140,220 5,200 Z" opacity="0.35"/>
+
+    <path class="weave" d="M 25,145 L 35,275"/>
+    <path class="weave" d="M 70,148 L 76,280"/>
+    <path class="weave" d="M 140,150 L 140,285"/>
+    <path class="weave" d="M 210,148 L 204,280"/>
+    <path class="weave" d="M 255,145 L 245,275"/>
+    <path class="weave" d="M 0,170 Q 140,184 280,170"/>
+    <path class="weave" d="M 6,210 Q 140,226 274,210"/>
+    <path class="weave" d="M 15,255 Q 140,272 265,255"/>
+  </g>
+
+  <text class="brand-name" x="330" y="155" text-anchor="start">Everyday</text>
+  <text class="brand-accent" x="330" y="215" text-anchor="start">Produce</text>
+  <line x1="330" y1="238" x2="430" y2="238" stroke="#d4a843" stroke-width="2"/>
+  <text class="brand-sub" x="330" y="265" text-anchor="start">SINCE 1985 · WALDO</text>
+</svg>

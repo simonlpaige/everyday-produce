@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Concept A — dark background variant. Cream text, gold accents. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" role="img" aria-label="Everyday Produce stamp, light-on-dark">
+  <defs>
+    <style>
+      .ring-outer { fill: none; stroke: #faf7f2; stroke-width: 6; }
+      .ring-inner { fill: none; stroke: #faf7f2; stroke-width: 3; }
+      .arc-text {
+        font-family: 'Playfair Display', Georgia, serif;
+        font-weight: 700;
+        font-size: 32px;
+        fill: #faf7f2;
+        letter-spacing: 0.22em;
+      }
+      .arc-text-bottom {
+        font-family: 'DM Sans', sans-serif;
+        font-weight: 600;
+        font-size: 20px;
+        fill: #c8b693;
+        letter-spacing: 0.28em;
+      }
+      .center-year {
+        font-family: 'Playfair Display', Georgia, serif;
+        font-weight: 800;
+        font-size: 64px;
+        fill: #d4a843;
+        text-anchor: middle;
+      }
+      .center-sub {
+        font-family: 'DM Sans', sans-serif;
+        font-weight: 600;
+        font-size: 14px;
+        fill: #c8b693;
+        text-anchor: middle;
+        letter-spacing: 0.28em;
+      }
+      .star { fill: #d4a843; }
+    </style>
+    <path id="arc-top-d" d="M 60,200 A 140,140 0 0 1 340,200" fill="none" />
+    <path id="arc-bottom-d" d="M 72,220 A 128,128 0 0 0 328,220" fill="none" />
+  </defs>
+
+  <circle class="ring-outer" cx="200" cy="200" r="184"/>
+  <circle class="ring-inner" cx="200" cy="200" r="166"/>
+
+  <text class="arc-text">
+    <textPath href="#arc-top-d" startOffset="50%" text-anchor="middle">EVERYDAY  PRODUCE</textPath>
+  </text>
+  <text class="arc-text-bottom">
+    <textPath href="#arc-bottom-d" startOffset="50%" text-anchor="middle">WALDO  ·  KANSAS CITY</textPath>
+  </text>
+
+  <g class="star">
+    <path d="M 60,200 l 3,-9 l 9,0 l -7,6 l 3,9 l -8,-6 l -8,6 l 3,-9 l -7,-6 l 9,0 z" transform="translate(-1, 0)"/>
+    <path d="M 340,200 l 3,-9 l 9,0 l -7,6 l 3,9 l -8,-6 l -8,6 l 3,-9 l -7,-6 l 9,0 z" transform="translate(-4, 0)"/>
+  </g>
+
+  <text class="center-sub" x="200" y="175">— EST —</text>
+  <text class="center-year" x="200" y="235">1985</text>
+  <text class="center-sub" x="200" y="265">HAND PICKED LOCAL</text>
+</svg>

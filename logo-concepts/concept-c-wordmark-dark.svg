@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Concept C — dark-background variant. Same layout, cream + gold fills. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 300" role="img" aria-label="Everyday Produce wordmark, light-on-dark">
+  <defs>
+    <style>
+      .word-main {
+        font-family: 'Playfair Display', Georgia, serif;
+        font-weight: 800;
+        font-size: 110px;
+        fill: #faf7f2;
+        letter-spacing: -0.02em;
+      }
+      .word-accent {
+        font-family: 'Playfair Display', Georgia, serif;
+        font-weight: 600;
+        font-style: italic;
+        font-size: 46px;
+        fill: #d4a843;
+        letter-spacing: 0.02em;
+      }
+      .word-sub {
+        font-family: 'DM Sans', sans-serif;
+        font-weight: 500;
+        font-size: 15px;
+        fill: #c8b693;
+        letter-spacing: 0.38em;
+      }
+      .leaf-mark { fill: #d4a843; }
+      .leaf-vein { fill: none; stroke: #2c2417; stroke-width: 1.8; stroke-linecap: round; }
+      .divider { stroke: #d4a843; stroke-width: 2; }
+    </style>
+  </defs>
+
+  <text class="word-main" x="50" y="140">Everyday</text>
+
+  <g transform="translate(440, 55) rotate(25)">
+    <path class="leaf-mark" d="M 0,-18 Q 14,-12 15,0 Q 14,12 0,18 Q -14,12 -15,0 Q -14,-12 0,-18 Z"/>
+    <path class="leaf-vein" d="M -10,8 Q 0,0 11,-10"/>
+  </g>
+
+  <line class="divider" x1="50" y1="170" x2="130" y2="170"/>
+  <line class="divider" x1="470" y1="170" x2="550" y2="170"/>
+
+  <text class="word-accent" x="150" y="182" text-anchor="start">Produce</text>
+
+  <text class="word-sub" x="300" y="225" text-anchor="middle">WALDO  ·  KANSAS CITY  ·  EST. 1985</text>
+  <text class="word-sub" x="300" y="255" text-anchor="middle" style="font-size:12px; letter-spacing:0.28em; fill:#a89376;">HAND  PICKED  ·  LOCAL  FARMS</text>
+</svg>
