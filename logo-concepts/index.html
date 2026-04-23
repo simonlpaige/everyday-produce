@@ -154,6 +154,8 @@
   .header-mock img { max-height: 96px; width: auto; }
   /* Concept A is a square stamp; cap its header height a bit */
   .header-mock img.stamp { max-height: 88px; }
+  /* Concept B is a wide horizontal lockup; let it fill container width instead of being height-capped, so the wordmark reads. */
+  .header-mock img.wide-lockup { max-height: none; height: auto; width: 100%; max-width: 100%; }
   .header-mock .nav {
     font-size: 13px;
     color: var(--warm-gray);
@@ -180,6 +182,8 @@
   .card-mock.dark { background: var(--dark); color: var(--cream); }
   .card-mock img { max-height: 120px; max-width: 85%; width: auto; align-self: flex-start; }
   .card-mock img.stamp { max-height: 130px; }
+  /* Concept B wide lockup: let it fill card width instead of being height-capped. */
+  .card-mock img.wide-lockup { max-height: none; max-width: 100%; width: 100%; height: auto; }
   .card-mock .card-contact {
     font-size: 10px;
     letter-spacing: 0.12em;
@@ -308,7 +312,7 @@
         <div class="size-label">Site header · cream</div>
         <div class="size-body">
           <div class="header-mock">
-            <img src="concept-b-basket.svg" alt="Concept B header">
+            <img class="wide-lockup" src="concept-b-basket.svg" alt="Concept B header">
             <span class="nav">HOME · SEASONAL · VISIT</span>
           </div>
         </div>
@@ -318,7 +322,7 @@
         <div class="size-label">Business card · cream</div>
         <div class="size-body">
           <div class="card-mock">
-            <img src="concept-b-basket.svg" alt="Concept B business card">
+            <img class="wide-lockup" src="concept-b-basket.svg" alt="Concept B business card">
             <div class="card-contact">7300 Wornall Rd · (816) 942-6344</div>
           </div>
         </div>
@@ -328,7 +332,7 @@
         <div class="size-label">Business card · dark</div>
         <div class="size-body dark">
           <div class="card-mock dark">
-            <img src="concept-b-basket-dark.svg" alt="Concept B on dark">
+            <img class="wide-lockup" src="concept-b-basket-dark.svg" alt="Concept B on dark">
             <div class="card-contact">7300 Wornall Rd · (816) 942-6344</div>
           </div>
         </div>
