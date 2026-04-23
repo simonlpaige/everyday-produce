@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Concept A v2: The Stamp. Simpler, bolder. Center mark dominates; curved text sized up; cream fill stays legible on dark. -->
+<!-- Concept A v3: The Stamp. Fixed after review: full arc text fits (no clipped E), Waldo line back at original bottom-arc position, gold stars restored at 9/3 o'clock, center stack bumped up slightly. -->
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" role="img" aria-label="Everyday Produce, established 1985, Waldo Kansas City">
   <defs>
     <style>
@@ -9,16 +9,16 @@
       .arc-text {
         font-family: 'Playfair Display', Georgia, serif;
         font-weight: 700;
-        font-size: 32px;
+        font-size: 28px;
         fill: #2c2417;
-        letter-spacing: 0.22em;
+        letter-spacing: 0.08em;
       }
       .arc-text-bottom {
-        font-family: 'DM Sans', sans-serif;
-        font-weight: 600;
-        font-size: 20px;
-        fill: #5c4a32;
-        letter-spacing: 0.28em;
+        font-family: 'Playfair Display', Georgia, serif;
+        font-weight: 700;
+        font-size: 22px;
+        fill: #2c2417;
+        letter-spacing: 0.14em;
       }
       .center-year {
         font-family: 'Playfair Display', Georgia, serif;
@@ -30,16 +30,17 @@
       .center-sub {
         font-family: 'DM Sans', sans-serif;
         font-weight: 600;
-        font-size: 14px;
+        font-size: 13px;
         fill: #5c4a32;
         text-anchor: middle;
         letter-spacing: 0.28em;
       }
       .star { fill: #d4a843; }
     </style>
-    <!-- Circular text paths. Top arc rides inside the inner ring; bottom arc pulled up so letters stay inside the ring. -->
-    <path id="arc-top" d="M 64,200 A 136,136 0 0 1 336,200" fill="none" />
-    <path id="arc-bottom" d="M 76,208 A 124,124 0 0 0 324,208" fill="none" />
+    <!-- Top arc: sits just inside the inner ring. Radius 150, tightly hugging the ring so glyphs don't clip at start/end. -->
+    <path id="arc-top" d="M 50,200 A 150,150 0 0 1 350,200" fill="none" />
+    <!-- Bottom arc: mirror of top. Radius 150. Curves upward so text reads left-to-right along the bottom. -->
+    <path id="arc-bottom" d="M 60,210 A 140,140 0 0 0 340,210" fill="none" />
   </defs>
 
   <!-- Cream disc -->
@@ -49,24 +50,26 @@
   <circle class="ring-outer" cx="200" cy="200" r="184"/>
   <circle class="ring-inner" cx="200" cy="200" r="166"/>
 
-  <!-- Top curved text -->
+  <!-- Top curved text: EVERYDAY PRODUCE. Smaller font + tighter letter-spacing so both words fit on the arc without clipping. -->
   <text class="arc-text">
-    <textPath href="#arc-top" startOffset="50%" text-anchor="middle">EVERYDAY  PRODUCE</textPath>
+    <textPath href="#arc-top" startOffset="50%" text-anchor="middle">EVERYDAY PRODUCE</textPath>
   </text>
 
-  <!-- Bottom curved text -->
+  <!-- Bottom curved text: WALDO · KANSAS CITY, back in its original place along the bottom of the badge. -->
   <text class="arc-text-bottom">
-    <textPath href="#arc-bottom" startOffset="50%" text-anchor="middle">WALDO  ·  KANSAS CITY</textPath>
+    <textPath href="#arc-bottom" startOffset="50%" text-anchor="middle">WALDO · KANSAS CITY</textPath>
   </text>
 
-  <!-- Flanking separator dots (replace stars; smaller, sit on the inner ring between top and bottom curves so they don't overlap letters) -->
+  <!-- Gold stars at 9 o'clock and 3 o'clock, between the top arc and bottom arc text. Same five-point star shape. -->
   <g class="star">
-    <circle cx="34" cy="200" r="4"/>
-    <circle cx="366" cy="200" r="4"/>
+    <!-- Left star, centered at (40, 200), radius ~10 -->
+    <polygon points="40,190 42.35,197.24 50,197.24 43.82,201.71 46.18,208.95 40,204.49 33.82,208.95 36.18,201.71 30,197.24 37.65,197.24"/>
+    <!-- Right star, centered at (360, 200), radius ~10 -->
+    <polygon points="360,190 362.35,197.24 370,197.24 363.82,201.71 366.18,208.95 360,204.49 353.82,208.95 356.18,201.71 350,197.24 357.65,197.24"/>
   </g>
 
-  <!-- Center: big EST. 1985 -->
-  <text class="center-sub" x="200" y="175">— EST —</text>
-  <text class="center-year" x="200" y="235">1985</text>
-  <text class="center-sub" x="200" y="265">HAND PICKED LOCAL</text>
+  <!-- Center stack: bumped up ~10px vs v2 so "HAND PICKED LOCAL" has more breathing room above the bottom arc. -->
+  <text class="center-sub" x="200" y="162">— EST —</text>
+  <text class="center-year" x="200" y="222">1985</text>
+  <text class="center-sub" x="200" y="252">HAND PICKED LOCAL</text>
 </svg>
