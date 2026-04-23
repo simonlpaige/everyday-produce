@@ -30,7 +30,7 @@
       .center-sub {
         font-family: 'DM Sans', sans-serif;
         font-weight: 600;
-        font-size: 13px;
+        font-size: 16px;
         fill: #5c4a32;
         text-anchor: middle;
         letter-spacing: 0.28em;
@@ -68,8 +68,8 @@
     <polygon points="360,190 362.35,197.24 370,197.24 363.82,201.71 366.18,208.95 360,204.49 353.82,208.95 356.18,201.71 350,197.24 357.65,197.24"/>
   </g>
 
-  <!-- Center stack: bumped up ~10px vs v2 so "HAND PICKED LOCAL" has more breathing room above the bottom arc. -->
-  <text class="center-sub" x="200" y="162">— EST —</text>
-  <text class="center-year" x="200" y="222">1985</text>
-  <text class="center-sub" x="200" y="252">HAND PICKED LOCAL</text>
+  <!-- Center stack: EST and HAND PICKED LOCAL bumped up in size (13->16px) per feedback. Vertical positions tweaked to keep the stack balanced. -->
+  <text class="center-sub" x="200" y="160">— EST —</text>
+  <text class="center-year" x="200" y="224">1985</text>
+  <text class="center-sub" x="200" y="256">HAND PICKED LOCAL</text>
 </svg>
