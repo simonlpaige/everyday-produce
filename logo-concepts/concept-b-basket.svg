@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Concept B v2: The Basket. Bigger, chunkier, reads clean at small sizes. -->
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 340" role="img" aria-label="Everyday Produce, a basket of fresh fruit">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 340" role="img" aria-label="Everyday Produce, a basket of fresh fruit">
   <defs>
     <style>
       .brand-name {
         font-family: 'Playfair Display', Georgia, serif;
         font-weight: 800;
-        font-size: 76px;
+        font-size: 82px;
         fill: #2c2417;
         letter-spacing: -0.01em;
       }
@@ -14,7 +14,7 @@
         font-family: 'Playfair Display', Georgia, serif;
         font-weight: 600;
         font-style: italic;
-        font-size: 52px;
+        font-size: 58px;
         fill: #3d7a4a;
       }
       .brand-sub {
@@ -90,13 +90,13 @@
     <path class="weave" d="M 15,255 Q 140,272 265,255"/>
   </g>
 
-  <!-- WORDMARK (right) -->
+  <!-- WORDMARK (right). viewBox widened to 760 so the full wordmark fits at any scale. -->
   <text class="brand-name" x="330" y="155" text-anchor="start">Everyday</text>
-  <text class="brand-accent" x="330" y="215" text-anchor="start">Produce</text>
+  <text class="brand-accent" x="330" y="220" text-anchor="start">Produce</text>
 
   <!-- Gold rule -->
-  <line x1="330" y1="238" x2="430" y2="238" stroke="#d4a843" stroke-width="2"/>
+  <line x1="330" y1="245" x2="430" y2="245" stroke="#d4a843" stroke-width="2"/>
 
   <!-- Tagline -->
-  <text class="brand-sub" x="330" y="265" text-anchor="start">SINCE 1985 · WALDO</text>
+  <text class="brand-sub" x="330" y="272" text-anchor="start">SINCE 1985 · WALDO</text>
 </svg>

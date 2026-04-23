@@ -36,8 +36,8 @@
       }
       .star { fill: #d4a843; }
     </style>
-    <path id="arc-top-d" d="M 60,200 A 140,140 0 0 1 340,200" fill="none" />
-    <path id="arc-bottom-d" d="M 72,220 A 128,128 0 0 0 328,220" fill="none" />
+    <path id="arc-top-d" d="M 64,200 A 136,136 0 0 1 336,200" fill="none" />
+    <path id="arc-bottom-d" d="M 76,208 A 124,124 0 0 0 324,208" fill="none" />
   </defs>
 
   <circle class="ring-outer" cx="200" cy="200" r="184"/>
@@ -51,8 +51,8 @@
   </text>
 
   <g class="star">
-    <path d="M 60,200 l 3,-9 l 9,0 l -7,6 l 3,9 l -8,-6 l -8,6 l 3,-9 l -7,-6 l 9,0 z" transform="translate(-1, 0)"/>
-    <path d="M 340,200 l 3,-9 l 9,0 l -7,6 l 3,9 l -8,-6 l -8,6 l 3,-9 l -7,-6 l 9,0 z" transform="translate(-4, 0)"/>
+    <circle cx="34" cy="200" r="4"/>
+    <circle cx="366" cy="200" r="4"/>
   </g>
 
   <text class="center-sub" x="200" y="175">— EST —</text>
