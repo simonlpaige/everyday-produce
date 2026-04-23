@@ -9,16 +9,16 @@
       .arc-text {
         font-family: 'Playfair Display', Georgia, serif;
         font-weight: 700;
-        font-size: 28px;
+        font-size: 24px;
         fill: #2c2417;
-        letter-spacing: 0.08em;
+        letter-spacing: 0.16em;
       }
       .arc-text-bottom {
-        font-family: 'Playfair Display', Georgia, serif;
-        font-weight: 700;
-        font-size: 22px;
-        fill: #2c2417;
-        letter-spacing: 0.14em;
+        font-family: 'DM Sans', sans-serif;
+        font-weight: 600;
+        font-size: 16px;
+        fill: #5c4a32;
+        letter-spacing: 0.28em;
       }
       .center-year {
         font-family: 'Playfair Display', Georgia, serif;
@@ -37,10 +37,10 @@
       }
       .star { fill: #d4a843; }
     </style>
-    <!-- Top arc: sits just inside the inner ring. Radius 150, tightly hugging the ring so glyphs don't clip at start/end. -->
-    <path id="arc-top" d="M 50,200 A 150,150 0 0 1 350,200" fill="none" />
-    <!-- Bottom arc: mirror of top. Radius 150. Curves upward so text reads left-to-right along the bottom. -->
-    <path id="arc-bottom" d="M 60,210 A 140,140 0 0 0 340,210" fill="none" />
+    <!-- Top arc: sits comfortably inside the inner ring with breathing room to the ring above. Radius 144. -->
+    <path id="arc-top" d="M 56,200 A 144,144 0 0 1 344,200" fill="none" />
+    <!-- Bottom arc: wider radius (156) and lower baseline so Waldo/Kansas City hugs the bottom ring without riding up the sides. -->
+    <path id="arc-bottom" d="M 52,208 A 156,156 0 0 0 348,208" fill="none" />
   </defs>
 
   <!-- Cream disc -->
