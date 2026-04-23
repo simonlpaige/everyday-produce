@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Concept A — dark background variant. Cream text, gold accents. -->
+<!-- Concept A dark v5: matches light v5 structure. Cream ring + top text, tan bottom arc, gold 1985 + stars. -->
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" role="img" aria-label="Everyday Produce stamp, light-on-dark">
   <defs>
     <style>
@@ -8,14 +8,14 @@
       .arc-text {
         font-family: 'Playfair Display', Georgia, serif;
         font-weight: 700;
-        font-size: 32px;
+        font-size: 24px;
         fill: #faf7f2;
-        letter-spacing: 0.22em;
+        letter-spacing: 0.16em;
       }
       .arc-text-bottom {
         font-family: 'DM Sans', sans-serif;
         font-weight: 600;
-        font-size: 20px;
+        font-size: 16px;
         fill: #c8b693;
         letter-spacing: 0.28em;
       }
@@ -29,33 +29,33 @@
       .center-sub {
         font-family: 'DM Sans', sans-serif;
         font-weight: 600;
-        font-size: 14px;
+        font-size: 16px;
         fill: #c8b693;
         text-anchor: middle;
         letter-spacing: 0.28em;
       }
       .star { fill: #d4a843; }
     </style>
-    <path id="arc-top-d" d="M 64,200 A 136,136 0 0 1 336,200" fill="none" />
-    <path id="arc-bottom-d" d="M 76,208 A 124,124 0 0 0 324,208" fill="none" />
+    <path id="arc-top-d" d="M 56,200 A 144,144 0 0 1 344,200" fill="none" />
+    <path id="arc-bottom-d" d="M 52,208 A 156,156 0 0 0 348,208" fill="none" />
   </defs>
 
   <circle class="ring-outer" cx="200" cy="200" r="184"/>
   <circle class="ring-inner" cx="200" cy="200" r="166"/>
 
   <text class="arc-text">
-    <textPath href="#arc-top-d" startOffset="50%" text-anchor="middle">EVERYDAY  PRODUCE</textPath>
+    <textPath href="#arc-top-d" startOffset="50%" text-anchor="middle">EVERYDAY PRODUCE</textPath>
   </text>
   <text class="arc-text-bottom">
-    <textPath href="#arc-bottom-d" startOffset="50%" text-anchor="middle">WALDO  ·  KANSAS CITY</textPath>
+    <textPath href="#arc-bottom-d" startOffset="50%" text-anchor="middle">WALDO · KANSAS CITY</textPath>
   </text>
 
   <g class="star">
-    <circle cx="34" cy="200" r="4"/>
-    <circle cx="366" cy="200" r="4"/>
+    <polygon points="40,190 42.35,197.24 50,197.24 43.82,201.71 46.18,208.95 40,204.49 33.82,208.95 36.18,201.71 30,197.24 37.65,197.24"/>
+    <polygon points="360,190 362.35,197.24 370,197.24 363.82,201.71 366.18,208.95 360,204.49 353.82,208.95 356.18,201.71 350,197.24 357.65,197.24"/>
   </g>
 
-  <text class="center-sub" x="200" y="175">— EST —</text>
-  <text class="center-year" x="200" y="235">1985</text>
-  <text class="center-sub" x="200" y="265">HAND PICKED LOCAL</text>
+  <text class="center-sub" x="200" y="160">— EST —</text>
+  <text class="center-year" x="200" y="224">1985</text>
+  <text class="center-sub" x="200" y="256">HAND PICKED LOCAL</text>
 </svg>
