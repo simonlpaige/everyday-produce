@@ -1,75 +1,24 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!-- Concept A v3: The Stamp. Fixed after review: full arc text fits (no clipped E), Waldo line back at original bottom-arc position, gold stars restored at 9/3 o'clock, center stack bumped up slightly. -->
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" role="img" aria-label="Everyday Produce, established 1985, Waldo Kansas City">
+<?xml version="1.0" encoding="utf-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" xmlns:bx="https://boxy-svg.com">
   <defs>
-    <style>
-      .bg { fill: #faf7f2; }
-      .ring-outer { fill: none; stroke: #3d7a4a; stroke-width: 6; }
-      .ring-inner { fill: none; stroke: #3d7a4a; stroke-width: 3; }
-      .arc-text {
-        font-family: 'Playfair Display', Georgia, serif;
-        font-weight: 700;
-        font-size: 24px;
-        fill: #2c2417;
-        letter-spacing: 0.16em;
-      }
-      .arc-text-bottom {
-        font-family: 'DM Sans', sans-serif;
-        font-weight: 600;
-        font-size: 16px;
-        fill: #5c4a32;
-        letter-spacing: 0.28em;
-      }
-      .center-year {
-        font-family: 'Playfair Display', Georgia, serif;
-        font-weight: 800;
-        font-size: 64px;
-        fill: #3d7a4a;
-        text-anchor: middle;
-      }
-      .center-sub {
-        font-family: 'DM Sans', sans-serif;
-        font-weight: 600;
-        font-size: 16px;
-        fill: #5c4a32;
-        text-anchor: middle;
-        letter-spacing: 0.28em;
-      }
-      .star { fill: #d4a843; }
-    </style>
-    <!-- Top arc: sits comfortably inside the inner ring with breathing room to the ring above. Radius 144. -->
-    <path id="arc-top" d="M 56,200 A 144,144 0 0 1 344,200" fill="none" />
-    <!-- Bottom arc: wider radius (156) and lower baseline so Waldo/Kansas City hugs the bottom ring without riding up the sides. -->
-    <path id="arc-bottom" d="M 52,208 A 156,156 0 0 0 348,208" fill="none" />
+    <path id="arc-top" d="M 56,200 A 144,144 0 0 1 344,200" fill="none"/>
+    <path id="arc-bottom" d="M 36.329 231.187 C 64.464 346.346 231.18 405.941 324.993 297.671 C 338.794 281.743 353.009 237.823 359.671 217.828" fill="none"/>
+    <bx:guide x="146.192" y="96.437" angle="90"/>
   </defs>
-
-  <!-- Cream disc -->
-  <circle class="bg" cx="200" cy="200" r="190"/>
-
-  <!-- Rings -->
-  <circle class="ring-outer" cx="200" cy="200" r="184"/>
-  <circle class="ring-inner" cx="200" cy="200" r="166"/>
-
-  <!-- Top curved text: EVERYDAY PRODUCE. Smaller font + tighter letter-spacing so both words fit on the arc without clipping. -->
-  <text class="arc-text">
+  <circle class="bg" cx="216.302" cy="206.206" r="190" style="fill: rgb(250, 247, 242); stroke-width: 1;"/>
+  <circle class="ring-outer" cx="216.302" cy="206.206" r="184" style="fill: none; stroke: rgb(61, 122, 74); stroke-width: 6;"/>
+  <circle class="ring-inner" cx="216.302" cy="206.206" r="166" style="fill: none; stroke: rgb(61, 122, 74); stroke-width: 3;"/>
+  <text class="arc-text" style="white-space: pre; fill: rgb(44, 36, 23); font-family: &quot;Playfair Display&quot;, Georgia, serif; font-size: 24px; font-weight: 700; letter-spacing: 3.84px; line-height: 38.4px; perspective-origin: 170.438px 83.8906px;" transform="matrix(1, 0, 0, 1, 16.302208, 6.206387)">
     <textPath href="#arc-top" startOffset="50%" text-anchor="middle">EVERYDAY PRODUCE</textPath>
   </text>
-
-  <!-- Bottom curved text: WALDO · KANSAS CITY, back in its original place along the bottom of the badge. -->
-  <text class="arc-text-bottom">
+  <text class="arc-text-bottom" style="white-space: pre; fill: rgb(92, 74, 50); font-family: &quot;DM Sans&quot;, sans-serif; font-weight: 600; letter-spacing: 4.48px; perspective-origin: 167.5px 157.422px;" transform="matrix(1, 0, 0, 1, 16.302208, 6.206387)">
     <textPath href="#arc-bottom" startOffset="50%" text-anchor="middle">WALDO · KANSAS CITY</textPath>
   </text>
-
-  <!-- Gold stars at 9 o'clock and 3 o'clock, between the top arc and bottom arc text. Same five-point star shape. -->
-  <g class="star">
-    <!-- Left star, centered at (40, 200), radius ~10 -->
-    <polygon points="40,190 42.35,197.24 50,197.24 43.82,201.71 46.18,208.95 40,204.49 33.82,208.95 36.18,201.71 30,197.24 37.65,197.24"/>
-    <!-- Right star, centered at (360, 200), radius ~10 -->
-    <polygon points="360,190 362.35,197.24 370,197.24 363.82,201.71 366.18,208.95 360,204.49 353.82,208.95 356.18,201.71 350,197.24 357.65,197.24"/>
+  <g class="star" style="fill: rgb(212, 168, 67);" transform="matrix(1, 0, 0, 1, 16.302208, 6.206387)">
+    <polygon points="56 147 58.35 154.24 66 154.24 59.82 158.71 62.18 165.95 56 161.49 49.82 165.95 52.18 158.71 46 154.24 53.65 154.24"/>
+    <polygon points="344 145 346.35 152.24 354 152.24 347.82 156.71 350.18 163.95 344 159.49 337.82 163.95 340.18 156.71 334 152.24 341.65 152.24"/>
   </g>
-
-  <!-- Center stack: EST and HAND PICKED LOCAL bumped up in size (13->16px) per feedback. Vertical positions tweaked to keep the stack balanced. -->
-  <text class="center-sub" x="200" y="160">— EST —</text>
-  <text class="center-year" x="200" y="224">1985</text>
-  <text class="center-sub" x="200" y="256">HAND PICKED LOCAL</text>
+  <text class="center-sub" x="216.302" y="149.206" style="white-space: pre; fill: rgb(92, 74, 50); font-family: &quot;DM Sans&quot;, sans-serif; font-weight: 600; letter-spacing: 4.48px; perspective-origin: 126.562px 79.9844px; text-anchor: middle; stroke-width: 1; font-size: 16px;">— EST —</text>
+  <text class="center-year" x="216.302" y="213.206" style="white-space: pre; fill: rgb(61, 122, 74); font-family: &quot;Playfair Display&quot;, Georgia, serif; font-size: 64px; font-weight: 800; line-height: 102.4px; perspective-origin: 139.062px 112px; text-anchor: middle; stroke-width: 1;">1985</text>
+  <text class="center-sub" x="216.302" y="245.206" style="white-space: pre; fill: rgb(92, 74, 50); font-family: &quot;DM Sans&quot;, sans-serif; font-weight: 600; letter-spacing: 4.48px; perspective-origin: 162.5px 128px; text-anchor: middle; stroke-width: 1; font-size: 16px;">HAND PICKED LOCAL</text>
 </svg>
