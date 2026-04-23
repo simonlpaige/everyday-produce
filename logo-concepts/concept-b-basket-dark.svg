@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Concept B — dark background variant. Cream wordmark, same fruit palette. -->
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 340" role="img" aria-label="Everyday Produce basket, light-on-dark">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 340" role="img" aria-label="Everyday Produce basket, light-on-dark">
   <defs>
     <style>
       .brand-name {
         font-family: 'Playfair Display', Georgia, serif;
         font-weight: 800;
-        font-size: 82px;
+        font-size: 72px;
         fill: #faf7f2;
         letter-spacing: -0.01em;
       }
@@ -14,7 +14,7 @@
         font-family: 'Playfair Display', Georgia, serif;
         font-weight: 600;
         font-style: italic;
-        font-size: 58px;
+        font-size: 50px;
         fill: #d4a843;
       }
       .brand-sub {
@@ -75,8 +75,8 @@
     <path class="weave" d="M 15,255 Q 140,272 265,255"/>
   </g>
 
-  <text class="brand-name" x="330" y="155" text-anchor="start">Everyday</text>
-  <text class="brand-accent" x="330" y="220" text-anchor="start">Produce</text>
-  <line x1="330" y1="245" x2="430" y2="245" stroke="#d4a843" stroke-width="2"/>
-  <text class="brand-sub" x="330" y="272" text-anchor="start">SINCE 1985 · WALDO</text>
+  <text class="brand-name" x="330" y="150" text-anchor="start">Everyday</text>
+  <text class="brand-accent" x="330" y="210" text-anchor="start">Produce</text>
+  <line x1="330" y1="235" x2="420" y2="235" stroke="#d4a843" stroke-width="2"/>
+  <text class="brand-sub" x="330" y="262" text-anchor="start">SINCE 1985 · WALDO</text>
 </svg>
