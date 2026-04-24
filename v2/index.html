@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Everyday Produce Market | Fresh Local Produce in Waldo, Kansas City</title>
+  <meta name="description" content="A neighborhood produce stand at 7300 Wornall Rd in Waldo, Kansas City. Open April through October. Waldo tradition since 1985.">
+  <meta property="og:title" content="Everyday Produce Market | Waldo's Favorite Produce Stand">
+  <meta property="og:description" content="Seasonal fruit and vegetables from local growers. Open April through October at 7300 Wornall Rd, Waldo, Kansas City.">
+  <meta property="og:image" content="https://everyday-produce.com/photos/hero.jpg">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://everyday-produce.com">
+  <link rel="canonical" href="https://everyday-produce.com">
+  <link rel="icon" href="assets/favicon.svg">
+  <meta name="theme-color" content="#2F7A3A">
+  <link rel="preload" as="image" href="../photos/hero.jpg" fetchpriority="high">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Oswald:wght@500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --red:        #B8232A;
+      --red-dark:   #8F1A20;
+      --green:      #2F7A3A;
+      --green-dark: #1F5228;
+      --yellow:     #F2C438;
+      --brown:      #7A4A28;
+      --brown-dark: #5A3518;
+      --cream:      #F5EDD8;
+      --cream-mid:  #EDE4CE;
+      --ink:        #2A1A0E;
+      --ink-muted:  rgba(42,26,14,0.55);
+      --shadow:     2px 2px 0 rgba(42,26,14,0.18);
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--cream);
+      color: var(--ink);
+      font-family: 'Inter', sans-serif;
+      font-size: 17px;
+      line-height: 1.65;
+      text-wrap: pretty;
+    }
+
+    img { display: block; max-width: 100%; }
+
+    /* Skip link */
+    .skip-link {
+      position: absolute; top: -200%; left: 16px;
+      background: var(--ink); color: var(--cream);
+      padding: 8px 20px; border-radius: 4px;
+      font-family: 'Oswald', sans-serif; font-weight: 700; font-size: 14px;
+      text-transform: uppercase; letter-spacing: 0.08em; text-decoration: none;
+      z-index: 9999;
+    }
+    .skip-link:focus { top: 12px; }
+
+    /* Global layout */
+    .container { max-width: 1160px; margin: 0 auto; padding: 0 32px; }
+    .section-pad { padding: 88px 0; }
+    @media (max-width: 768px) { .section-pad { padding: 56px 0; } .container { padding: 0 20px; } }
+
+    /* Typography helpers */
+    .eyebrow {
+      font-family: 'Oswald', sans-serif; font-weight: 500;
+      font-size: 12px; text-transform: uppercase; letter-spacing: 0.22em;
+      color: var(--green); margin-bottom: 8px;
+    }
+    .section-h2 {
+      font-family: 'Alfa Slab One', serif; font-weight: 400;
+      font-size: clamp(28px, 4vw, 44px); line-height: 1.1; color: var(--ink);
+    }
+
+    /* Buttons */
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center;
+      font-family: 'Oswald', sans-serif; font-weight: 700; font-size: 16px;
+      text-transform: uppercase; letter-spacing: 0.08em; text-decoration: none;
+      padding: 14px 32px; border-radius: 4px; border: 2px solid var(--ink);
+      cursor: pointer; transition: background 120ms, transform 120ms;
+      box-shadow: var(--shadow); white-space: nowrap;
+    }
+    .btn:focus-visible { outline: 3px solid var(--ink); outline-offset: 3px; }
+    .btn-primary  { background: var(--red);   color: var(--cream); }
+    .btn-primary:hover  { background: var(--red-dark); transform: translateY(-1px); }
+    .btn-secondary { background: var(--cream); color: var(--ink); }
+    .btn-secondary:hover { background: #e6dcc4; transform: translateY(-1px); }
+
+    /* Status pill */
+    .status-pill {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-family: 'Oswald', sans-serif; font-weight: 700; font-size: 15px;
+      text-transform: uppercase; letter-spacing: 0.10em; color: var(--cream);
+      padding: 8px 22px; border-radius: 999px; border: 2px solid var(--ink);
+      box-shadow: var(--shadow);
+    }
+    .status-open   { background: var(--green); }
+    .status-closed { background: var(--red); }
+
+    /* Cards */
+    .card {
+      background: var(--cream); border: 2px solid var(--ink);
+      box-shadow: var(--shadow); border-radius: 4px; padding: 24px;
+    }
+
+    /* Logo image */
+    .ep-logo { display: block; width: 100%; height: auto; }
+    .hero-logo { max-width: 800px; width: 100%; }
+    .footer-logo-img { max-width: 240px; width: 100%; }
+
+    /* HERO */
+    #hero {
+      min-height: 100svh; background: var(--cream);
+      display: flex; flex-direction: column; position: relative; overflow: hidden;
+    }
+    #hero::before {
+      content: ''; position: absolute; inset: 0; pointer-events: none;
+      background: repeating-linear-gradient(
+        -58deg, transparent 0, transparent 44px,
+        rgba(47,122,58,0.032) 44px, rgba(47,122,58,0.032) 88px
+      );
+    }
+    .hero-inner {
+      flex: 1; display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      text-align: center; padding: 56px 24px 32px; gap: 28px;
+      position: relative; z-index: 1;
+    }
+    .hero-ctas { display: flex; flex-wrap: wrap; justify-content: center; gap: 14px; }
+
+    /* Produce strip */
+    .produce-strip {
+      border-top: 2px solid var(--ink); background: var(--green);
+      padding: 22px 32px; display: flex; justify-content: center;
+      align-items: center; gap: clamp(20px, 5vw, 64px); flex-wrap: wrap;
+    }
+    .produce-chip {
+      display: flex; flex-direction: column; align-items: center; gap: 7px;
+    }
+    .produce-chip svg { width: 56px; height: 56px; }
+    .produce-chip span {
+      font-family: 'Oswald', sans-serif; font-weight: 700; font-size: 11px;
+      text-transform: uppercase; letter-spacing: 0.14em; color: var(--cream);
+    }
+
+    /* ABOUT */
+    #about { border-top: 2px solid var(--ink); }
+    .about-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 72px; align-items: start;
+    }
+    @media (max-width: 768px) { .about-grid { grid-template-columns: 1fr; gap: 40px; } }
+    .about-h2 {
+      font-family: 'Alfa Slab One', serif; font-size: clamp(24px, 3.5vw, 38px);
+      line-height: 1.1; margin: 8px 0 24px; color: var(--ink);
+    }
+    .about-text p { font-size: 17px; line-height: 1.7; margin-bottom: 16px; color: var(--ink); }
+    .about-photo {
+      width: 100%; aspect-ratio: 4/3; object-fit: cover;
+      border: 2px solid var(--ink); box-shadow: 3px 3px 0 rgba(42,26,14,0.15);
+      border-radius: 4px;
+    }
+
+    /* SEASON */
+    #season {
+      background: var(--cream-mid);
+      border-top: 2px solid var(--ink); border-bottom: 2px solid var(--ink);
+    }
+    .season-header { margin-bottom: 40px; }
+    .season-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
+    }
+    @media (max-width: 900px) { .season-grid { grid-template-columns: repeat(2,1fr); } }
+    @media (max-width: 540px)  { .season-grid { grid-template-columns: 1fr; } }
+    .season-card {
+      background: var(--cream); border: 2px solid var(--ink);
+      box-shadow: var(--shadow); border-radius: 4px; padding: 0; overflow: hidden;
+      display: flex; flex-direction: column;
+    }
+    .season-card svg { width: 72px; height: 72px; margin: 28px 24px 16px; display: block; }
+    .season-photo {
+      width: 100%; aspect-ratio: 4/3; object-fit: cover; display: block;
+      border-bottom: 2px solid var(--ink);
+    }
+    .season-body { padding: 20px 24px 24px; }
+    .s-name {
+      font-family: 'Oswald', sans-serif; font-weight: 700; font-size: 20px;
+      text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 4px;
+    }
+    .s-status { font-size: 15px; font-weight: 500; line-height: 1.4; margin-bottom: 4px; }
+    .s-note { font-size: 14px; font-style: italic; color: var(--ink-muted); }
+
+    /* REVIEWS */
+    #reviews { border-top: 2px solid var(--ink); }
+    .reviews-grid {
+      display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; margin-top: 40px;
+    }
+    @media (max-width: 900px) { .reviews-grid { grid-template-columns: 1fr; } }
+    .review-card {
+      background: var(--cream); border: 2px solid var(--ink);
+      box-shadow: var(--shadow); border-radius: 4px; padding: 24px;
+    }
+    .review-stars { color: var(--red); font-size: 18px; letter-spacing: 1px; margin-bottom: 14px; }
+    .review-quote { font-style: italic; line-height: 1.65; margin-bottom: 16px; font-size: 16px; }
+    .review-meta {
+      font-family: 'Oswald', sans-serif; font-weight: 500; font-size: 12px;
+      text-transform: uppercase; letter-spacing: 0.1em; color: var(--ink-muted);
+    }
+
+    /* VISIT */
+    #visit { background: var(--cream-mid); border-top: 2px solid var(--ink); }
+    .visit-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: start; margin-top: 40px;
+    }
+    @media (max-width: 768px) { .visit-grid { grid-template-columns: 1fr; gap: 40px; } }
+    .map-frame {
+      width: 100%; aspect-ratio: 4/3;
+      border: 2px solid var(--ink); box-shadow: 3px 3px 0 rgba(42,26,14,0.15);
+      border-radius: 4px; overflow: hidden; background: var(--cream);
+    }
+    .map-frame iframe { width: 100%; height: 100%; border: 0; display: block; }
+    .hours-h3 {
+      font-family: 'Oswald', sans-serif; font-weight: 700; font-size: 16px;
+      text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 14px; margin-top: 28px;
+    }
+    .hours-h3:first-child { margin-top: 0; }
+    .hours-table { width: 100%; border-collapse: collapse; margin-bottom: 8px; }
+    .hours-table th {
+      font-family: 'Oswald', sans-serif; font-weight: 700; font-size: 12px;
+      text-transform: uppercase; letter-spacing: 0.12em; padding: 6px 0;
+      text-align: left; border-bottom: 2px solid var(--ink); color: var(--ink);
+    }
+    .hours-table th:last-child { text-align: right; }
+    .hours-table td {
+      font-family: 'Inter', sans-serif; font-size: 15px; line-height: 1.5;
+      padding: 9px 0; border-bottom: 1px solid rgba(42,26,14,0.12); color: var(--ink);
+    }
+    .hours-table td:last-child { text-align: right; font-weight: 500; }
+    .contact-row { display: flex; align-items: flex-start; gap: 11px; margin-bottom: 10px; font-size: 15px; }
+    .contact-row svg { flex-shrink: 0; margin-top: 2px; }
+    .contact-row a { color: var(--ink); text-decoration: none; font-weight: 500; }
+    .contact-row a:hover { color: var(--red); }
+    .contact-note { font-size: 14px; color: var(--ink-muted); line-height: 1.5; }
+
+    /* FOOTER */
+    footer {
+      background: var(--ink); color: var(--cream);
+      padding: 64px 0 36px; border-top: 2px solid var(--ink);
+    }
+    .footer-top { text-align: center; margin-bottom: 48px; }
+    .footer-logo-badge {
+      display: inline-block; background: var(--cream);
+      border: 2px solid rgba(245,237,216,0.25); border-radius: 4px;
+      padding: 14px 28px; margin-bottom: 14px;
+    }
+    .footer-tagline {
+      font-family: 'Oswald', sans-serif; font-weight: 500; font-size: 14px;
+      text-transform: uppercase; letter-spacing: 0.22em; color: var(--green);
+    }
+    .footer-cols {
+      display: grid; grid-template-columns: repeat(3,1fr); gap: 48px; margin-bottom: 48px;
+    }
+    @media (max-width: 768px) { .footer-cols { grid-template-columns: 1fr; gap: 32px; } }
+    .footer-col h4 {
+      font-family: 'Oswald', sans-serif; font-weight: 700; font-size: 13px;
+      text-transform: uppercase; letter-spacing: 0.18em; color: var(--cream);
+      padding-bottom: 10px; margin-bottom: 14px;
+      border-bottom: 1px solid rgba(245,237,216,0.2);
+    }
+    .footer-col p, .footer-col a {
+      font-family: 'Inter', sans-serif; font-size: 15px; line-height: 1.7;
+      color: rgba(245,237,216,0.72); text-decoration: none; display: block;
+    }
+    .footer-col a:hover { color: var(--cream); }
+    .footer-dim { font-size: 13px !important; opacity: 0.45; margin-top: 6px; }
+    .footer-bottom {
+      border-top: 1px solid rgba(245,237,216,0.12); padding-top: 24px;
+      text-align: center; font-family: 'Inter', sans-serif; font-size: 14px;
+      color: rgba(245,237,216,0.38);
+    }
+    /* HOUSE BANNER (top of page) */
+    .house-banner {
+      background: var(--yellow, #F2C438);
+      color: var(--ink, #2A1A0E);
+      border-bottom: 2px solid var(--ink, #2A1A0E);
+      text-align: center;
+      padding: 14px 20px;
+      font-family: 'Oswald', sans-serif;
+      font-weight: 500;
+      font-size: 14px;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+    .house-banner strong {
+      font-weight: 700;
+    }
+    .house-banner .house-cta {
+      display: inline-block;
+      background: var(--ink, #2A1A0E);
+      color: var(--cream, #F5EDD8);
+      text-decoration: none;
+      padding: 8px 18px;
+      border-radius: 4px;
+      border: 2px solid var(--ink, #2A1A0E);
+      font-family: 'Oswald', sans-serif;
+      font-weight: 700;
+      font-size: 13px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      transition: background 0.15s, color 0.15s;
+    }
+    .house-banner .house-cta:hover,
+    .house-banner .house-cta:focus {
+      background: var(--red, #B8232A);
+      color: var(--cream, #F5EDD8);
+    }
+    @media (max-width: 640px) {
+      .house-banner { font-size: 13px; padding: 12px 16px; flex-direction: column; gap: 10px; }
+      .house-banner .house-cta { font-size: 12px; padding: 8px 16px; }
+    }
+
+    /* HOUSE CALLOUT (mid-page, richer card) */
+    #house-callout { background: var(--ink, #2A1A0E); color: var(--cream, #F5EDD8); border-top: 2px solid var(--ink, #2A1A0E); border-bottom: 2px solid var(--ink, #2A1A0E); }
+    .house-callout-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; }
+    @media (max-width: 768px) { .house-callout-inner { grid-template-columns: 1fr; gap: 24px; } }
+    #house-callout .eyebrow { color: var(--yellow, #F2C438); }
+    #house-callout h2 { font-family: 'Alfa Slab One', serif; font-size: clamp(26px, 3.8vw, 40px); line-height: 1.1; margin: 8px 0 16px; }
+    #house-callout p { font-size: 17px; line-height: 1.7; margin-bottom: 12px; opacity: 0.88; }
+    #house-callout .callout-meta { font-family: 'Oswald', sans-serif; font-size: 13px; text-transform: uppercase; letter-spacing: 0.12em; color: var(--yellow, #F2C438); margin-bottom: 20px; }
+    #house-callout .callout-cta {
+      display: inline-block; background: var(--yellow, #F2C438); color: var(--ink, #2A1A0E);
+      padding: 14px 28px; border-radius: 4px; border: 2px solid var(--ink, #2A1A0E);
+      font-family: 'Oswald', sans-serif; font-weight: 700; font-size: 14px;
+      letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none;
+      transition: background 0.15s, color 0.15s;
+    }
+    #house-callout .callout-cta:hover,
+    #house-callout .callout-cta:focus { background: var(--red, #B8232A); color: var(--cream, #F5EDD8); }
+    .house-stat-row { display: flex; flex-wrap: wrap; gap: 24px; margin-bottom: 24px; }
+    .house-stat { font-family: 'Oswald', sans-serif; }
+    .house-stat .num { font-size: 24px; font-weight: 700; color: var(--cream, #F5EDD8); line-height: 1; }
+    .house-stat .label { font-size: 11px; text-transform: uppercase; letter-spacing: 0.14em; color: var(--yellow, #F2C438); opacity: 0.82; margin-top: 4px; display: block; }
+    .callout-photos {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px;
+      margin: 28px 0;
+    }
+    @media (max-width: 480px) { .callout-photos { grid-template-columns: 1fr; } }
+    .callout-photo {
+      border: 2px solid var(--cream, #F5EDD8); border-radius: 4px;
+      overflow: hidden; aspect-ratio: 4/3;
+      box-shadow: 3px 3px 0 rgba(245,237,216,0.18);
+    }
+    .callout-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  </style>
+</head>
+<body>
+
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <!-- HOUSE-FOR-PRODUCE BANNER (top of page) -->
+  <div class="house-banner" role="region" aria-label="Special home buyer offer">
+    <span>
+      🏡 <strong>Buy this house, eat free produce all season.</strong>
+      801 W 56th St &middot; MLS #2613841
+    </span>
+    <a href="house.html" class="house-cta">See the offer →</a>
+  </div>
+
+  <main id="main">
+
+    <!-- HERO -->
+    <section id="hero" aria-label="Hero">
+      <div class="hero-inner">
+        <img src="assets/logo-horizontal.svg" alt="Everyday Produce Market - Waldo Tradition Since 1985" class="ep-logo hero-logo" width="920" height="400">
+
+        <div id="status-pill" class="status-pill status-open" aria-live="polite" aria-atomic="true">
+          Open today 8:30 - 6:30
+        </div>
+
+        <div class="hero-ctas">
+          <a href="https://maps.google.com/?q=7300+Wornall+Rd+Kansas+City+MO+64114"
+             class="btn btn-primary" target="_blank" rel="noopener">Get directions</a>
+          <a href="tel:+18169426344" class="btn btn-secondary">Call us - 816-942-6344</a>
+        </div>
+      </div>
+
+      <!-- Produce strip -->
+      <div class="produce-strip" aria-hidden="true" role="presentation">
+
+        <!-- Tomato -->
+        <div class="produce-chip">
+          <svg viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="30" cy="37" r="19" fill="#B8232A" stroke="#2A1A0E" stroke-width="2.5"/>
+            <rect x="27.5" y="13" width="5" height="13" rx="2.5" fill="#2F7A3A" stroke="#2A1A0E" stroke-width="2"/>
+            <ellipse cx="21" cy="19" rx="8" ry="3.5" fill="#2F7A3A" stroke="#2A1A0E" stroke-width="1.8" transform="rotate(-38 21 19)"/>
+            <ellipse cx="39" cy="19" rx="8" ry="3.5" fill="#2F7A3A" stroke="#2A1A0E" stroke-width="1.8" transform="rotate(38 39 19)"/>
+          </svg>
+          <span>Tomato</span>
+        </div>
+
+        <!-- Watermelon slice -->
+        <div class="produce-chip">
+          <svg viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M8 52 Q30 6 52 52Z" fill="#2F7A3A" stroke="#2A1A0E" stroke-width="2.5" stroke-linejoin="round"/>
+            <path d="M14 50 Q30 18 46 50Z" fill="#B8232A"/>
+            <ellipse cx="24" cy="42" rx="2" ry="3.5" fill="#2A1A0E" transform="rotate(-18 24 42)"/>
+            <ellipse cx="30" cy="36" rx="2" ry="3.5" fill="#2A1A0E"/>
+            <ellipse cx="36" cy="42" rx="2" ry="3.5" fill="#2A1A0E" transform="rotate(18 36 42)"/>
+          </svg>
+          <span>Melon</span>
+        </div>
+
+        <!-- Peach -->
+        <div class="produce-chip">
+          <svg viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="30" cy="36" r="20" fill="#F2C438" stroke="#2A1A0E" stroke-width="2.5"/>
+            <path d="M30 16 Q27 26 30 36 Q33 26 30 16" fill="#D4A419" opacity="0.5"/>
+            <rect x="27.5" y="11" width="5" height="10" rx="2.5" fill="#5A3518" stroke="#2A1A0E" stroke-width="1.8"/>
+            <ellipse cx="22" cy="15" rx="8" ry="3.5" fill="#2F7A3A" stroke="#2A1A0E" stroke-width="1.8" transform="rotate(-35 22 15)"/>
+          </svg>
+          <span>Peach</span>
+        </div>
+
+        <!-- Grapes -->
+        <div class="produce-chip">
+          <svg viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="22" cy="30" r="9"  fill="#2F7A3A" stroke="#2A1A0E" stroke-width="2"/>
+            <circle cx="38" cy="30" r="9"  fill="#2F7A3A" stroke="#2A1A0E" stroke-width="2"/>
+            <circle cx="30" cy="42" r="9"  fill="#2F7A3A" stroke="#2A1A0E" stroke-width="2"/>
+            <circle cx="30" cy="20" r="7.5" fill="#2F7A3A" stroke="#2A1A0E" stroke-width="2"/>
+            <rect x="27.5" y="7" width="5" height="9" rx="2.5" fill="#5A3518" stroke="#2A1A0E" stroke-width="1.8"/>
+            <ellipse cx="22" cy="11" rx="7" ry="3" fill="#2F7A3A" stroke="#2A1A0E" stroke-width="1.8" transform="rotate(-30 22 11)"/>
+          </svg>
+          <span>Grapes</span>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="section-pad">
+      <div class="container">
+        <div class="about-grid">
+
+          <div class="about-text">
+            <p class="eyebrow">About the stand</p>
+            <h2 class="about-h2">Konrad has been doing this a long time.</h2>
+            <p>He started selling produce in Waldo because he liked it. Fruit and vegetables, in season, priced fair. It is a smaller operation than you might expect - more personal. He shows up most days and knows what came in that week.</p>
+            <p>The stand has been at 7300 Wornall since 1985. That is 40 years in the same spot, in the same neighborhood. The idea has not changed: sell good produce to the people who live here. No app. No loyalty points. Just a tent and whatever is ready right now.</p>
+          </div>
+
+          <img class="about-photo"
+               src="../photos/about-customers.jpg"
+               alt="Customers browsing the produce tables under the stand's awning on Wornall Rd"
+               width="800" height="600" loading="lazy">
+
+        </div>
+      </div>
+    </section>
+
+    <!-- WHAT'S IN SEASON -->
+    <section id="season" class="section-pad">
+      <div class="container">
+        <div class="season-header">
+          <p class="eyebrow">What's in season</p>
+          <h2 class="section-h2">This week at the stand</h2>
+        </div>
+
+        <div class="season-grid">
+
+          <!-- Watermelons -->
+          <div class="season-card">
+            <img class="season-photo" src="../photos/gallery-melons.jpg" alt="Watermelons stacked at the stand" loading="lazy" width="800" height="600">
+            <div class="season-body">
+              <p class="s-name">Watermelons</p>
+              <p class="s-status">Heavy ones, ripe now.</p>
+              <p class="s-note">Thump one. We'll pick the good one.</p>
+            </div>
+          </div>
+
+          <!-- Tomatoes -->
+          <div class="season-card">
+            <img class="season-photo" src="../photos/gallery-tomato-basket.jpg" alt="Basket of ripe tomatoes at the stand" loading="lazy" width="800" height="600">
+            <div class="season-body">
+              <p class="s-name">Tomatoes</p>
+              <p class="s-status">Local. Smell like tomatoes.</p>
+              <p class="s-note">Sliced, stewed, or eaten over the sink.</p>
+            </div>
+          </div>
+
+          <!-- Mangoes -->
+          <div class="season-card">
+            <img class="season-photo" src="../photos/gallery-mangoes.jpg" alt="Ripe mangoes in a display crate" loading="lazy" width="800" height="600">
+            <div class="season-body">
+              <p class="s-name">Mangoes</p>
+              <p class="s-status">Ripe. Soft to the touch.</p>
+              <p class="s-note">Best eaten standing over the sink.</p>
+            </div>
+          </div>
+
+          <!-- Strawberries -->
+          <div class="season-card">
+            <svg viewBox="0 0 72 72" fill="none" aria-hidden="true">
+              <path d="M36 66 Q14 50 14 30 Q14 12 36 12 Q58 12 58 30 Q58 50 36 66Z" fill="#B8232A" stroke="#2A1A0E" stroke-width="2.5"/>
+              <circle cx="26" cy="32" r="2.5" fill="#F2C438"/>
+              <circle cx="36" cy="26" r="2.5" fill="#F2C438"/>
+              <circle cx="46" cy="32" r="2.5" fill="#F2C438"/>
+              <circle cx="31" cy="43" r="2.5" fill="#F2C438"/>
+              <circle cx="41" cy="43" r="2.5" fill="#F2C438"/>
+              <ellipse cx="29" cy="14" rx="9" ry="5" fill="#2F7A3A" stroke="#2A1A0E" stroke-width="2" transform="rotate(-22 29 14)"/>
+              <ellipse cx="43" cy="14" rx="9" ry="5" fill="#2F7A3A" stroke="#2A1A0E" stroke-width="2" transform="rotate(22 43 14)"/>
+              <rect x="33.5" y="6" width="5" height="9" rx="2.5" fill="#2F7A3A" stroke="#2A1A0E" stroke-width="1.8"/>
+            </svg>
+            <div class="season-body">
+              <p class="s-name">Strawberries</p>
+              <p class="s-status">First flat of the year came in Tuesday.</p>
+              <p class="s-note">Local. Won't last long.</p>
+            </div>
+          </div>
+
+          <!-- Flower Baskets -->
+          <div class="season-card">
+            <img class="season-photo" src="../photos/gallery-flower-rack.jpg" alt="Rack of hanging flower baskets at the stand" loading="lazy" width="800" height="600">
+            <div class="season-body">
+              <p class="s-name">Flower baskets</p>
+              <p class="s-status">Hanging baskets, full and fresh.</p>
+              <p class="s-note">Grown local. Pick one off the hook.</p>
+            </div>
+          </div>
+
+          <!-- Local Jam -->
+          <div class="season-card">
+            <img class="season-photo" src="../photos/gallery-jams.jpg" alt="Jars of local jam on the shelf" loading="lazy" width="800" height="600">
+            <div class="season-body">
+              <p class="s-name">Local jam</p>
+              <p class="s-status">Made this season, not last.</p>
+              <p class="s-note">Strawberry, peach, and mixed berry.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- GALLERY -->
+    <section id="gallery" class="section-pad" aria-label="Around the stand">
+      <div class="container">
+        <div class="gallery-header">
+          <p class="eyebrow">Around the stand</p>
+          <h2 class="section-h2">What it looks like</h2>
+        </div>
+
+        <div class="gallery-grid">
+          <div class="gallery-item tall">
+            <img src="../photos/gallery-fruit-cart.jpg" alt="Fruit cart at the stand, loaded with seasonal produce" loading="lazy" width="600" height="800">
+          </div>
+          <div class="gallery-item">
+            <img src="../photos/gallery-preserves-stand.jpg" alt="Shelf of preserves and local goods" loading="lazy" width="800" height="600">
+          </div>
+          <div class="gallery-item">
+            <img src="../photos/gallery-corn.jpg" alt="Fresh corn in bins" loading="lazy" width="800" height="600">
+          </div>
+          <div class="gallery-item">
+            <img src="../photos/gallery-flowers.jpg" alt="Cut flowers for sale at the stand" loading="lazy" width="800" height="600">
+          </div>
+          <div class="gallery-item">
+            <img src="../photos/gallery-honey.jpg" alt="Jars of local honey on display" loading="lazy" width="800" height="600">
+          </div>
+          <div class="gallery-item">
+            <img src="../photos/gallery-herbs.jpg" alt="Fresh herbs in bunches" loading="lazy" width="800" height="600">
+          </div>
+          <div class="gallery-item">
+            <img src="../photos/gallery-eggs.jpg" alt="Cartons of fresh eggs at the stand" loading="lazy" width="800" height="600">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- REVIEWS -->
+    <section id="reviews" class="section-pad">
+      <div class="container">
+        <p class="eyebrow">What folks say</p>
+        <h2 class="section-h2">Real reviews from real neighbors</h2>
+
+        <div class="reviews-grid">
+
+          <article class="review-card">
+            <div class="review-stars" aria-label="5 out of 5 stars">★★★★★</div>
+            <p class="review-quote">"Amazing little find in Waldo! I'm so happy I stopped. Best blueberries and peaches I've had! Couldn't find better people working there. Definitely will be back."</p>
+            <p class="review-meta">Katie "KRay" Raymon / Google Review</p>
+          </article>
+
+          <article class="review-card">
+            <div class="review-stars" aria-label="5 out of 5 stars">★★★★★</div>
+            <p class="review-quote">"Konrad &amp; Andrew are so cool &amp; nice. This has been the perfect spot for me to get all my produce during my lunch break or after work. Big fan!"</p>
+            <p class="review-meta">Violette Irene / Google Review</p>
+          </article>
+
+          <article class="review-card">
+            <div class="review-stars" aria-label="5 out of 5 stars">★★★★★</div>
+            <p class="review-quote">"I've been going to Konrad's stand for 8 years now! They make sure everything is perfect and back it up. I especially love their strawberries, farm fresh eggs &amp; sweet-hot salsa. The location is very convenient to my house and everyone on staff is so helpful and efficient."</p>
+            <p class="review-meta">Julie Clemons / Google Review</p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- HOUSE CALLOUT -->
+    <section id="house-callout" class="section-pad" aria-labelledby="house-callout-h2">
+      <div class="container">
+        <div class="house-callout-inner">
+          <div>
+            <p class="eyebrow">A one-of-a-kind offer</p>
+            <h2 id="house-callout-h2">Buy this house, eat free produce all season.</h2>
+            <p class="callout-meta">801 W 56th St &middot; Kansas City MO 64113 &middot; MLS #2613841</p>
+            <p>Close on 801 W 56th St and you eat from our market free for the rest of the 2026 season. Same hand-picked produce, flowers, and preserves our Waldo neighbors have loved since 1985. Stop in whenever you like. No cards, no coupons, no limit on visits.</p>
+            <p>Just say your name at the stand. We'll know.</p>
+          </div>
+          <div>
+            <div class="callout-photos">
+              <div class="callout-photo"><img src="../photos/house/01.jpg" alt="Front of the house" loading="lazy" width="600" height="450"></div>
+              <div class="callout-photo"><img src="../photos/house/02.jpg" alt="Kitchen" loading="lazy" width="600" height="450"></div>
+              <div class="callout-photo"><img src="../photos/house/04.jpg" alt="Backyard" loading="lazy" width="600" height="450"></div>
+            </div>
+            <div class="house-stat-row">
+              <div class="house-stat"><span class="num">7</span><span class="label">Bedrooms</span></div>
+              <div class="house-stat"><span class="num">4.5</span><span class="label">Bathrooms</span></div>
+              <div class="house-stat"><span class="num">5,230</span><span class="label">Sq ft</span></div>
+              <div class="house-stat"><span class="num">0.51</span><span class="label">Acres</span></div>
+              <div class="house-stat"><span class="num">1925</span><span class="label">Built</span></div>
+              <div class="house-stat"><span class="num">64113</span><span class="label">Zip</span></div>
+            </div>
+            <a href="house.html" class="callout-cta">See the full offer &rarr;</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- VISIT -->
+    <section id="visit" class="section-pad">
+      <div class="container">
+        <p class="eyebrow">Come see us</p>
+        <h2 class="section-h2">7300 Wornall Rd, Waldo</h2>
+
+        <div class="visit-grid">
+
+          <div class="map-frame">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3100.0!2d-94.5935!3d38.9935!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87c0ead8f1a4f33d%3A0x2d6e1a8c6e7a2f3e!2s7300%20Wornall%20Rd%2C%20Kansas%20City%2C%20MO%2064114!5e0!3m2!1sen!2sus!4v1700000000000!5m2!1sen!2sus"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              allowfullscreen=""
+              title="Everyday Produce Market on Google Maps"></iframe>
+          </div>
+
+          <div class="hours-block">
+            <p class="hours-h3">Hours</p>
+            <table class="hours-table" aria-label="Store hours">
+              <thead>
+                <tr><th scope="col">Day</th><th scope="col">Open</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>Monday - Sunday</td><td><time datetime="08:30-18:30">8:30 am - 6:30 pm</time></td></tr>
+              </tbody>
+            </table>
+
+            <p class="hours-h3">Season</p>
+            <p class="contact-note" style="margin-bottom:24px;">Open April through October. Follow on Facebook for the exact opening date each spring.</p>
+
+            <p class="hours-h3">Contact</p>
+            <div class="contact-row">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.6 3.47 2 2 0 0 1 3.57 1h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.91a16 16 0 0 0 6 6l.92-.92a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
+              <a href="tel:+18169426344">816-942-6344</a>
+            </div>
+            <div class="contact-row">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              <span>7300 Wornall Rd, Kansas City, MO 64114</span>
+            </div>
+            <div class="contact-row" style="align-items:flex-start;">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="margin-top:2px;"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><path d="M3 9h18M9 21V9"/></svg>
+              <span class="contact-note">Free parking alongside the stand. Cash or card accepted.</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+
+      <div class="footer-top">
+        <div class="footer-logo-badge">
+          <img src="assets/logo-horizontal.svg" alt="Everyday Produce Market" class="ep-logo footer-logo-img" width="920" height="400">
+        </div>
+        <p class="footer-tagline">Waldo Tradition Since 1985</p>
+      </div>
+
+      <div class="footer-cols">
+        <div class="footer-col">
+          <h4>Visit</h4>
+          <p>7300 Wornall Rd<br>Kansas City, MO 64114</p>
+          <p style="margin-top:10px;">Monday - Sunday &nbsp; 8:30 am - 6:30 pm</p>
+          <p class="footer-dim">Open April through October</p>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <a href="tel:+18169426344">816-942-6344</a>
+          <p class="footer-dim" style="margin-top:8px;">Cash or card accepted</p>
+        </div>
+        <div class="footer-col">
+          <h4>Follow</h4>
+          <a href="https://www.facebook.com/everydayproduce" target="_blank" rel="noopener">Facebook</a>
+          <p class="footer-dim" style="margin-top:8px;">Opening dates, what's in, and when we close each fall.</p>
+        </div>
+      </div>
+
+      <p class="footer-bottom">
+        &copy; 2026 Everyday Produce Market &middot; Built by Simon L. Paige Web Design
+      </p>
+
+    </div>
+  </footer>
+
+  <script>
+    // Open / closed status for the hero pill.
+    // Stand runs Monday-Sunday 8:30 am - 6:30 pm during the season.
+    // Season: April 15 through the end of October.
+    (function () {
+      const OPEN_MIN  = 8 * 60 + 30;    // 8:30 am
+      const CLOSE_MIN = 18 * 60 + 30;   // 6:30 pm
+
+      function inSeason(d) {
+        const m = d.getMonth(), day = d.getDate();
+        if (m < 3 || m > 9) return false;         // closed Nov-March
+        if (m === 3 && day < 15) return false;    // opens mid-April
+        return true;
+      }
+
+      function liveStatus() {
+        const now = new Date();
+        if (!inSeason(now)) {
+          return { open: false, text: 'See you in April' };
+        }
+        const mins = now.getHours() * 60 + now.getMinutes();
+        if (mins >= OPEN_MIN && mins < CLOSE_MIN) {
+          return { open: true, text: 'Open today 8:30 - 6:30' };
+        }
+        if (mins < OPEN_MIN) {
+          return { open: false, text: 'Opens at 8:30 am' };
+        }
+        return { open: false, text: 'Closed today. Back tomorrow 8:30' };
+      }
+
+      function apply(s) {
+        const pill = document.getElementById('status-pill');
+        if (!pill) return;
+        pill.textContent = s.text;
+        pill.classList.toggle('status-open', s.open);
+        pill.classList.toggle('status-closed', !s.open);
+      }
+
+      apply(liveStatus());
+      setInterval(function () { apply(liveStatus()); }, 60000);
+    })();
+  </script>
+
+  <!-- Structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Everyday Produce Market",
+    "image": "https://everyday-produce.com/photos/hero.jpg",
+    "url": "https://everyday-produce.com",
+    "telephone": "+18169426344",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "7300 Wornall Rd",
+      "addressLocality": "Kansas City",
+      "addressRegion": "MO",
+      "postalCode": "64114",
+      "addressCountry": "US"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 38.9609,
+      "longitude": -94.5943
+    },
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+      "opens": "08:30",
+      "closes": "18:30"
+    },
+    "sameAs": [
+      "https://www.facebook.com/everydayproduce",
+      "https://www.yelp.com/biz/everyday-produce-market-kansas-city-2"
+    ],
+    "description": "A neighborhood produce stand at 7300 Wornall Rd in Waldo, Kansas City. Open April through October. Waldo tradition since 1985."
+  }
+  </script>
+
+</body>
+</html>
