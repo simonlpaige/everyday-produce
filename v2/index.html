@@ -421,7 +421,7 @@
         <img src="assets/logo-horizontal.svg?v=2" alt="Everyday Produce Market - Waldo Tradition Since 1985" class="ep-logo hero-logo" width="920" height="400">
 
         <div id="status-pill" class="status-pill status-open" aria-live="polite" aria-atomic="true">
-          Open today 8:30 - 6:30
+          8:30 am - 6:30 pm &middot; 7 days a week
         </div>
 
         <div class="hero-ctas">
@@ -774,13 +774,11 @@
   </footer>
 
   <script>
-    // Open / closed status for the hero pill.
-    // Stand runs Monday-Sunday 8:30 am - 6:30 pm during the season.
-    // Season: April 15 through the end of October.
+    // Hero status pill.
+    // Per Konrad: in season, always show the standing hours line
+    // ("8:30 am - 6:30 pm \u00b7 7 days a week"). Off-season, flip to
+    // "Closed for the season". The stand runs April 15 - October 31.
     (function () {
-      const OPEN_MIN  = 8 * 60 + 30;    // 8:30 am
-      const CLOSE_MIN = 18 * 60 + 30;   // 6:30 pm
-
       function inSeason(d) {
         const m = d.getMonth(), day = d.getDate();
         if (m < 3 || m > 9) return false;         // closed Nov-March
@@ -791,16 +789,9 @@
       function liveStatus() {
         const now = new Date();
         if (!inSeason(now)) {
-          return { open: false, text: 'See you in April' };
+          return { open: false, text: 'Closed for the season' };
         }
-        const mins = now.getHours() * 60 + now.getMinutes();
-        if (mins >= OPEN_MIN && mins < CLOSE_MIN) {
-          return { open: true, text: 'Open today 8:30 - 6:30' };
-        }
-        if (mins < OPEN_MIN) {
-          return { open: false, text: 'Opens at 8:30 am' };
-        }
-        return { open: false, text: 'Closed today. Back tomorrow 8:30' };
+        return { open: true, text: '8:30 am - 6:30 pm \u00b7 7 days a week' };
       }
 
       function apply(s) {
@@ -812,7 +803,8 @@
       }
 
       apply(liveStatus());
-      setInterval(function () { apply(liveStatus()); }, 60000);
+      // Recheck once an hour - season boundary is the only thing that flips.
+      setInterval(function () { apply(liveStatus()); }, 60 * 60 * 1000);
     })();
   </script>
 
