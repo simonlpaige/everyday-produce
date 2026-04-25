@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Konrad & the stand | Everyday Produce Market</title>
+  <meta name="description" content="The story of Everyday Produce Market in Waldo, Kansas City. Konrad Pfeifauf has run the stand since the late 1990s. The neighborhood has been buying produce here since 1985.">
+  <meta property="og:title" content="About Konrad & the stand | Everyday Produce Market">
+  <meta property="og:description" content="The story of Everyday Produce Market in Waldo, Kansas City. Run by Konrad since the late 1990s. Open since 1985.">
+  <meta property="og:image" content="https://everyday-produce.com/photos/about-customers.jpg">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://everyday-produce.com/about.html">
+  <link rel="canonical" href="https://everyday-produce.com/about.html">
+  <link rel="icon" href="assets/favicon.svg">
+  <meta name="theme-color" content="#2F7A3A">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Oswald:wght@500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --red:        #B8232A;
+      --red-dark:   #8F1A20;
+      --green:      #2F7A3A;
+      --green-dark: #1F5228;
+      --yellow:     #F2C438;
+      --brown:      #7A4A28;
+      --brown-dark: #5A3518;
+      --cream:      #F5EDD8;
+      --cream-mid:  #EDE4CE;
+      --ink:        #2A1A0E;
+      --ink-muted:  rgba(42,26,14,0.55);
+      --shadow:     2px 2px 0 rgba(42,26,14,0.18);
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--cream);
+      color: var(--ink);
+      font-family: 'Inter', sans-serif;
+      font-size: 17px;
+      line-height: 1.65;
+      text-wrap: pretty;
+    }
+    img { display: block; max-width: 100%; }
+
+    .skip-link {
+      position: absolute; top: -200%; left: 16px;
+      background: var(--ink); color: var(--cream);
+      padding: 8px 20px; border-radius: 4px;
+      font-family: 'Oswald', sans-serif; font-weight: 700; font-size: 14px;
+      text-transform: uppercase; letter-spacing: 0.08em; text-decoration: none;
+      z-index: 9999;
+    }
+    .skip-link:focus { top: 12px; }
+
+    .container { max-width: 1160px; margin: 0 auto; padding: 0 32px; }
+    .section-pad { padding: 88px 0; }
+    @media (max-width: 768px) { .section-pad { padding: 56px 0; } .container { padding: 0 20px; } }
+
+    .eyebrow {
+      font-family: 'Oswald', sans-serif; font-weight: 500;
+      font-size: 12px; text-transform: uppercase; letter-spacing: 0.22em;
+      color: var(--green); margin-bottom: 8px;
+    }
+    .section-h2 {
+      font-family: 'Alfa Slab One', serif; font-weight: 400;
+      font-size: clamp(28px, 4vw, 44px); line-height: 1.1; color: var(--ink);
+    }
+
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center;
+      font-family: 'Oswald', sans-serif; font-weight: 700; font-size: 16px;
+      text-transform: uppercase; letter-spacing: 0.08em; text-decoration: none;
+      padding: 14px 32px; border-radius: 4px; border: 2px solid var(--ink);
+      cursor: pointer; transition: background 120ms, transform 120ms;
+      box-shadow: var(--shadow); white-space: nowrap;
+    }
+    .btn:focus-visible { outline: 3px solid var(--ink); outline-offset: 3px; }
+    .btn-primary  { background: var(--red);   color: var(--cream); }
+    .btn-primary:hover  { background: var(--red-dark); transform: translateY(-1px); }
+    .btn-secondary { background: var(--cream); color: var(--ink); }
+    .btn-secondary:hover { background: #e6dcc4; transform: translateY(-1px); }
+
+    .ep-logo { display: block; width: 100%; height: auto; }
+    .footer-logo-img { max-width: 240px; width: 100%; }
+
+    /* PAGE TOP - simple branded header so people can get back home */
+    .page-top {
+      background: var(--cream);
+      border-bottom: 2px solid var(--ink);
+      padding: 18px 0;
+    }
+    .page-top-row {
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 24px;
+    }
+    .page-top-logo {
+      max-width: 220px;
+      display: block;
+    }
+    .page-top-back {
+      font-family: 'Oswald', sans-serif; font-weight: 700; font-size: 14px;
+      text-transform: uppercase; letter-spacing: 0.10em;
+      color: var(--ink); text-decoration: none;
+      padding: 8px 16px; border: 2px solid var(--ink); border-radius: 4px;
+      background: var(--cream); box-shadow: var(--shadow);
+      transition: background 120ms;
+    }
+    .page-top-back:hover { background: #e6dcc4; }
+
+    /* HERO */
+    .about-hero {
+      padding: 64px 0 32px;
+      background: var(--cream);
+      position: relative;
+    }
+    .about-hero h1 {
+      font-family: 'Alfa Slab One', serif; font-weight: 400;
+      font-size: clamp(36px, 6vw, 64px); line-height: 1.05;
+      color: var(--ink);
+      margin-bottom: 12px;
+    }
+    .about-hero .lede {
+      font-size: 20px; color: var(--ink);
+      max-width: 720px; margin-bottom: 32px;
+    }
+    .about-hero img {
+      width: 100%; aspect-ratio: 16 / 9; object-fit: cover;
+      border: 2px solid var(--ink);
+      box-shadow: 6px 6px 0 rgba(42,26,14,0.12);
+      border-radius: 4px;
+      margin-top: 24px;
+    }
+
+    /* STORY */
+    .story {
+      padding: 64px 0;
+    }
+    .story-inner {
+      max-width: 760px; margin: 0 auto;
+    }
+    .story p {
+      font-size: 18px; line-height: 1.75;
+      margin-bottom: 24px; color: var(--ink);
+    }
+    .story p:first-of-type::first-letter {
+      font-family: 'Alfa Slab One', serif;
+      font-size: 4em; line-height: 0.85;
+      float: left; margin: 6px 14px 0 0;
+      color: var(--red);
+    }
+    .pull-quote {
+      font-family: 'Alfa Slab One', serif; font-weight: 400;
+      font-size: clamp(22px, 3vw, 30px); line-height: 1.25;
+      color: var(--green-dark);
+      border-left: 4px solid var(--red);
+      padding: 12px 0 12px 28px;
+      margin: 36px 0;
+    }
+
+    /* INLINE PHOTO STRIP */
+    .strip {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 16px; margin: 40px 0;
+    }
+    @media (max-width: 640px) { .strip { grid-template-columns: 1fr; } }
+    .strip img {
+      width: 100%; aspect-ratio: 4 / 3; object-fit: cover;
+      border: 2px solid var(--ink);
+      box-shadow: var(--shadow);
+      border-radius: 4px;
+    }
+
+    /* CTA BACK TO HOME */
+    .come-by {
+      background: var(--cream-mid);
+      padding: 64px 0;
+      border-top: 2px solid var(--ink);
+      border-bottom: 2px solid var(--ink);
+    }
+    .come-by-inner {
+      max-width: 720px; margin: 0 auto; text-align: center;
+    }
+    .come-by h2 {
+      font-family: 'Alfa Slab One', serif; font-weight: 400;
+      font-size: clamp(28px, 4vw, 40px); line-height: 1.15;
+      margin-bottom: 14px;
+    }
+    .come-by p {
+      font-size: 18px; margin-bottom: 28px;
+    }
+    .come-by .button-row {
+      display: flex; flex-wrap: wrap; gap: 14px; justify-content: center;
+    }
+
+    /* FOOTER (matches index.html v2) */
+    footer {
+      background: var(--ink); color: var(--cream);
+      padding: 64px 0 32px;
+    }
+    footer a { color: var(--cream); text-decoration: underline; text-underline-offset: 3px; }
+    footer a:hover { color: var(--yellow); }
+    .footer-top {
+      display: flex; align-items: center; gap: 24px; flex-wrap: wrap;
+      margin-bottom: 36px; padding-bottom: 28px;
+      border-bottom: 1px solid rgba(245,237,216,0.18);
+    }
+    .footer-logo-badge {
+      background: var(--cream); padding: 18px 22px; border-radius: 4px;
+      border: 2px solid var(--cream);
+    }
+    .footer-tagline {
+      font-family: 'Oswald', sans-serif; font-weight: 700;
+      font-size: 18px; letter-spacing: 0.06em; text-transform: uppercase;
+      color: var(--yellow);
+    }
+    .footer-cols {
+      display: grid; gap: 28px;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      margin-bottom: 36px;
+    }
+    .footer-col h4 {
+      font-family: 'Oswald', sans-serif; font-weight: 700;
+      font-size: 13px; text-transform: uppercase; letter-spacing: 0.16em;
+      color: var(--yellow); margin-bottom: 10px;
+    }
+    .footer-col p { margin-bottom: 4px; }
+    .footer-dim { color: rgba(245,237,216,0.62); font-size: 14px; }
+    .footer-bottom {
+      padding-top: 24px; border-top: 1px solid rgba(245,237,216,0.18);
+      font-size: 14px; color: rgba(245,237,216,0.62);
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+  <a href="#main" class="skip-link">Skip to content</a>
+
+  <!-- TOP BAR -->
+  <div class="page-top">
+    <div class="container">
+      <div class="page-top-row">
+        <a href="index.html" aria-label="Everyday Produce Market home">
+          <img src="assets/logo-horizontal.svg?v=2" alt="Everyday Produce Market" class="ep-logo page-top-logo" width="920" height="400">
+        </a>
+        <a href="index.html" class="page-top-back">&larr; Back to home</a>
+      </div>
+    </div>
+  </div>
+
+  <main id="main">
+
+    <!-- HERO -->
+    <section class="about-hero">
+      <div class="container">
+        <p class="eyebrow">About</p>
+        <h1>Konrad &amp; the stand</h1>
+        <p class="lede">Everyday Produce has been a part of Waldo since 1985. Konrad Pfeifauf has run it since the late 1990s, and you can still find him at the stand every day of the season.</p>
+        <img src="../photos/about-customers.jpg" alt="Konrad working with customers under the green-striped tent" loading="lazy" width="1200" height="675">
+      </div>
+    </section>
+
+    <!-- STORY -->
+    <section class="story">
+      <div class="container">
+        <div class="story-inner">
+
+          <p>Konrad grew up in Waldo, just a bike ride from Bingham, the old neighborhood school near 77th and Wyandotte. As a kid he would pedal past Everyday Produce, then a small fruit and vegetable stand near 75th and Wornall run by Frank DeLuna. Frank already knew the family by reputation. Konrad's brothers had proven themselves as reliable help at Jasper's and Marco Polo's, the longtime Italian restaurant and market on 103rd Street. So in 1985, Frank offered Konrad a job at the stand.</p>
+
+          <p>Konrad stayed with Everyday Produce through college at the University of Missouri, where he studied criminal psychology. After graduation, and after time away including a stretch abroad in Australia, Frank called him back with an offer to help take over the business. By the late 1990s, Konrad was running it himself.</p>
+
+          <div class="pull-quote">"You'll always find Konrad at the stand, sampling fruit and greeting regulars."</div>
+
+          <div class="strip">
+            <img src="../photos/about-interior.jpg" alt="Inside the stand at 7300 Wornall Rd" loading="lazy" width="800" height="600">
+            <img src="../photos/about-sign.jpg" alt="The Everyday Produce sign at the corner of 73rd and Wornall" loading="lazy" width="800" height="600">
+          </div>
+
+          <p>Everyday Produce has moved with the neighborhood over the years. From its original home near 75th and Wornall, to a long run near the Price Chopper at 103rd between Wornall and State Line, and now back in the heart of Waldo at 7300 Wornall Road. Today, Konrad is still at the stand every day of the season, greeting regulars, sampling fruit, and hand-picking produce from Kansas City-area farmers and trusted distributors.</p>
+
+          <p>When winter comes and the produce tents close, he keeps working. He runs a snow-plow service through the cold months until it is time to open the stand again the next April.</p>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- COME BY CTA -->
+    <section class="come-by">
+      <div class="container">
+        <div class="come-by-inner">
+          <h2>Come say hi.</h2>
+          <p>Open every day, 8:30 am to 6:30 pm. April through October. Konrad is usually right by the register.</p>
+          <div class="button-row">
+            <a href="https://maps.google.com/?q=7300+Wornall+Rd+Kansas+City+MO+64114"
+               class="btn btn-primary" target="_blank" rel="noopener">Get directions</a>
+            <a href="tel:+18169426344" class="btn btn-secondary">Call us &middot; 816-942-6344</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+
+      <div class="footer-top">
+        <div class="footer-logo-badge">
+          <img src="assets/logo-horizontal.svg?v=2" alt="Everyday Produce Market" class="ep-logo footer-logo-img" width="920" height="400">
+        </div>
+        <p class="footer-tagline">Waldo Tradition Since 1985</p>
+      </div>
+
+      <div class="footer-cols">
+        <div class="footer-col">
+          <h4>Visit</h4>
+          <p>7300 Wornall Rd<br>Kansas City, MO 64114</p>
+          <p style="margin-top:10px;">Monday - Sunday &nbsp; 8:30 am - 6:30 pm</p>
+          <p class="footer-dim">Open April through October</p>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <a href="tel:+18169426344">816-942-6344</a>
+          <p class="footer-dim" style="margin-top:8px;">Cash or card accepted</p>
+        </div>
+        <div class="footer-col">
+          <h4>Follow</h4>
+          <a href="https://www.facebook.com/everydayproduce" target="_blank" rel="noopener">Facebook</a>
+          <p class="footer-dim" style="margin-top:8px;">Opening dates, what's in, and when we close each fall.</p>
+        </div>
+      </div>
+
+      <p class="footer-bottom">
+        &copy; 2026 Everyday Produce Market &middot; Built by Simon L. Paige Web Design
+      </p>
+
+    </div>
+  </footer>
+
+</body>
+</html>

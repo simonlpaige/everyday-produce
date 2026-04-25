@@ -1,436 +1,399 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Buy This House, Get Free Produce All Season | Everyday Produce</title>
-  <meta name="description" content="Buy 801 W 56th St (MLS #2613841) and get free produce at Everyday Produce for the entire 2026 season. A one-of-a-kind offer from Waldo's favorite market." />
-  <meta name="robots" content="index,follow" />
-  <meta property="og:title" content="Buy This House, Get Free Produce All Season" />
-  <meta property="og:description" content="One-of-a-kind offer: purchase 801 W 56th St, Kansas City MO, and eat free from Everyday Produce all 2026 season." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://everyday-produce.com/house.html" />
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🏡</text></svg>" />
-  <meta name="theme-color" content="#3d7a4a" />
-  <link rel="canonical" href="https://everyday-produce.com/house.html" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Buy This House, Eat Free Produce All Season | Everyday Produce Market</title>
+  <meta name="description" content="Buy 801 W 56th St (MLS #2613841) and eat free produce at Everyday Produce Market for the entire 2026 season. A one-of-a-kind offer from Waldo's favorite market.">
+  <meta name="robots" content="index,follow">
+  <meta property="og:title" content="Buy This House, Eat Free Produce All Season">
+  <meta property="og:description" content="One-of-a-kind offer: purchase 801 W 56th St, Kansas City MO, and eat free from Everyday Produce Market all 2026 season.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://everyday-produce.com/house.html">
+  <meta name="theme-color" content="#B8232A">
+  <link rel="canonical" href="https://everyday-produce.com/house.html">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --cream: #faf7f2;
-      --white: #ffffff;
-      --dark: #2c2417;
-      --brown: #5c4a32;
-      --green: #3d7a4a;
-      --green-dark: #2d5e38;
-      --green-light: #e8f2e5;
-      --green-pale: #f0f7ee;
-      --gold: #d4a843;
-      --gold-light: #fdf6e3;
-      --warm-gray: #635b50;
-      --border: #e6e0d6;
-      --terracotta: #c26e4a;
-      --shadow-sm: 0 1px 3px rgba(44,36,23,0.06);
-      --shadow-md: 0 4px 20px rgba(44,36,23,0.08);
-      --shadow-lg: 0 12px 40px rgba(44,36,23,0.12);
+      --cream: #F5EDD8;
+      --cream-mid: #EDE4CB;
+      --white: #FFFFFF;
+      --red: #B8232A;
+      --red-dark: #8F1A20;
+      --green: #2F7A3A;
+      --green-dark: #1F5228;
+      --yellow: #F2C438;
+      --yellow-dark: #D4A419;
+      --brown: #7A4A28;
+      --brown-dark: #5A3518;
+      --ink: #2A1A0E;
+      --ink-muted: #635B50;
+      --shadow: 3px 3px 0 rgba(42, 26, 14, 0.15);
     }
 
     html { scroll-behavior: smooth; }
-
     body {
-      background: var(--cream);
-      color: var(--dark);
-      font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
-      font-weight: 400;
-      line-height: 1.6;
+      background: var(--cream); color: var(--ink);
+      font-family: 'Inter', system-ui, sans-serif;
+      font-weight: 400; line-height: 1.6;
       -webkit-font-smoothing: antialiased;
     }
 
-    img { display: block; max-width: 100%; }
-    a { color: var(--green-dark); transition: color 0.2s; }
-    a:hover { color: var(--green); }
+    .skip-link {
+      position: absolute; top: -40px; left: 0; background: var(--ink); color: var(--cream);
+      padding: 10px 18px; text-decoration: none; z-index: 100; border-radius: 0 0 4px 0;
+    }
+    .skip-link:focus { top: 0; }
 
-    /* ── NAV ── */
-    .nav {
-      background: rgba(255,255,255,0.95);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      padding: 14px 48px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      border-bottom: 1px solid var(--border);
-      position: sticky;
-      top: 0;
-      z-index: 100;
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+    .section-pad { padding: 72px 0; }
+    @media (max-width: 768px) { .section-pad { padding: 56px 0; } }
+
+    .eyebrow {
+      font-family: 'Oswald', sans-serif; font-weight: 500;
+      font-size: 12px; text-transform: uppercase; letter-spacing: 0.22em;
+      color: var(--green); margin-bottom: 12px;
     }
-    .nav-brand {
-      display: flex; align-items: center; gap: 12px;
-      text-decoration: none; color: var(--dark);
-    }
-    .nav-icon {
-      width: 40px; height: 40px;
-      background: var(--green-light);
-      border-radius: 50%;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 20px;
-    }
-    .nav-name {
-      font-family: 'Playfair Display', serif;
-      font-size: 22px; font-weight: 700;
-      color: var(--dark);
-    }
+
+    /* NAV BACK BAR */
     .nav-back {
-      font-size: 14px; font-weight: 500;
-      color: var(--warm-gray); text-decoration: none;
+      border-bottom: 2px solid var(--ink); background: var(--cream);
+      padding: 16px 24px;
     }
-    .nav-back:hover { color: var(--green-dark); }
+    .nav-back a {
+      font-family: 'Oswald', sans-serif; font-weight: 600; font-size: 13px;
+      text-transform: uppercase; letter-spacing: 0.14em;
+      color: var(--ink); text-decoration: none;
+    }
+    .nav-back a:hover, .nav-back a:focus { color: var(--red); }
 
-    /* ── HERO ── */
-    .hero {
-      background: linear-gradient(180deg, var(--green-pale) 0%, var(--cream) 100%);
-      padding: 64px 24px 48px;
-      text-align: center;
-      border-bottom: 1px solid var(--border);
+    /* HERO */
+    #hero {
+      background: var(--ink); color: var(--cream);
+      padding: 80px 24px; text-align: center;
+      border-bottom: 2px solid var(--ink);
     }
-    .hero .kicker {
-      display: inline-block;
-      background: var(--gold);
-      color: var(--dark);
-      padding: 6px 14px;
-      border-radius: 999px;
-      font-size: 13px;
-      font-weight: 700;
-      letter-spacing: 0.05em;
-      text-transform: uppercase;
-      margin-bottom: 20px;
+    #hero .eyebrow { color: var(--yellow); }
+    #hero h1 {
+      font-family: 'Alfa Slab One', serif;
+      font-size: clamp(36px, 6vw, 64px); line-height: 1.05;
+      margin: 10px auto 20px; max-width: 900px;
     }
-    .hero h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(32px, 5vw, 54px);
-      font-weight: 800;
-      line-height: 1.1;
-      color: var(--dark);
-      max-width: 900px;
-      margin: 0 auto 18px;
-    }
-    .hero h1 .accent { color: var(--green-dark); font-style: italic; }
-    .hero .sub {
-      font-size: clamp(17px, 2vw, 20px);
-      color: var(--warm-gray);
-      max-width: 680px;
-      margin: 0 auto 28px;
+    #hero .red-accent { color: var(--red); }
+    #hero .lede {
+      font-size: 18px; max-width: 640px; margin: 0 auto 36px;
+      opacity: 0.88; line-height: 1.65;
     }
     .hero-meta {
-      display: flex; flex-wrap: wrap;
-      justify-content: center; gap: 16px 28px;
-      font-size: 15px; color: var(--brown);
-      margin-bottom: 28px;
+      display: flex; flex-wrap: wrap; justify-content: center; gap: 28px;
+      margin-bottom: 36px; font-family: 'Oswald', sans-serif;
+      font-size: 14px; letter-spacing: 0.08em; text-transform: uppercase;
     }
-    .hero-meta b { color: var(--dark); font-weight: 600; }
+    .hero-meta .dot { color: var(--yellow); }
+    .hero-ctas { display: flex; flex-wrap: wrap; justify-content: center; gap: 14px; }
+    .btn-primary, .btn-secondary {
+      display: inline-block; padding: 14px 28px; border-radius: 4px;
+      font-family: 'Oswald', sans-serif; font-weight: 700; font-size: 14px;
+      letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none;
+      border: 2px solid var(--ink); transition: background 0.15s, color 0.15s, transform 0.15s;
+    }
+    .btn-primary { background: var(--yellow); color: var(--ink); }
+    .btn-primary:hover, .btn-primary:focus { background: var(--red); color: var(--cream); }
+    .btn-secondary { background: transparent; color: var(--cream); border-color: var(--cream); }
+    .btn-secondary:hover, .btn-secondary:focus { background: var(--cream); color: var(--ink); border-color: var(--cream); }
 
-    .btn {
-      display: inline-block;
-      padding: 14px 28px;
-      border-radius: 999px;
-      font-weight: 600;
-      font-size: 16px;
-      text-decoration: none;
-      transition: transform 0.15s, background 0.2s, box-shadow 0.2s;
+    /* SECTION HEADINGS */
+    .section-h2 {
+      font-family: 'Alfa Slab One', serif;
+      font-size: clamp(26px, 3.8vw, 40px); line-height: 1.1;
+      margin: 8px 0 24px; color: var(--ink);
     }
-    .btn-primary {
-      background: var(--green);
-      color: white;
-      box-shadow: var(--shadow-md);
-    }
-    .btn-primary:hover {
-      background: var(--green-dark);
-      color: white;
-      transform: translateY(-2px);
-      box-shadow: var(--shadow-lg);
-    }
-    .btn-ghost {
-      background: transparent;
-      color: var(--dark);
-      border: 1.5px solid var(--border);
-      margin-left: 10px;
-    }
-    .btn-ghost:hover { border-color: var(--green); color: var(--green-dark); }
 
-    /* ── SECTIONS ── */
-    section.wrap {
-      max-width: 1080px;
-      margin: 0 auto;
-      padding: 56px 24px;
+    /* OFFER */
+    #offer { border-top: 2px solid var(--ink); background: var(--cream); }
+    .offer-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start;
+      margin-top: 32px;
     }
-    h2 {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(26px, 3.4vw, 36px);
-      font-weight: 700;
-      color: var(--dark);
-      margin-bottom: 20px;
-    }
-    h2 .accent { color: var(--green-dark); }
-
-    /* ── OFFER CARD ── */
+    @media (max-width: 768px) { .offer-grid { grid-template-columns: 1fr; gap: 32px; } }
+    .offer-copy p { font-size: 17px; line-height: 1.7; margin-bottom: 16px; }
     .offer-card {
-      background: var(--white);
-      border: 1px solid var(--border);
-      border-radius: 18px;
-      padding: 32px;
-      box-shadow: var(--shadow-sm);
+      background: var(--white); border: 2px solid var(--ink); border-radius: 4px;
+      padding: 32px; box-shadow: var(--shadow);
     }
-    .offer-card p { font-size: 17px; color: var(--brown); margin-bottom: 14px; }
+    .offer-card h3 {
+      font-family: 'Alfa Slab One', serif; font-size: 22px;
+      margin-bottom: 16px;
+    }
     .offer-card ul {
-      list-style: none;
-      margin: 18px 0 0;
-      padding: 0;
+      list-style: none; padding: 0; margin: 0;
     }
     .offer-card li {
-      position: relative;
-      padding: 10px 0 10px 34px;
-      border-bottom: 1px solid var(--border);
-      font-size: 16px;
-      color: var(--dark);
+      padding: 10px 0 10px 28px; position: relative;
+      font-size: 15px; line-height: 1.5;
+      border-top: 1px solid rgba(42,26,14,0.12);
     }
-    .offer-card li:last-child { border-bottom: none; }
+    .offer-card li:first-child { border-top: none; }
     .offer-card li::before {
-      content: "🌿";
-      position: absolute;
-      left: 0; top: 10px;
-      font-size: 18px;
+      content: ''; position: absolute; left: 0; top: 16px;
+      width: 14px; height: 14px; border-radius: 50%;
+      background: var(--red); border: 2px solid var(--ink);
     }
 
-    /* ── LISTING FACTS ── */
-    .facts-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-      gap: 14px;
-      margin-top: 8px;
+    /* FINE PRINT */
+    .fine-print {
+      background: var(--cream-mid); border: 2px solid var(--ink); border-radius: 4px;
+      padding: 24px 28px; margin-top: 32px;
+      font-size: 14px; line-height: 1.65; color: var(--ink-muted);
     }
-    .fact {
-      background: var(--white);
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      padding: 18px;
-      text-align: center;
-    }
-    .fact .n {
-      font-family: 'Playfair Display', serif;
-      font-size: 28px;
-      font-weight: 700;
-      color: var(--green-dark);
-    }
-    .fact .l {
-      font-size: 13px;
-      color: var(--warm-gray);
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      margin-top: 4px;
-    }
+    .fine-print strong { color: var(--ink); font-weight: 600; }
 
-    /* ── PHOTO GRID ── */
-    .photos {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-      gap: 14px;
+    /* PHOTOS */
+    #photos { border-top: 2px solid var(--ink); background: var(--cream); }
+    .photo-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;
+      margin-top: 32px;
     }
-    .photo {
-      aspect-ratio: 4 / 3;
-      background: var(--green-light);
-      border-radius: 12px;
-      overflow: hidden;
-      display: flex; align-items: center; justify-content: center;
-      color: var(--warm-gray);
-      font-size: 13px;
-      border: 1px dashed var(--border);
+    @media (max-width: 900px) { .photo-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 540px) { .photo-grid { grid-template-columns: 1fr; } }
+    .photo-item {
+      border: 2px solid var(--ink); border-radius: 4px;
+      box-shadow: var(--shadow); overflow: hidden;
+      background: var(--cream-mid); aspect-ratio: 4/3;
     }
-    .photo img { width: 100%; height: 100%; object-fit: cover; }
-    .photo.large { grid-column: span 2; aspect-ratio: 16 / 9; }
-    @media (max-width: 600px) { .photo.large { grid-column: span 1; } }
-
+    .photo-item.large { grid-column: span 2; aspect-ratio: 16/9; }
+    @media (max-width: 540px) { .photo-item.large { grid-column: span 1; aspect-ratio: 4/3; } }
+    .photo-item img { width: 100%; height: 100%; object-fit: cover; display: block; }
     .photos-note {
-      font-size: 14px;
-      color: var(--warm-gray);
-      margin-top: 14px;
+      margin-top: 18px; font-size: 14px; color: var(--ink-muted);
       font-style: italic;
     }
 
-    /* ── CONTACT CARD ── */
-    .contact-card {
-      background: var(--dark);
-      color: var(--cream);
-      border-radius: 18px;
-      padding: 36px;
-      display: grid;
-      grid-template-columns: 1fr auto;
-      gap: 28px;
-      align-items: center;
+    /* HOUSE */
+    #house { border-top: 2px solid var(--ink); background: var(--cream-mid); }
+    .house-stat-row {
+      display: grid; grid-template-columns: repeat(6, 1fr);
+      gap: 16px; margin: 32px 0;
     }
-    .contact-card h3 {
-      font-family: 'Playfair Display', serif;
-      font-size: 24px;
-      font-weight: 700;
-      margin-bottom: 8px;
-      color: var(--gold-light);
+    @media (max-width: 900px) { .house-stat-row { grid-template-columns: repeat(3, 1fr); } }
+    @media (max-width: 520px) { .house-stat-row { grid-template-columns: repeat(2, 1fr); } }
+    .house-stat {
+      background: var(--white); border: 2px solid var(--ink); border-radius: 4px;
+      padding: 18px 16px; text-align: center; box-shadow: var(--shadow);
     }
-    .contact-card .agent {
-      font-size: 17px;
-      color: var(--gold);
-      margin-bottom: 12px;
+    .house-stat .num {
+      font-family: 'Alfa Slab One', serif; font-size: 28px;
+      color: var(--red); line-height: 1; display: block;
     }
-    .contact-card p { font-size: 15px; color: #d8cfb8; margin-bottom: 6px; }
-    .contact-card a { color: var(--gold-light); font-weight: 600; text-decoration: underline; }
-    .contact-card a:hover { color: var(--gold); }
-    .contact-card .btn-primary {
-      background: var(--gold);
-      color: var(--dark);
+    .house-stat .label {
+      font-family: 'Oswald', sans-serif; font-size: 11px;
+      text-transform: uppercase; letter-spacing: 0.14em;
+      color: var(--ink-muted); margin-top: 6px; display: block;
     }
-    .contact-card .btn-primary:hover { background: #e6bc5a; color: var(--dark); }
-    @media (max-width: 700px) {
-      .contact-card { grid-template-columns: 1fr; text-align: left; }
+    .house-blurb { font-size: 17px; line-height: 1.7; max-width: 700px; margin-bottom: 24px; }
+    .listing-links {
+      display: flex; flex-wrap: wrap; gap: 12px; margin-top: 8px;
+    }
+    .listing-links a {
+      font-family: 'Oswald', sans-serif; font-weight: 600;
+      font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase;
+      color: var(--ink); text-decoration: none;
+      padding: 10px 18px; border: 2px solid var(--ink); border-radius: 4px;
+      background: var(--white); transition: background 0.15s, color 0.15s;
+    }
+    .listing-links a:hover, .listing-links a:focus {
+      background: var(--ink); color: var(--cream);
     }
 
-    /* ── FOOTER ── */
+    /* AGENT */
+    #agent { border-top: 2px solid var(--ink); background: var(--cream); }
+    .agent-card {
+      background: var(--white); border: 2px solid var(--ink); border-radius: 4px;
+      padding: 36px; box-shadow: var(--shadow);
+      display: grid; grid-template-columns: auto 1fr; gap: 32px; align-items: center;
+      max-width: 760px; margin: 32px auto 0;
+    }
+    @media (max-width: 640px) {
+      .agent-card { grid-template-columns: 1fr; gap: 20px; text-align: center; }
+    }
+    .agent-mark {
+      width: 96px; height: 96px; border-radius: 50%;
+      background: var(--red); color: var(--cream);
+      border: 2px solid var(--ink);
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Alfa Slab One', serif; font-size: 36px;
+    }
+    .agent-info h3 {
+      font-family: 'Alfa Slab One', serif; font-size: 24px;
+      margin-bottom: 4px;
+    }
+    .agent-info .firm {
+      font-family: 'Oswald', sans-serif; font-size: 13px;
+      text-transform: uppercase; letter-spacing: 0.12em;
+      color: var(--ink-muted); margin-bottom: 14px;
+    }
+    .agent-info p { font-size: 15px; line-height: 1.55; margin-bottom: 4px; }
+    .agent-info a { color: var(--red); text-decoration: underline; }
+    .agent-info a:hover, .agent-info a:focus { color: var(--ink); }
+
+    /* FOOTER */
     footer {
-      background: var(--dark);
-      color: #c9bfa8;
-      padding: 36px 24px;
-      text-align: center;
-      font-size: 14px;
+      background: var(--ink); color: var(--cream);
+      padding: 48px 24px 32px; text-align: center;
+      border-top: 2px solid var(--ink);
     }
-    footer a { color: var(--gold-light); text-decoration: none; }
-    footer a:hover { color: var(--gold); text-decoration: underline; }
+    footer p { font-size: 14px; line-height: 1.6; opacity: 0.85; margin-bottom: 8px; }
+    footer .dim { opacity: 0.55; font-size: 13px; }
+    footer a { color: var(--yellow); text-decoration: underline; }
+    footer a:hover, footer a:focus { color: var(--cream); }
 
-    /* ── FINE PRINT ── */
-    .fine-print {
-      max-width: 900px;
-      margin: 28px auto 0;
-      font-size: 13px;
-      color: var(--warm-gray);
-      line-height: 1.6;
-      padding: 18px 20px;
-      background: var(--gold-light);
-      border-left: 3px solid var(--gold);
-      border-radius: 4px;
-    }
+    ::selection { background: var(--yellow); color: var(--ink); }
   </style>
 </head>
 <body>
 
-  <!-- NAV -->
-  <nav class="nav" role="navigation" aria-label="Main navigation">
-    <a href="/" class="nav-brand">
-      <div class="nav-icon" aria-hidden="true">🍎</div>
-      <div class="nav-name">Everyday Produce</div>
-    </a>
-    <a href="/" class="nav-back">← Back to the market</a>
-  </nav>
+  <a class="skip-link" href="#main">Skip to main content</a>
 
-  <!-- HERO -->
-  <header class="hero">
-    <div class="kicker">🏡 A one-of-a-kind KC offer</div>
-    <h1>Buy this house, eat <span class="accent">free produce</span> all season.</h1>
-    <p class="sub">
-      Purchase <b>801 W 56th St, Kansas City, MO 64113</b> and we'll feed you from Everyday Produce for the entire 2026 season. Hand-picked, farm-fresh, on the house.
-    </p>
-    <div class="hero-meta">
-      <span>🏷️ <b>MLS #2613841</b></span>
-      <span>📍 <b>64113 · Brookside area</b></span>
-      <span>🛏️ <b>7 bed · 4.5 bath · 5,230 sqft</b></span>
-      <span>🏊‍♂️ <b>Pool</b></span>
+  <!-- NAV BACK -->
+  <div class="nav-back">
+    <div class="container">
+      <a href="../">&larr; Back to the market</a>
     </div>
-    <div>
-      <a href="#contact" class="btn btn-primary">Talk to the listing agent</a>
-      <a href="#photos" class="btn btn-ghost">See photos</a>
-    </div>
-  </header>
+  </div>
 
-  <!-- THE OFFER -->
-  <section class="wrap">
-    <h2>The offer, <span class="accent">plain and simple</span></h2>
-    <div class="offer-card">
-      <p>
-        Close on 801 W 56th St and you eat from our market — free — for the rest of the 2026 season.
-        Same hand-picked produce, flowers, and preserves our Waldo neighbors have loved since 1985.
-        Stop in whenever you like. No cards, no coupons, no limit on visits.
-      </p>
-      <ul>
-        <li>Free produce at Everyday Produce, 7300 Wornall Rd, for the full 2026 season.</li>
-        <li>Fruits, vegetables, flowers, and in-house preserves all included.</li>
-        <li>Starts the day you close. Ends the day we close for the season.</li>
-        <li>Just say your name at the stand. We'll know.</li>
-      </ul>
-    </div>
+  <main id="main">
 
-    <p class="fine-print">
-      Good faith offer between the buyer(s) of record at 801 W 56th St, Kansas City, MO 64113 and
-      Everyday Produce. Non-transferable. Household quantities, reasonable daily use. Offer is independent of
-      the real estate transaction and not a condition of sale. Questions? Come talk to us at the market.
-    </p>
-  </section>
-
-  <!-- LISTING FACTS -->
-  <section class="wrap" style="padding-top: 0;">
-    <h2>The house</h2>
-    <div class="facts-grid">
-      <div class="fact"><div class="n">7</div><div class="l">Bedrooms</div></div>
-      <div class="fact"><div class="n">4.5</div><div class="l">Bathrooms</div></div>
-      <div class="fact"><div class="n">5,230</div><div class="l">Sq Ft</div></div>
-      <div class="fact"><div class="n">0.51</div><div class="l">Acres</div></div>
-      <div class="fact"><div class="n">1925</div><div class="l">Built</div></div>
-      <div class="fact"><div class="n">64113</div><div class="l">Zip</div></div>
-    </div>
-    <p style="margin-top: 18px; color: var(--brown); font-size: 16px;">
-      A 1925 single-family home on a half-acre lot in one of Kansas City's most walkable neighborhoods.
-      Listing details provided by Heartland MLS (#2613841).
-      <a href="https://www.reecenichols.com/realestate/details/79629327/801-w-56th-street-kansas-city-mo-64113" target="_blank" rel="noopener">View on ReeceNichols</a> ·
-      <a href="https://www.zillow.com/homedetails/801-W-56th-St-Kansas-City-MO-64113/2353145_zpid/" target="_blank" rel="noopener">View on Zillow</a> ·
-      <a href="https://www.redfin.com/MO/Kansas-City/801-W-56th-St-64113/home/93165002" target="_blank" rel="noopener">View on Redfin</a>
-    </p>
-  </section>
-
-  <!-- PHOTOS -->
-  <section class="wrap" id="photos" style="padding-top: 0;">
-    <h2>Photos</h2>
-    <div class="photos">
-      <div class="photo large"><img src="photos/house/04.jpg" alt="Aerial view of the property and grounds with pool" loading="lazy" /></div>
-      <div class="photo"><img src="photos/house/01.jpg" alt="Tudor-style home with lush landscaping" loading="lazy" /></div>
-      <div class="photo"><img src="photos/house/02.jpg" alt="Kitchen with island and hardwood floors" loading="lazy" /></div>
-      <div class="photo"><img src="photos/house/03.jpg" alt="Living room with fireplace and original woodwork" loading="lazy" /></div>
-      <div class="photo"><img src="photos/house/05.jpg" alt="Spacious primary bedroom with hardwood floors" loading="lazy" /></div>
-      <div class="photo"><img src="photos/house/06.jpg" alt="Private backyard pool and patio" loading="lazy" /></div>
-    </div>
-  </section>
-
-  <!-- CONTACT -->
-  <section class="wrap" id="contact" style="padding-top: 0;">
-    <h2>Make an offer</h2>
-    <div class="contact-card">
-      <div>
-        <h3>John Pfeifauf</h3>
-        <div class="agent">ReeceNichols · Country Club Plaza</div>
-        <p>📧 <a href="mailto:Fife@reecenichols.com">Fife@reecenichols.com</a></p>
-        <p>📱 Direct: <a href="tel:18168056916">816.805.6916</a></p>
-        <p>☎️ Office: <a href="tel:18167094900">816.709.4900</a></p>
+    <!-- HERO -->
+    <section id="hero" aria-label="The offer">
+      <p class="eyebrow">A one-of-a-kind KC offer</p>
+      <h1>Buy this house. <span class="red-accent">Eat free produce</span> all season.</h1>
+      <p class="lede">Purchase 801 W 56th St, Kansas City, MO 64113 and we'll feed you from Everyday Produce Market for the entire 2026 season. Hand-picked, on the house.</p>
+      <div class="hero-meta">
+        <span>&#127991; MLS #2613841</span>
+        <span class="dot">&middot;</span>
+        <span>&#128205; 64113 Brookside area</span>
+        <span class="dot">&middot;</span>
+        <span>7 bed &middot; 4.5 bath &middot; 5,230 sqft</span>
       </div>
-      <div>
-        <a href="mailto:Fife@reecenichols.com?subject=801%20W%2056th%20St%20(MLS%20%232613841)%20-%20inquiry" class="btn btn-primary">Email John →</a>
+      <div class="hero-ctas">
+        <a href="#agent" class="btn-primary">Talk to the listing agent</a>
+        <a href="#photos" class="btn-secondary">See the house</a>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- FOOTER -->
+    <!-- THE OFFER -->
+    <section id="offer" class="section-pad" aria-labelledby="offer-h2">
+      <div class="container">
+        <p class="eyebrow">The offer, plain and simple</p>
+        <h2 id="offer-h2" class="section-h2">Close on 801 W 56th, eat from the market all 2026.</h2>
+
+        <div class="offer-grid">
+          <div class="offer-copy">
+            <p>Same hand-picked produce, flowers, and preserves our Waldo neighbors have loved since 1985. Stop in whenever you like. No cards, no coupons, no limit on visits.</p>
+            <p>Just say your name at the stand. We'll know.</p>
+          </div>
+
+          <div class="offer-card">
+            <h3>What's included</h3>
+            <ul>
+              <li>Free produce at Everyday Produce Market, 7300 Wornall Rd, for the full 2026 season.</li>
+              <li>Fruits, vegetables, flowers, and in-house preserves all included.</li>
+              <li>Starts the day you close. Ends the day we close for the season.</li>
+              <li>Just say your name at the stand. We'll know.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="fine-print">
+          <strong>Good faith offer</strong> between the buyer(s) of record at 801 W 56th St, Kansas City, MO 64113 and Everyday Produce Market. Non-transferable. Household quantities, reasonable daily use. Offer is independent of the real estate transaction and not a condition of sale. Questions? Come talk to us at the market.
+        </div>
+      </div>
+    </section>
+
+    <!-- PHOTOS -->
+    <section id="photos" class="section-pad" aria-labelledby="photos-h2">
+      <div class="container">
+        <p class="eyebrow">Photos</p>
+        <h2 id="photos-h2" class="section-h2">Take a look around.</h2>
+
+        <div class="photo-grid">
+          <div class="photo-item large">
+            <img src="photos/house/01.jpg" alt="Front of the house from the street" loading="lazy" width="1200" height="675">
+          </div>
+          <div class="photo-item">
+            <img src="photos/house/02.jpg" alt="Kitchen" loading="lazy" width="800" height="600">
+          </div>
+          <div class="photo-item">
+            <img src="photos/house/03.jpg" alt="Living room" loading="lazy" width="800" height="600">
+          </div>
+          <div class="photo-item">
+            <img src="photos/house/04.jpg" alt="Backyard" loading="lazy" width="800" height="600">
+          </div>
+          <div class="photo-item">
+            <img src="photos/house/05.jpg" alt="Primary bedroom" loading="lazy" width="800" height="600">
+          </div>
+          <div class="photo-item">
+            <img src="photos/house/06.jpg" alt="Interior detail" loading="lazy" width="800" height="600">
+          </div>
+        </div>
+
+        <p class="photos-note">More listing photos on <a href="https://www.reecenichols.com/realestate/details/79629327/801-w-56th-street-kansas-city-mo-64113" target="_blank" rel="noopener">ReeceNichols</a>, <a href="https://www.zillow.com/homedetails/801-W-56th-St-Kansas-City-MO-64113/2353145_zpid/" target="_blank" rel="noopener">Zillow</a>, and <a href="https://www.redfin.com/MO/Kansas-City/801-W-56th-St-64113/home/93165002" target="_blank" rel="noopener">Redfin</a>.</p>
+      </div>
+    </section>
+
+    <!-- THE HOUSE -->
+    <section id="house" class="section-pad" aria-labelledby="house-h2">
+      <div class="container">
+        <p class="eyebrow">The house</p>
+        <h2 id="house-h2" class="section-h2">801 W 56th St, Kansas City MO 64113</h2>
+        <p class="house-blurb">A 1925 single-family home on a half-acre lot in one of Kansas City's most walkable neighborhoods. Listing details provided by Heartland MLS (#2613841).</p>
+
+        <div class="house-stat-row">
+          <div class="house-stat"><span class="num">7</span><span class="label">Bedrooms</span></div>
+          <div class="house-stat"><span class="num">4.5</span><span class="label">Bathrooms</span></div>
+          <div class="house-stat"><span class="num">5,230</span><span class="label">Sq ft</span></div>
+          <div class="house-stat"><span class="num">0.51</span><span class="label">Acres</span></div>
+          <div class="house-stat"><span class="num">1925</span><span class="label">Built</span></div>
+          <div class="house-stat"><span class="num">64113</span><span class="label">Zip</span></div>
+        </div>
+
+        <div class="listing-links">
+          <a href="https://www.reecenichols.com/realestate/details/79629327/801-w-56th-street-kansas-city-mo-64113" target="_blank" rel="noopener">View on ReeceNichols</a>
+          <a href="https://www.zillow.com/homedetails/801-W-56th-St-Kansas-City-MO-64113/2353145_zpid/" target="_blank" rel="noopener">View on Zillow</a>
+          <a href="https://www.redfin.com/MO/Kansas-City/801-W-56th-St-64113/home/93165002" target="_blank" rel="noopener">View on Redfin</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- AGENT -->
+    <section id="agent" class="section-pad" aria-labelledby="agent-h2">
+      <div class="container">
+        <p class="eyebrow" style="text-align: center;">Make an offer</p>
+        <h2 id="agent-h2" class="section-h2" style="text-align: center;">Talk to the listing agent.</h2>
+
+        <div class="agent-card">
+          <div class="agent-mark" aria-hidden="true">JP</div>
+          <div class="agent-info">
+            <h3>John Pfeifauf</h3>
+            <p class="firm">ReeceNichols &middot; Country Club Plaza</p>
+            <p>&#128231; <a href="mailto:Fife@reecenichols.com">Fife@reecenichols.com</a></p>
+            <p>&#128241; Direct: <a href="tel:+18168056916">816.805.6916</a></p>
+            <p>&#9742;&#65039; Office: <a href="tel:+18167094900">816.709.4900</a></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
   <footer>
-    <p>
-      <a href="/">Everyday Produce</a> · 7300 Wornall Rd, Kansas City MO · <a href="tel:8169426344">(816) 942-6344</a>
-    </p>
-    <p style="margin-top: 8px; opacity: 0.7;">
-      Offer presented by Everyday Produce. Not a real estate agency. All property details via Heartland MLS.
-    </p>
+    <p><strong>Everyday Produce Market</strong> &middot; 7300 Wornall Rd, Kansas City MO &middot; <a href="tel:+18169426344">(816) 942-6344</a></p>
+    <p class="dim">Offer presented by Everyday Produce Market. Not a real estate agency. All property details via Heartland MLS.</p>
   </footer>
 
 </body>
