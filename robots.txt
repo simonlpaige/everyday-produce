@@ -1,0 +1,6 @@
+# robots.txt for everyday-produce.com
+User-agent: *
+Allow: /
+
+# AI agent overview: /llms.txt
+Sitemap: https://everyday-produce.com/sitemap.xml
