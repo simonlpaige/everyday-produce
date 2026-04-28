@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<title>Everyday Produce Market — Logo Refresh</title>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+<style>
+  html, body { margin: 0; padding: 0; background: #E8E3D5; font-family: Inter, sans-serif; }
+  * { box-sizing: border-box; }
+
+  /* Global "outlined" text treatment for branded copy */
+  .ep-outline {
+    -webkit-text-stroke: 2px #2A1A0E;
+    paint-order: stroke fill;
+  }
+</style>
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+</head>
+<body>
+<div id="root"></div>
+
+<script type="text/babel" src="design-canvas.jsx"></script>
+<script type="text/babel" src="logo.jsx"></script>
+<script type="text/babel" src="deliverables.jsx"></script>
+
+<script type="text/babel">
+const { DesignCanvas, DCSection, DCArtboard } = window;
+
+function App() {
+  return (
+    <DesignCanvas title="Everyday Produce Market — logo system">
+      {/* --- PRIMARY LOGO LOCKUP --- */}
+      <DCSection id="primary" title="Primary lockup">
+        <DCArtboard id="horizontal" label="Horizontal · full color" width={900} height={460}>
+          <div style={{width:900, height:460, background:'#F5EDD8', display:'flex', alignItems:'center', justifyContent:'center'}}>
+            <EPLogoHorizontal width={820} showTagline={true}/>
+          </div>
+        </DCArtboard>
+        <DCArtboard id="horizontal-white" label="Horizontal · on cream" width={900} height={460}>
+          <div style={{width:900, height:460, background:'#FFFFFF', display:'flex', alignItems:'center', justifyContent:'center'}}>
+            <EPLogoHorizontal width={820} showTagline={true}/>
+          </div>
+        </DCArtboard>
+        <DCArtboard id="stacked" label="Stacked · compact" width={500} height={600}>
+          <div style={{width:500, height:600, background:'#F5EDD8', display:'flex', alignItems:'center', justifyContent:'center'}}>
+            <EPLogoStacked width={440} showTagline={true}/>
+          </div>
+        </DCArtboard>
+      </DCSection>
+
+      {/* --- ORIGINAL COMPARISON --- */}
+      <DCSection id="compare" title="Before / after">
+        <DCArtboard id="before" label="Original" width={820} height={420}>
+          <div style={{width:820, height:420, background:'#FFFFFF', display:'flex', alignItems:'center', justifyContent:'center'}}>
+            <img src="uploads/logo-2-horizontal.png" alt="original" style={{maxWidth:'92%', maxHeight:'90%'}}/>
+          </div>
+        </DCArtboard>
+        <DCArtboard id="after" label="Refined" width={820} height={420}>
+          <div style={{width:820, height:420, background:'#FFFFFF', display:'flex', alignItems:'center', justifyContent:'center'}}>
+            <EPLogoHorizontal width={760} showTagline={true}/>
+          </div>
+        </DCArtboard>
+      </DCSection>
+
+      {/* --- MONOCHROME --- */}
+      <DCSection id="mono" title="Monochrome">
+        <DCArtboard id="mono-dark" label="Single-ink · ink on cream" width={900} height={460}>
+          <div style={{width:900, height:460, background:'#F5EDD8', display:'flex', alignItems:'center', justifyContent:'center'}}>
+            <EPLogoHorizontal width={820} showTagline={true} mono={true} monoColor="#2A1A0E"/>
+          </div>
+        </DCArtboard>
+        <DCArtboard id="mono-reverse" label="Reversed · cream on red" width={900} height={460}>
+          <div style={{width:900, height:460, background: '#B8232A', display:'flex', alignItems:'center', justifyContent:'center'}}>
+            <EPLogoHorizontal width={820} showTagline={true} mono={true} monoColor="#F5EDD8"/>
+          </div>
+        </DCArtboard>
+        <DCArtboard id="mono-black" label="Pure black · for fax/stamp" width={600} height={460}>
+          <div style={{width:600, height:460, background:'#FFFFFF', display:'flex', alignItems:'center', justifyContent:'center'}}>
+            <EPLogoStacked width={500} showTagline={true} mono={true} monoColor="#000000"/>
+          </div>
+        </DCArtboard>
+      </DCSection>
+
+      {/* --- CIRCLE BADGE --- */}
+      <DCSection id="badge" title="Circle badge">
+        <DCArtboard id="badge-color" label="Full color · 500px" width={560} height={560}>
+          <div style={{width:560, height:560, background:'#F0EBDF', display:'flex', alignItems:'center', justifyContent:'center'}}>
+            <CircleBadge size={500}/>
+          </div>
+        </DCArtboard>
+        <DCArtboard id="badge-mono" label="Single-ink" width={560} height={560}>
+          <div style={{width:560, height:560, background:'#F5EDD8', display:'flex', alignItems:'center', justifyContent:'center'}}>
+            <CircleBadge size={500} mono={true} monoColor="#2A1A0E"/>
+          </div>
+        </DCArtboard>
+        <DCArtboard id="badge-sizes" label="Sticker / stamp sizes" width={560} height={560}>
+          <div style={{width:560, height:560, background:'#F0EBDF', display:'flex', alignItems:'center', justifyContent:'center', gap: 20}}>
+            <CircleBadge size={240}/>
+            <div style={{display:'flex', flexDirection:'column', gap: 16}}>
+              <CircleBadge size={160}/>
+              <CircleBadge size={90}/>
+            </div>
+          </div>
+        </DCArtboard>
+      </DCSection>
+
+      {/* --- FAVICON --- */}
+      <DCSection id="favicon" title="Favicon">
+        <DCArtboard id="favicon-set" label="16 · 32 · 64 + browser tab preview" width={820} height={240}>
+          <FaviconSet/>
+        </DCArtboard>
+      </DCSection>
+
+      {/* --- BUSINESS CARD --- */}
+      <DCSection id="card" title="Business card">
+        <DCArtboard id="card-both" label="Front + back · 3.5″ × 2″" width={1520} height={500}>
+          <BusinessCardSet/>
+        </DCArtboard>
+      </DCSection>
+
+      {/* --- WEB BANNER --- */}
+      <DCSection id="banner" title="Web banner (homepage hero)">
+        <DCArtboard id="banner-1" label="1200 × 360" width={1240} height={400}>
+          <div style={{width:1240, height:400, background:'#F0EBDF', padding: 20, display:'flex', alignItems:'center', justifyContent:'center'}}>
+            <WebBanner/>
+          </div>
+        </DCArtboard>
+      </DCSection>
+
+      {/* --- SOCIAL AVATAR --- */}
+      <DCSection id="avatar" title="Social avatar">
+        <DCArtboard id="avatar-lg" label="400px master" width={480} height={480}>
+          <div style={{width:480, height:480, background:'#F0EBDF', display:'flex', alignItems:'center', justifyContent:'center'}}>
+            <SocialAvatar size={400}/>
+          </div>
+        </DCArtboard>
+        <DCArtboard id="avatar-context" label="Contextual sizes" width={600} height={480}>
+          <div style={{width:600, height:480, background:'#F0EBDF', display:'flex', flexDirection:'column', alignItems:'center', justifyContent:'center', gap: 24, padding: 20}}>
+            <div style={{display:'flex', gap: 20, alignItems:'center'}}>
+              <SocialAvatar size={160}/>
+              <SocialAvatar size={96}/>
+              <SocialAvatar size={56}/>
+              <SocialAvatar size={40}/>
+            </div>
+            {/* Mock social row */}
+            <div style={{width:'100%', background:'#fff', border:'1px solid #DDD', borderRadius: 8, padding: 14, display:'flex', gap: 12, alignItems:'center'}}>
+              <div style={{borderRadius: 8, overflow:'hidden'}}><SocialAvatar size={48}/></div>
+              <div style={{display:'flex', flexDirection:'column'}}>
+                <div style={{fontFamily:'Inter, sans-serif', fontWeight:600, fontSize: 14, color:'#111'}}>Everyday Produce Market</div>
+                <div style={{fontFamily:'Inter, sans-serif', fontSize: 12, color:'#666'}}>@everydayproduce · Kansas City, MO</div>
+              </div>
+            </div>
+          </div>
+        </DCArtboard>
+      </DCSection>
+
+      {/* --- SIGNAGE --- */}
+      <DCSection id="signage" title="Signage mockup">
+        <DCArtboard id="storefront" label="Storefront · awning + sign + A-frame" width={1140} height={660}>
+          <SignageMockup/>
+        </DCArtboard>
+      </DCSection>
+
+    </DesignCanvas>
+  );
+}
+
+ReactDOM.createRoot(document.getElementById('root')).render(<App/>);
+</script>
+</body>
+</html>

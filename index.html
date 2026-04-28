@@ -183,6 +183,25 @@
       width: 100%; aspect-ratio: 4/3; object-fit: cover; display: block;
       border-bottom: 2px solid var(--ink);
     }
+    .cooler-board {
+      width: 100%; aspect-ratio: 4/3; display: flex; flex-direction: column;
+      justify-content: center; padding: 20px 22px;
+      background: #1a3a2a; border-bottom: 2px solid var(--ink);
+      box-sizing: border-box;
+    }
+    .cooler-board-title {
+      font-family: 'Oswald', sans-serif; font-weight: 700; font-size: 15px;
+      text-transform: uppercase; letter-spacing: 0.12em;
+      color: #a8d8b8; margin-bottom: 12px;
+    }
+    .cooler-board-list {
+      list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 4px 16px;
+    }
+    .cooler-board-list li {
+      font-family: 'Oswald', sans-serif; font-weight: 400; font-size: 13px;
+      color: #e8f4ec; text-transform: uppercase; letter-spacing: 0.04em;
+      line-height: 1.4;
+    }
     .season-body { padding: 20px 24px 24px; }
     .s-name {
       font-family: 'Oswald', sans-serif; font-weight: 700; font-size: 20px;
@@ -556,13 +575,37 @@
             </div>
           </div>
 
-          <!-- Local free-range eggs -->
+          <!-- Cooler list -->
           <div class="season-card">
-            <img class="season-photo" src="photos/gallery-preserves-stand.jpg" alt="Handwritten cooler price board next to local jams and preserves" loading="lazy" width="800" height="600">
+            <div class="cooler-board" aria-label="In the cooler">
+              <p class="cooler-board-title">In the Cooler</p>
+              <ul class="cooler-board-list">
+                <li>Broccoli</li>
+                <li>Cauliflower</li>
+                <li>Red Grapes</li>
+                <li>Green Grapes</li>
+                <li>Green Onions</li>
+                <li>Carrots</li>
+                <li>Green Beans</li>
+                <li>Honeycrisp Apples</li>
+                <li>Asparagus</li>
+                <li>Jalape&#241;os</li>
+                <li>Head Lettuce</li>
+                <li>Pineapple</li>
+                <li>Romaine Lettuce</li>
+                <li>Free-Range Eggs</li>
+                <li>Fresh Salsa</li>
+                <li>Yellow Squash</li>
+                <li>Red Peppers</li>
+                <li>Zucchini</li>
+                <li>Yellow Peppers</li>
+                <li>Green Peppers</li>
+              </ul>
+            </div>
             <div class="season-body">
-              <p class="s-name">Local free-range eggs</p>
-              <p class="s-status">Kept in the cooler. Ask at the register.</p>
-              <p class="s-note">Plus local jams, preserves, and fresh salsa (hot or mild).</p>
+              <p class="s-name">What&rsquo;s in the cooler</p>
+              <p class="s-status">Updated regularly &mdash; stock changes daily.</p>
+              <p class="s-note">Local free-range eggs, fresh salsa, and seasonal veg. Ask at the register if you don&rsquo;t see it.</p>
             </div>
           </div>
 

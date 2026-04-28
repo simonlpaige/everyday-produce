@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<title>Everyday Produce Market — Logo System (Print)</title>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+<style>
+  html, body { margin: 0; padding: 0; background: #FFFFFF; font-family: Inter, sans-serif; color: #2A1A0E; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  * { box-sizing: border-box; }
+
+  .page {
+    width: 11in;
+    height: 8.5in;
+    padding: 0.5in;
+    display: flex;
+    flex-direction: column;
+    page-break-after: always;
+    break-after: page;
+    break-inside: avoid;
+    position: relative;
+    background: #FFFFFF;
+    overflow: hidden;
+  }
+  .page:last-child { page-break-after: auto; break-after: auto; }
+
+  .page-header {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    border-bottom: 1px solid #2A1A0E;
+    padding-bottom: 10px;
+    margin-bottom: 24px;
+  }
+  .page-title {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+    font-size: 22px;
+    letter-spacing: 0.06em;
+    color: #2A1A0E;
+    text-transform: uppercase;
+  }
+  .page-brand {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 500;
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    color: #2F7A3A;
+  }
+  .page-body {
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    min-height: 0;
+  }
+  .caption {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 500;
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    color: #6B6560;
+    text-transform: uppercase;
+  }
+  .row { display: flex; gap: 28px; align-items: center; justify-content: center; flex-wrap: wrap; }
+  .col { display: flex; flex-direction: column; align-items: center; gap: 8px; }
+  .stage { border: 1px solid #D9D2C0; }
+
+  @page { size: letter landscape; margin: 0; }
+  @media print {
+    html, body { background: #FFFFFF; }
+    .page { page-break-after: always; break-after: page; }
+  }
+</style>
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+</head>
+<body>
+<div id="root"></div>
+
+<script type="text/babel" src="logo.jsx"></script>
+<script type="text/babel" src="deliverables.jsx"></script>
+
+<script type="text/babel">
+function Page({ title, children }) {
+  return (
+    <div className="page">
+      <div className="page-header">
+        <div className="page-title">{title}</div>
+        <div className="page-brand">EVERYDAY PRODUCE MARKET · LOGO SYSTEM</div>
+      </div>
+      <div className="page-body">{children}</div>
+    </div>
+  );
+}
+
+function App() {
+  return (
+    <>
+      {/* 1. Cover — primary lockup */}
+      <Page title="01 · Primary lockup">
+        <div className="stage" style={{padding: 24}}>
+          <EPLogoHorizontal width={820} showTagline={true}/>
+        </div>
+        <div className="caption">Horizontal · full color · on cream</div>
+      </Page>
+
+      {/* 2. Stacked */}
+      <Page title="02 · Stacked lockup">
+        <div className="stage" style={{padding: 24, background:'#F5EDD8'}}>
+          <EPLogoStacked width={440} showTagline={true}/>
+        </div>
+        <div className="caption">Stacked · compact — for square placements</div>
+      </Page>
+
+      {/* 3. Before / after */}
+      <Page title="03 · Before / after">
+        <div className="row" style={{alignItems:'flex-end'}}>
+          <div className="col">
+            <div className="stage" style={{padding: 16, background:'#FFFFFF'}}>
+              <img src="uploads/logo-2-horizontal.png" alt="original" style={{width: 440, height: 'auto', display:'block'}}/>
+            </div>
+            <div className="caption">Original</div>
+          </div>
+          <div className="col">
+            <div className="stage" style={{padding: 16, background:'#FFFFFF'}}>
+              <EPLogoHorizontal width={460} showTagline={true}/>
+            </div>
+            <div className="caption">Refined</div>
+          </div>
+        </div>
+      </Page>
+
+      {/* 4. Monochrome */}
+      <Page title="04 · Monochrome">
+        <div className="row" style={{alignItems:'stretch'}}>
+          <div className="col">
+            <div className="stage" style={{padding: 16, background:'#F5EDD8', width: 460}}>
+              <EPLogoHorizontal width={420} showTagline={true} mono={true} monoColor="#2A1A0E"/>
+            </div>
+            <div className="caption">Ink on cream</div>
+          </div>
+          <div className="col">
+            <div className="stage" style={{padding: 16, background:'#B8232A', width: 460}}>
+              <EPLogoHorizontal width={420} showTagline={true} mono={true} monoColor="#F5EDD8"/>
+            </div>
+            <div className="caption">Reversed · cream on red</div>
+          </div>
+        </div>
+        <div className="stage" style={{padding: 16, background:'#FFFFFF'}}>
+          <EPLogoStacked width={320} showTagline={true} mono={true} monoColor="#000000"/>
+        </div>
+        <div className="caption">Pure black · fax / stamp</div>
+      </Page>
+
+      {/* 5. Circle badge */}
+      <Page title="05 · Circle badge">
+        <div className="row" style={{gap: 30}}>
+          <div className="col">
+            <CircleBadge size={360}/>
+            <div className="caption">Full color</div>
+          </div>
+          <div className="col">
+            <CircleBadge size={360} mono={true} monoColor="#2A1A0E"/>
+            <div className="caption">Single-ink</div>
+          </div>
+        </div>
+      </Page>
+
+      {/* 6. Favicon */}
+      <Page title="06 · Favicon">
+        <FaviconSet/>
+      </Page>
+
+      {/* 7. Business card */}
+      <Page title="07 · Business card">
+        <div className="row" style={{gap: 36}}>
+          <div className="col">
+            <BusinessCardFront/>
+            <div className="caption">Front · 3.5″ × 2″</div>
+          </div>
+          <div className="col">
+            <BusinessCardBack/>
+            <div className="caption">Back</div>
+          </div>
+        </div>
+      </Page>
+
+      {/* 8. Web banner */}
+      <Page title="08 · Web banner">
+        <div style={{transform:'scale(0.78)', transformOrigin:'center'}}>
+          <WebBanner/>
+        </div>
+        <div className="caption">Homepage hero · 1200 × 360</div>
+      </Page>
+
+      {/* 9. Social avatar */}
+      <Page title="09 · Social avatar">
+        <div className="row" style={{alignItems:'center', gap: 40}}>
+          <SocialAvatar size={340}/>
+          <div className="col" style={{gap: 16, alignItems:'flex-start'}}>
+            <div className="row" style={{gap: 16, alignItems:'center'}}>
+              <SocialAvatar size={120}/>
+              <SocialAvatar size={72}/>
+              <SocialAvatar size={48}/>
+            </div>
+            <div className="caption">Contextual sizes</div>
+          </div>
+        </div>
+      </Page>
+
+      {/* 10. Signage */}
+      <Page title="10 · Signage mockup">
+        <div style={{transform:'scale(0.72)', transformOrigin:'center'}}>
+          <SignageMockup/>
+        </div>
+        <div className="caption">Storefront · awning, sign, A-frame</div>
+      </Page>
+    </>
+  );
+}
+
+ReactDOM.createRoot(document.getElementById('root')).render(<App/>);
+
+// Wait for fonts + render, then print
+(async () => {
+  try { if (document.fonts && document.fonts.ready) await document.fonts.ready; } catch(e){}
+  await new Promise(r => setTimeout(r, 800));
+  window.print();
+})();
+</script>
+</body>
+</html>
