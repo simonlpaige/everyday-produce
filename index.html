@@ -417,6 +417,71 @@
       box-shadow: 3px 3px 0 rgba(245,237,216,0.18);
     }
     .callout-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+    /* TODAY'S NEWS BANNER (sits below the house-banner) */
+    .news-banner {
+      background: var(--green);
+      color: var(--cream);
+      border-bottom: 2px solid var(--ink);
+      text-align: center;
+      padding: 14px 20px;
+      font-family: 'Oswald', sans-serif;
+      font-weight: 500;
+      font-size: 14px;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+    .news-banner strong { font-weight: 700; }
+    @media (max-width: 640px) {
+      .news-banner { font-size: 13px; padding: 12px 16px; }
+    }
+
+    /* SEASON LEDE (the "Right now" line) */
+    .season-lede {
+      font-size: 18px;
+      line-height: 1.6;
+      margin-top: 16px;
+      max-width: 760px;
+      color: var(--ink);
+    }
+
+    /* SEASON VIDEOS (today's arrivals) */
+    .season-videos {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      margin: 32px 0 40px;
+    }
+    @media (max-width: 768px) { .season-videos { grid-template-columns: 1fr; gap: 16px; } }
+    .season-videos figure {
+      border: 2px solid var(--ink);
+      box-shadow: var(--shadow);
+      border-radius: 4px;
+      overflow: hidden;
+      background: var(--cream);
+      margin: 0;
+    }
+    .season-videos video {
+      display: block;
+      width: 100%;
+      height: auto;
+      aspect-ratio: 16/9;
+      object-fit: cover;
+      background: #000;
+      border-bottom: 2px solid var(--ink);
+    }
+    .season-videos figcaption {
+      padding: 12px 16px;
+      font-family: 'Oswald', sans-serif;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--ink);
+      background: var(--cream);
+    }
+
+    /* Gallery: ensure <picture> wrappers fill their tile */
+    .gallery-item picture { display: block; width: 100%; height: 100%; }
   </style>
 </head>
 <body>
@@ -431,6 +496,11 @@
       801 W 56th St &middot; MLS #2613841
     </span>
     <a href="house.html" class="house-cta">See the offer →</a>
+  </div>
+
+  <!-- TODAY'S NEWS BANNER -->
+  <div class="news-banner" role="region" aria-label="Today at the stand">
+    <span>🍅 <strong>Today:</strong> first local tomatoes + seeded watermelon are in! Plus loads of fresh potted flowers. 🍉</span>
   </div>
 
   <main id="main">
@@ -531,6 +601,24 @@
         <div class="season-header">
           <p class="eyebrow">What's in season</p>
           <h2 class="section-h2">This week at the stand</h2>
+          <p class="season-lede">Right now: first local homegrown tomatoes are in, plus red ripe seeded watermelon &mdash; both started today. Fresh potted flowers fully stocked for the weekend.</p>
+        </div>
+
+        <div class="season-videos">
+          <figure>
+            <video controls preload="metadata" poster="photos/poster-tomatoes-2026-05.jpg" playsinline aria-label="Video of the season's first local homegrown tomatoes">
+              <source src="videos/tomatoes-local-2026-05.mp4" type="video/mp4">
+              Video of the season's first local homegrown tomatoes at Everyday Produce Market.
+            </video>
+            <figcaption>First local tomatoes &mdash; just arrived today.</figcaption>
+          </figure>
+          <figure>
+            <video controls preload="metadata" poster="photos/poster-watermelon-2026-05.jpg" playsinline aria-label="Video of red ripe seeded watermelons available now">
+              <source src="videos/watermelon-seeded-2026-05.mp4" type="video/mp4">
+              Video of red ripe seeded watermelons available now at Everyday Produce Market.
+            </video>
+            <figcaption>Red ripe seeded watermelon &mdash; in today.</figcaption>
+          </figure>
         </div>
 
         <div class="season-grid">
@@ -632,6 +720,18 @@
         </div>
 
         <div class="gallery-grid">
+          <div class="gallery-item wide">
+            <picture>
+              <source srcset="photos/gallery-tomato-crate-2026-05.webp" type="image/webp">
+              <img src="photos/gallery-tomato-crate-2026-05.jpg" alt="Crate of fresh local tomatoes, just delivered to Everyday Produce Market" loading="lazy" width="1600" height="1200">
+            </picture>
+          </div>
+          <div class="gallery-item wide">
+            <picture>
+              <source srcset="photos/gallery-storefront-2026-05.webp" type="image/webp">
+              <img src="photos/gallery-storefront-2026-05.jpg" alt="Storefront of Everyday Produce Market in Waldo, Kansas City" loading="lazy" width="1600" height="1200">
+            </picture>
+          </div>
           <div class="gallery-item tall">
             <img src="photos/gallery-flowers-front.jpg" alt="Petunias and gazanias in front of the storefront at 7300 Wornall" loading="lazy" width="600" height="800">
           </div>
