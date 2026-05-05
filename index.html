@@ -339,86 +339,63 @@
       text-align: center; font-family: 'Inter', sans-serif; font-size: 14px;
       color: rgba(245,237,216,0.38);
     }
-    /* HOUSE BANNER (top of page) */
-    .house-banner {
-      background: var(--yellow, #F2C438);
-      color: var(--ink, #2A1A0E);
-      border-bottom: 2px solid var(--ink, #2A1A0E);
-      text-align: center;
-      padding: 14px 20px;
-      font-family: 'Oswald', sans-serif;
-      font-weight: 500;
-      font-size: 14px;
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 14px;
-    }
-    .house-banner strong {
-      font-weight: 700;
-    }
-    .house-banner .house-cta {
-      display: inline-block;
-      background: var(--ink, #2A1A0E);
-      color: var(--cream, #F5EDD8);
-      text-decoration: none;
-      padding: 8px 18px;
-      border-radius: 4px;
-      border: 2px solid var(--ink, #2A1A0E);
-      font-family: 'Oswald', sans-serif;
-      font-weight: 700;
-      font-size: 13px;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      transition: background 0.15s, color 0.15s;
-    }
-    .house-banner .house-cta:hover,
-    .house-banner .house-cta:focus {
-      background: var(--red, #B8232A);
-      color: var(--cream, #F5EDD8);
-    }
-    @media (max-width: 640px) {
-      .house-banner { font-size: 13px; padding: 12px 16px; flex-direction: column; gap: 10px; }
-      .house-banner .house-cta { font-size: 12px; padding: 8px 16px; }
-    }
+    /* MOTHER'S DAY CALLOUT */
 
-    /* HOUSE CALLOUT (mid-page, richer card) */
-    #house-callout { background: var(--ink, #2A1A0E); color: var(--cream, #F5EDD8); border-top: 2px solid var(--ink, #2A1A0E); border-bottom: 2px solid var(--ink, #2A1A0E); }
-    .house-callout-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; }
-    @media (max-width: 768px) { .house-callout-inner { grid-template-columns: 1fr; gap: 24px; } }
-    #house-callout .eyebrow { color: var(--yellow, #F2C438); }
-    #house-callout h2 { font-family: 'Alfa Slab One', serif; font-size: clamp(26px, 3.8vw, 40px); line-height: 1.1; margin: 8px 0 16px; }
-    #house-callout p { font-size: 17px; line-height: 1.7; margin-bottom: 12px; opacity: 0.88; }
-    #house-callout .callout-meta { font-family: 'Oswald', sans-serif; font-size: 13px; text-transform: uppercase; letter-spacing: 0.12em; color: var(--yellow, #F2C438); margin-bottom: 20px; }
-    #house-callout .callout-cta {
-      display: inline-block; background: var(--yellow, #F2C438); color: var(--ink, #2A1A0E);
-      padding: 14px 28px; border-radius: 4px; border: 2px solid var(--ink, #2A1A0E);
-      font-family: 'Oswald', sans-serif; font-weight: 700; font-size: 14px;
-      letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none;
-      transition: background 0.15s, color 0.15s;
+    .mothers-day-callout {
+      background: var(--ink);
+      color: var(--cream);
+      border: 2px solid var(--ink);
+      box-shadow: 4px 4px 0 rgba(42,26,14,0.18);
+      border-radius: 4px;
+      padding: clamp(24px, 4vw, 44px);
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 32px;
+      align-items: center;
     }
-    #house-callout .callout-cta:hover,
-    #house-callout .callout-cta:focus { background: var(--red, #B8232A); color: var(--cream, #F5EDD8); }
-    .house-stat-row { display: flex; flex-wrap: wrap; gap: 24px; margin-bottom: 24px; }
-    .house-stat { font-family: 'Oswald', sans-serif; }
-    .house-stat .num { font-size: 24px; font-weight: 700; color: var(--cream, #F5EDD8); line-height: 1; }
-    .house-stat .label { font-size: 11px; text-transform: uppercase; letter-spacing: 0.14em; color: var(--yellow, #F2C438); opacity: 0.82; margin-top: 4px; display: block; }
-    .callout-photos {
-      display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px;
-      margin: 28px 0;
+    @media (max-width: 820px) { .mothers-day-callout { grid-template-columns: 1fr; } }
+    .mothers-day-callout .eyebrow { color: var(--yellow); }
+    .mothers-day-callout h2 {
+      font-family: 'Alfa Slab One', serif;
+      font-size: clamp(26px, 4vw, 42px);
+      line-height: 1.1;
+      margin: 8px 0 16px;
     }
-    @media (max-width: 480px) { .callout-photos { grid-template-columns: 1fr; } }
+    .mothers-day-callout p { font-size: 17px; line-height: 1.7; margin-bottom: 16px; opacity: 0.9; }
+    .mothers-day-callout .callout-cta {
+      display: inline-block;
+      background: var(--yellow);
+      color: var(--ink);
+      padding: 14px 28px;
+      border-radius: 4px;
+      border: 2px solid var(--cream);
+      font-family: 'Oswald', sans-serif;
+      font-weight: 700;
+      font-size: 14px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      text-decoration: none;
+      box-shadow: 2px 2px 0 rgba(245,237,216,0.22);
+    }
+    .mothers-day-callout .callout-cta:hover,
+    .mothers-day-callout .callout-cta:focus { background: var(--red); color: var(--cream); }
+    .callout-photo-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 18px; }
+    @media (max-width: 540px) { .callout-photo-grid { grid-template-columns: 1fr; } }
     .callout-photo {
-      border: 2px solid var(--cream, #F5EDD8); border-radius: 4px;
-      overflow: hidden; aspect-ratio: 4/3;
+      border: 2px solid var(--cream);
+      border-radius: 4px;
+      overflow: hidden;
+      aspect-ratio: 4/3;
       box-shadow: 3px 3px 0 rgba(245,237,216,0.18);
+      background: var(--cream);
     }
     .callout-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .house-stat-row { display: flex; flex-wrap: wrap; gap: 18px; }
+    .house-stat { font-family: 'Oswald', sans-serif; }
+    .house-stat .num { display: block; color: var(--cream); font-size: 21px; font-weight: 700; line-height: 1; text-transform: uppercase; }
+    .house-stat .label { display: block; color: var(--yellow); font-size: 11px; letter-spacing: 0.14em; margin-top: 5px; text-transform: uppercase; }
 
-    /* TODAY'S NEWS BANNER (sits below the house-banner) */
+/* TODAY'S NEWS BANNER */
     .news-banner {
       background: var(--green);
       color: var(--cream);
@@ -488,18 +465,9 @@
 <h1 style="position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden">Everyday Produce Market - Fresh Local Produce in Waldo, Kansas City</h1>
 
   <a class="skip-link" href="#main">Skip to main content</a>
-
-  <!-- HOUSE-FOR-PRODUCE BANNER (top of page) -->
-  <div class="house-banner" role="region" aria-label="Special home buyer offer">
-    <span>
-      🏡 <strong>Buy this house, eat free produce all season.</strong>
-      801 W 56th St &middot; MLS #2613841
-    </span>
-  </div>
-
-  <!-- TODAY'S NEWS BANNER -->
+<!-- TODAY'S NEWS BANNER -->
   <div class="news-banner" role="region" aria-label="Today at the stand">
-    <span>🍅 <strong>Today:</strong> first local tomatoes + seeded watermelon are in! Plus loads of fresh potted flowers. 🍉</span>
+    <span>🌸 <strong>Mother's Day:</strong> plants and flowers sale is in full swing! Hanging baskets, blooms, and spring color are ready now. 🌼</span>
   </div>
 
   <main id="main">
@@ -788,14 +756,14 @@
         <div class="house-callout mothers-day-callout">
           <div class="callout-copy">
             <p class="eyebrow">Mother's Day weekend</p>
-            <h2>Plants and flowers are in full swing</h2>
+            <h2>Mother's Day plants and flowers sale is in full swing</h2>
             <p>Konrad has the stand packed with hanging baskets, blooms, and spring color for Mother's Day. Come pick out something bright while the selection is good.</p>
             <a href="#visit" class="callout-cta">Come shop the Mother's Day sale &rarr;</a>
           </div>
           <div class="callout-card">
             <div class="callout-photo-grid">
-              <div class="callout-photo"><img src="photos/mothers-day/mothers-day-flowers-1.jpg" alt="Mother's Day flowers and plants at Everyday Produce" loading="lazy" width="600" height="450"></div>
-              <div class="callout-photo"><img src="photos/mothers-day/mothers-day-flowers-2.jpg" alt="Colorful spring plants ready for Mother's Day at Everyday Produce" loading="lazy" width="600" height="450"></div>
+              <div class="callout-photo"><img src="photos/gallery-flowers-front.jpg" alt="Mother's Day flowers and plants at Everyday Produce" loading="lazy" width="600" height="450"></div>
+              <div class="callout-photo"><img src="photos/gallery-flower-rack.jpg" alt="Colorful spring plants ready for Mother's Day at Everyday Produce" loading="lazy" width="600" height="450"></div>
             </div>
             <div class="house-stat-row">
               <div class="house-stat"><span class="num">Fresh</span><span class="label">flowers</span></div>
@@ -970,3 +938,4 @@
 
 </body>
 </html>
+
