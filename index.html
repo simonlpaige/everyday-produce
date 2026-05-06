@@ -506,6 +506,56 @@
       display: block;
       border-radius: 20px;
     }
+  
+    /* Mother's Day sale photos: show the full original frame. No crop, no fixed-height card. */
+    .mothers-day-full-gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1rem;
+      align-items: start;
+      margin: 1.25rem 0;
+    }
+
+    .mothers-day-full-card {
+      margin: 0;
+      padding: 0.5rem;
+      border-radius: 1rem;
+      background: #fff8ea;
+      border: 1px solid rgba(42, 26, 14, 0.16);
+      box-shadow: 0 10px 24px rgba(42, 26, 14, 0.10);
+    }
+
+    .mothers-day-full-card img {
+      display: block;
+      width: 100%;
+      height: auto;
+      max-height: none;
+      aspect-ratio: auto;
+      object-fit: contain;
+      object-position: center center;
+      border-radius: 0.75rem;
+      background: #fff8ea;
+    }
+  
+    /* Final media safety override: these customer-supplied sale photos must never be cropped. */
+    .callout-photo.mothers-day-photo,
+    .mothers-day-full-card {
+      height: auto !important;
+      max-height: none !important;
+      aspect-ratio: auto !important;
+      overflow: visible !important;
+    }
+
+    .callout-photo.mothers-day-photo img,
+    .mothers-day-full-card img {
+      display: block !important;
+      width: 100% !important;
+      height: auto !important;
+      max-height: none !important;
+      aspect-ratio: auto !important;
+      object-fit: contain !important;
+      object-position: center center !important;
+    }
   </style>
 </head>
 <body>
@@ -601,8 +651,8 @@
           </div>
           <div class="callout-card">
             <div class="callout-photo-grid">
-              <div class="callout-photo mothers-day-photo"><img src="photos/mothers-day/mothers-day-flowers-uncropped-1000013849.jpg?v=5" alt="Mother's Day potted plants and flowers outside Everyday Produce Market" loading="lazy" width="1400" height="1963"></div>
-              <div class="callout-photo mothers-day-photo"><img src="photos/mothers-day/mothers-day-flowers-uncropped-1000013849.jpg?v=5" alt="Mother's Day flowers and hanging baskets outside Everyday Produce Market" loading="lazy" width="1400" height="1963"></div>
+              <div class="callout-photo mothers-day-photo"><img src="photos/mothers-day/mothers-day-full-1000013848.jpg?v=10" alt="Mother's Day potted plants outside Everyday Produce Market" loading="eager" width="1200" height="1600"></div>
+              <div class="callout-photo mothers-day-photo"><img src="photos/mothers-day/mothers-day-full-1000013849.jpg?v=10" alt="Mother's Day flowers and hanging baskets outside Everyday Produce Market" loading="eager" width="1200" height="1600"></div>
             </div>
             <div class="house-stat-row">
               <div class="house-stat"><span class="num">Fresh</span><span class="label">flowers</span></div>
@@ -771,13 +821,16 @@
               <source srcset="photos/gallery-storefront-2026-05.webp" type="image/webp">
               <img src="photos/gallery-storefront-2026-05.jpg" alt="Storefront of Everyday Produce Market in Waldo, Kansas City" loading="lazy" width="1600" height="1200">
             </picture>
-          </div>
-          <div class="gallery-item wide mothers-day-photo">
-            <img src="photos/mothers-day/mothers-day-flowers-uncropped-1000013848.jpg?v=7" alt="Mother's Day potted plants and flowers outside Everyday Produce Market" loading="lazy" width="1200" height="1680">
-          </div>
-          <div class="gallery-item wide mothers-day-photo">
-            <img src="photos/mothers-day/mothers-day-flowers-uncropped-1000013849.jpg?v=7" alt="Mother's Day flowers and hanging baskets outside Everyday Produce Market" loading="lazy" width="1200" height="1680">
-          </div>
+          </div>        </div>
+        <div class="mothers-day-full-gallery" aria-label="Mother's Day plants and flowers at Everyday Produce">
+          <figure class="mothers-day-full-card">
+            <img src="photos/mothers-day/mothers-day-full-1000013848.jpg?v=10" alt="Mother's Day potted plants outside Everyday Produce Market" loading="eager" width="1200" height="1600">
+          </figure>
+          <figure class="mothers-day-full-card">
+            <img src="photos/mothers-day/mothers-day-full-1000013849.jpg?v=10" alt="Mother's Day flowers and hanging baskets outside Everyday Produce Market" loading="eager" width="1200" height="1600">
+          </figure>
+        </div>
+        <div class="gallery-grid">
           <div class="gallery-item">
             <img src="photos/gallery-stand-interior.jpg" alt="Inside the green-striped tent with customers shopping" loading="lazy" width="800" height="600">
           </div>
@@ -987,4 +1040,7 @@
 
 </body>
 </html>
+
+
+
 
