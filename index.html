@@ -229,26 +229,44 @@
       background: var(--cream);
     }
     .gallery-item img {
-      width: 100%; height: 100%;
-      object-fit: cover; object-position: center center; display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center center;
+      display: block;
       transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
     }
     .gallery-item:hover img,
     .gallery-item:focus-within img { transform: scale(1.04); }
     .gallery-item.tall { grid-row: span 2; }
     .gallery-item.wide { grid-column: span 2; }
-    
-      .gallery-item.mothers-day-photo { min-height: 500px; }
+    .gallery-grid.bottom-gallery {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      grid-auto-rows: auto;
+      margin-top: 16px;
     }
-    
-      .gallery-item.mothers-day-photo { min-height: 460px; }
+    .bottom-gallery .gallery-item {
+      aspect-ratio: 4 / 3;
+    }
+    @media (max-width: 760px) {
+      .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+        grid-auto-rows: 220px;
+      }
+      .gallery-grid.bottom-gallery {
+        grid-template-columns: 1fr;
+      }
+      .gallery-item.wide { grid-column: span 2; }
+    }
+    @media (max-width: 520px) {
+      .gallery-grid { grid-template-columns: 1fr; }
+      .gallery-item.wide { grid-column: span 1; }
     }
     @media (prefers-reduced-motion: reduce) {
       .gallery-item img { transition: none; }
       .gallery-item:hover img,
       .gallery-item:focus-within img { transform: none; }
     }
-
     /* REVIEWS */
     #reviews { border-top: 2px solid var(--ink); }
     .reviews-grid {
@@ -680,7 +698,7 @@
           <img class="about-photo"
                src="photos/about-customers.jpg"
                alt="Konrad at the register helping a customer under the stand's awning on Wornall Rd"
-               width="800" height="600" loading="lazy">
+               width="1600" height="1067" loading="lazy">
 
         </div>
       </div>
@@ -716,7 +734,7 @@
 
           <!-- Hanging flower baskets - the hot seller right now -->
           <div class="season-card">
-            <img class="season-photo" src="photos/gallery-flowers.jpg" alt="Hanging baskets full of pink, orange, and yellow petunias" loading="lazy" width="800" height="600">
+            <img class="season-photo" src="photos/gallery-flowers.jpg" alt="Hanging baskets full of pink, orange, and yellow petunias" loading="lazy" width="1600" height="1067">
             <div class="season-body">
               <p class="s-name">Hanging flower baskets</p>
               <p class="s-status">Selling fast right now.</p>
@@ -726,7 +744,7 @@
 
           <!-- Bedding plants & potted flowers -->
           <div class="season-card">
-            <img class="season-photo" src="photos/gallery-flowers-cart.jpg" alt="Carts of begonias and bedding plants outside the stand" loading="lazy" width="800" height="600">
+            <img class="season-photo" src="photos/gallery-flowers-cart.jpg" alt="Carts of begonias and bedding plants outside the stand" loading="lazy" width="1600" height="1067">
             <div class="season-body">
               <p class="s-name">Bedding plants</p>
               <p class="s-status">Fresh in for spring.</p>
@@ -736,7 +754,7 @@
 
           <!-- Strawberries -->
           <div class="season-card">
-            <img class="season-photo" src="photos/gallery-strawberries.jpg" alt="Pints of fresh red strawberries in green cartons" loading="lazy" width="800" height="600">
+            <img class="season-photo" src="photos/gallery-strawberries.jpg" alt="Pints of fresh red strawberries in green cartons" loading="lazy" width="1600" height="1067">
             <div class="season-body">
               <p class="s-name">Strawberries</p>
               <p class="s-status">First flats of the season are in.</p>
@@ -746,7 +764,7 @@
 
           <!-- Asparagus & cool-season veg from the cooler -->
           <div class="season-card">
-            <img class="season-photo" src="photos/gallery-zucchini.jpg" alt="Trays of zucchini, yellow squash, and peppers" loading="lazy" width="800" height="600">
+            <img class="season-photo" src="photos/gallery-zucchini.jpg" alt="Trays of zucchini, yellow squash, and peppers" loading="lazy" width="1600" height="1067">
             <div class="season-body">
               <p class="s-name">Asparagus &amp; spring veg</p>
               <p class="s-status">In the cooler.</p>
@@ -790,7 +808,7 @@
 
           <!-- Honeycrisps + cooler fruit -->
           <div class="season-card">
-            <img class="season-photo" src="photos/gallery-tomato-basket.jpg" alt="Strawberries and pineapples on display" loading="lazy" width="800" height="600">
+            <img class="season-photo" src="photos/gallery-tomato-basket.jpg" alt="Strawberries and pineapples on display" loading="lazy" width="1600" height="1067">
             <div class="season-body">
               <p class="s-name">Pineapple, grapes, Honeycrisps</p>
               <p class="s-status">In every day.</p>
@@ -831,18 +849,18 @@
             <img src="photos/mothers-day/mothers-day-full-1000013849.jpg?v=10" alt="Mother's Day flowers and hanging baskets outside Everyday Produce Market" loading="eager" width="1200" height="1600">
           </figure>
         </div>
-        <div class="gallery-grid">
+        <div class="gallery-grid bottom-gallery">
           <div class="gallery-item">
-            <img src="photos/gallery-stand-interior.jpg" alt="Inside the green-striped tent with customers shopping" loading="lazy" width="800" height="600">
+            <img src="photos/gallery-stand-interior.jpg" alt="Inside the green-striped tent with customers shopping" loading="lazy" width="1600" height="1067">
           </div>
           <div class="gallery-item">
-            <img src="photos/gallery-corn.jpg" alt="Konrad at the register under the Checker-Board Corn sign" loading="lazy" width="800" height="600">
+            <img src="photos/gallery-corn.jpg" alt="Konrad at the register under the Checker-Board Corn sign" loading="lazy" width="1600" height="1067">
           </div>
           <div class="gallery-item">
-            <img src="photos/gallery-melons.jpg" alt="Watermelons, cantaloupes, and signage at the stand entrance" loading="lazy" width="800" height="600">
+            <img src="photos/gallery-melons.jpg" alt="Watermelons, cantaloupes, and signage at the stand entrance" loading="lazy" width="1600" height="1067">
           </div>
           <div class="gallery-item">
-            <img src="photos/gallery-avocados.jpg" alt="Tray of ripe California avocados" loading="lazy" width="800" height="600">
+            <img src="photos/gallery-avocados.jpg" alt="Tray of ripe California avocados" loading="lazy" width="1600" height="1067">
           </div>
         </div>
       </div>
