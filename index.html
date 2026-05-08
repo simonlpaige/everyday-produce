@@ -157,7 +157,8 @@
     }
     .about-text p { font-size: 17px; line-height: 1.7; margin-bottom: 16px; color: var(--ink); }
     .about-photo {
-      width: 100%; aspect-ratio: 4/3; object-fit: contain;
+      width: 100%; aspect-ratio: 4/3; object-fit: cover;
+      object-position: center center;
       border: 2px solid var(--ink); box-shadow: 3px 3px 0 rgba(42,26,14,0.15);
       border-radius: 4px;
     }
@@ -180,7 +181,7 @@
     }
     .season-card svg { width: 72px; height: 72px; margin: 28px 24px 16px; display: block; }
     .season-photo {
-      width: 100%; aspect-ratio: 4/3; object-fit: contain; display: block;
+      width: 100%; aspect-ratio: 4/3; object-fit: cover; object-position: center center; display: block;
       border-bottom: 2px solid var(--ink);
     }
     .cooler-board {
@@ -229,7 +230,7 @@
     }
     .gallery-item img {
       width: 100%; height: 100%;
-      object-fit: contain; display: block;
+      object-fit: cover; object-position: center center; display: block;
       transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
     }
     .gallery-item:hover img,
@@ -1040,6 +1041,8 @@
 
 </body>
 </html>
+
+
 
 
 
