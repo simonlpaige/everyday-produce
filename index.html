@@ -267,6 +267,73 @@
       .gallery-item:hover img,
       .gallery-item:focus-within img { transform: none; }
     }
+
+
+    /* WEEKEND UPDATE - Konrad photo drop */
+    .weekend-update-card {
+      background: var(--cream);
+      border: 2px solid var(--ink);
+      box-shadow: var(--shadow);
+      border-radius: 4px;
+      padding: clamp(20px, 3vw, 32px);
+      margin: 0 0 40px;
+    }
+    .weekend-update-card .eyebrow { color: var(--green); }
+    .weekend-update-card h3 {
+      font-family: 'Alfa Slab One', serif;
+      font-size: clamp(24px, 3.5vw, 38px);
+      line-height: 1.12;
+      margin: 6px 0 12px;
+    }
+    .weekend-update-card p {
+      max-width: 760px;
+      font-size: 17px;
+      line-height: 1.65;
+      margin-bottom: 16px;
+    }
+    .weekend-photo-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 22px;
+      align-items: start;
+    }
+    .weekend-photo-card {
+      background: #fff8ea;
+      border: 2px solid var(--ink);
+      box-shadow: var(--shadow);
+      border-radius: 4px;
+      overflow: hidden;
+      min-height: 100%;
+    }
+    .weekend-photo-card.featured { grid-column: span 2; }
+    .weekend-photo-card picture,
+    .weekend-photo-card img { display: block; width: 100%; }
+    .weekend-photo-card img {
+      height: auto;
+      object-fit: contain;
+      object-position: center center;
+      background: #fff8ea;
+    }
+    .weekend-photo-card figcaption {
+      border-top: 2px solid var(--ink);
+      padding: 10px 12px;
+      font-family: 'Oswald', sans-serif;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      line-height: 1.35;
+      color: var(--ink);
+    }
+    @media (max-width: 900px) {
+      .weekend-photo-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+    @media (max-width: 560px) {
+      .weekend-photo-grid { grid-template-columns: 1fr; }
+      .weekend-photo-card.featured { grid-column: span 1; }
+    }
+
     /* REVIEWS */
     #reviews { border-top: 2px solid var(--ink); }
     .reviews-grid {
@@ -583,7 +650,7 @@
   <a class="skip-link" href="#main">Skip to main content</a>
 <!-- TODAY'S NEWS BANNER -->
   <div class="news-banner" role="region" aria-label="Today at the stand">
-    <span>🌸 <strong>Mother's Day:</strong> plants and flowers sale is in full swing! Hanging baskets, blooms, and spring color are ready now. 🌼</span>
+    <span>🍉 <strong>Weekend update:</strong> red seeded watermelon is in, and the first green tomatoes just landed. Happy Mother's Day!</span>
   </div>
 
   <main id="main">
@@ -663,20 +730,20 @@
       <div class="container">
         <div class="house-callout mothers-day-callout">
           <div class="callout-copy">
-            <p class="eyebrow">Mother's Day weekend</p>
-            <h2>Mother's Day plants and flowers sale is in full swing</h2>
-            <p>Konrad has the stand packed with hanging baskets, blooming plants, and fresh flowers for Mother's Day. The plant and flower sale is in full swing, so come pick out something bright while the selection is good.</p>
-            <a href="#visit" class="callout-cta">Come shop the Mother's Day sale &rarr;</a>
+            <p class="eyebrow">Weekend update</p>
+            <h2>Seeded watermelon and green tomatoes are in</h2>
+            <p>Konrad just got in more red seeded watermelon and the first batch of green tomatoes. Flowers and plants are still ready for Mother's Day too.</p>
+            <a href="#visit" class="callout-cta">Come by this weekend</a>
           </div>
           <div class="callout-card">
             <div class="callout-photo-grid">
-              <div class="callout-photo mothers-day-photo"><img src="photos/mothers-day/mothers-day-full-1000013848.jpg?v=10" alt="Mother's Day potted plants outside Everyday Produce Market" loading="eager" width="1200" height="1600"></div>
-              <div class="callout-photo mothers-day-photo"><img src="photos/mothers-day/mothers-day-full-1000013849.jpg?v=10" alt="Mother's Day flowers and hanging baskets outside Everyday Produce Market" loading="eager" width="1200" height="1600"></div>
+              <div class="callout-photo mothers-day-photo"><img src="photos/weekend-update-2026-05-09/weekend-update-01.jpg?v=1" alt="Red seeded watermelon at Everyday Produce Market" loading="eager" width="1200" height="1600"></div>
+              <div class="callout-photo mothers-day-photo"><img src="photos/weekend-update-2026-05-09/weekend-update-02.jpg?v=1" alt="Green tomatoes and weekend produce at Everyday Produce Market" loading="eager" width="1200" height="1600"></div>
             </div>
             <div class="house-stat-row">
-              <div class="house-stat"><span class="num">Fresh</span><span class="label">flowers</span></div>
-              <div class="house-stat"><span class="num">Plants</span><span class="label">ready now</span></div>
-              <div class="house-stat"><span class="num">Mother's</span><span class="label">Day gifts</span></div>
+              <div class="house-stat"><span class="num">Seeded</span><span class="label">watermelon</span></div>
+              <div class="house-stat"><span class="num">Green</span><span class="label">tomatoes</span></div>
+              <div class="house-stat"><span class="num">Happy</span><span class="label">Mother's Day</span></div>
             </div>
           </div>
         </div>
@@ -710,7 +777,7 @@
         <div class="season-header">
           <p class="eyebrow">What's in season</p>
           <h2 class="section-h2">This week at the stand</h2>
-          <p class="season-lede">Right now: first local homegrown tomatoes are in, plus red ripe seeded watermelon &mdash; both started today. Fresh potted flowers fully stocked for the weekend.</p>
+          <p class="season-lede">Right now: more red seeded watermelon just came in, and Konrad has the first batch of green tomatoes. Flowers and plants are still ready for Mother's Day.</p>
         </div>
 
         <div class="season-videos">
@@ -732,23 +799,29 @@
 
         <div class="season-grid">
 
-          <!-- Hanging flower baskets - the hot seller right now -->
+          <!-- Seeded watermelon - weekend update -->
           <div class="season-card">
-            <img class="season-photo" src="photos/gallery-flowers.jpg" alt="Hanging baskets full of pink, orange, and yellow petunias" loading="lazy" width="1600" height="1067">
+            <picture>
+              <source srcset="photos/weekend-update-2026-05-09/weekend-update-01.webp?v=1" type="image/webp">
+              <img class="season-photo" src="photos/weekend-update-2026-05-09/weekend-update-01.jpg?v=1" alt="Red seeded watermelon at Everyday Produce Market" loading="lazy" width="1350" height="1800">
+            </picture>
             <div class="season-body">
-              <p class="s-name">Hanging flower baskets</p>
-              <p class="s-status">Selling fast right now.</p>
-              <p class="s-note">Petunias, calibrachoa, geraniums. Pick one off the hook.</p>
+              <p class="s-name">Seeded watermelon</p>
+              <p class="s-status">More just came in.</p>
+              <p class="s-note">Red, seeded, and ready for the weekend.</p>
             </div>
           </div>
 
-          <!-- Bedding plants & potted flowers -->
+          <!-- Green tomatoes - weekend update -->
           <div class="season-card">
-            <img class="season-photo" src="photos/gallery-flowers-cart.jpg" alt="Carts of begonias and bedding plants outside the stand" loading="lazy" width="1600" height="1067">
+            <picture>
+              <source srcset="photos/weekend-update-2026-05-09/weekend-update-02.webp?v=1" type="image/webp">
+              <img class="season-photo" src="photos/weekend-update-2026-05-09/weekend-update-02.jpg?v=1" alt="First batch of green tomatoes at Everyday Produce Market" loading="lazy" width="1350" height="1800">
+            </picture>
             <div class="season-body">
-              <p class="s-name">Bedding plants</p>
-              <p class="s-status">Fresh in for spring.</p>
-              <p class="s-note">Begonias, geraniums, mixed planters ready to go in the ground.</p>
+              <p class="s-name">Green tomatoes</p>
+              <p class="s-status">First batch is here.</p>
+              <p class="s-note">Good for frying. Ask Konrad how ripe they are.</p>
             </div>
           </div>
 
@@ -828,6 +901,63 @@
           <h2 class="section-h2">What it looks like</h2>
         </div>
 
+        <article class="weekend-update-card" aria-labelledby="weekend-update-heading">
+          <p class="eyebrow">Fresh from Konrad</p>
+          <h3 id="weekend-update-heading">A few photos from this weekend</h3>
+          <p>More red seeded watermelon came in, and the first green tomatoes are on the stand. Happy Mother's Day from Konrad.</p>
+          <div class="weekend-photo-grid">
+            <figure class="weekend-photo-card featured">
+              <picture>
+                <source srcset="photos/weekend-update-2026-05-09/weekend-update-01.webp?v=1" type="image/webp">
+                <img src="photos/weekend-update-2026-05-09/weekend-update-01.jpg?v=1" alt="Red seeded watermelon at Everyday Produce Market" loading="lazy" width="1350" height="1800">
+              </picture>
+              <figcaption>Red seeded watermelon</figcaption>
+            </figure>
+            <figure class="weekend-photo-card featured">
+              <picture>
+                <source srcset="photos/weekend-update-2026-05-09/weekend-update-02.webp?v=1" type="image/webp">
+                <img src="photos/weekend-update-2026-05-09/weekend-update-02.jpg?v=1" alt="First green tomatoes at Everyday Produce Market" loading="lazy" width="1350" height="1800">
+              </picture>
+              <figcaption>First green tomatoes</figcaption>
+            </figure>
+            <figure class="weekend-photo-card">
+              <picture>
+                <source srcset="photos/weekend-update-2026-05-09/weekend-update-03.webp?v=1" type="image/webp">
+                <img src="photos/weekend-update-2026-05-09/weekend-update-03.jpg?v=1" alt="Weekend produce display at Everyday Produce Market" loading="lazy" width="1350" height="1800">
+              </picture>
+              <figcaption>Weekend at the stand</figcaption>
+            </figure>
+            <figure class="weekend-photo-card">
+              <picture>
+                <source srcset="photos/weekend-update-2026-05-09/weekend-update-04.webp?v=1" type="image/webp">
+                <img src="photos/weekend-update-2026-05-09/weekend-update-04.jpg?v=1" alt="Fresh produce at Everyday Produce Market for Mother's Day weekend" loading="lazy" width="1350" height="1800">
+              </picture>
+              <figcaption>Ready for Mother's Day</figcaption>
+            </figure>
+            <figure class="weekend-photo-card">
+              <picture>
+                <source srcset="photos/weekend-update-2026-05-09/weekend-update-05.webp?v=1" type="image/webp">
+                <img src="photos/weekend-update-2026-05-09/weekend-update-05.jpg?v=1" alt="Produce display at Everyday Produce Market in Waldo" loading="lazy" width="1350" height="1800">
+              </picture>
+              <figcaption>Fresh in now</figcaption>
+            </figure>
+            <figure class="weekend-photo-card">
+              <picture>
+                <source srcset="photos/weekend-update-2026-05-09/weekend-update-06.webp?v=1" type="image/webp">
+                <img src="photos/weekend-update-2026-05-09/weekend-update-06.jpg?v=1" alt="Weekend produce at Everyday Produce Market" loading="lazy" width="1350" height="1800">
+              </picture>
+              <figcaption>Come by this weekend</figcaption>
+            </figure>
+            <figure class="weekend-photo-card">
+              <picture>
+                <source srcset="photos/weekend-update-2026-05-09/weekend-update-07.webp?v=1" type="image/webp">
+                <img src="photos/weekend-update-2026-05-09/weekend-update-07.jpg?v=1" alt="Fresh produce for Mother's Day weekend at Everyday Produce Market" loading="lazy" width="1350" height="1800">
+              </picture>
+              <figcaption>Happy Mother's Day</figcaption>
+            </figure>
+          </div>
+        </article>
+
         <div class="gallery-grid">
           <div class="gallery-item wide">
             <picture>
@@ -843,10 +973,10 @@
           </div>        </div>
         <div class="mothers-day-full-gallery" aria-label="Mother's Day plants and flowers at Everyday Produce">
           <figure class="mothers-day-full-card">
-            <img src="photos/mothers-day/mothers-day-full-1000013848.jpg?v=10" alt="Mother's Day potted plants outside Everyday Produce Market" loading="eager" width="1200" height="1600">
+            <img src="photos/weekend-update-2026-05-09/weekend-update-01.jpg?v=1" alt="Red seeded watermelon at Everyday Produce Market" loading="eager" width="1200" height="1600">
           </figure>
           <figure class="mothers-day-full-card">
-            <img src="photos/mothers-day/mothers-day-full-1000013849.jpg?v=10" alt="Mother's Day flowers and hanging baskets outside Everyday Produce Market" loading="eager" width="1200" height="1600">
+            <img src="photos/weekend-update-2026-05-09/weekend-update-02.jpg?v=1" alt="Green tomatoes and weekend produce at Everyday Produce Market" loading="eager" width="1200" height="1600">
           </figure>
         </div>
         <div class="gallery-grid bottom-gallery">
