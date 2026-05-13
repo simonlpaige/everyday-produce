@@ -9,3 +9,9 @@ photos/_archive/
 Thumbs.db
 .DS_Store
 desktop.ini
+
+screenshots/
+
+gemma-review-*.md
+
+audit-result.json
