@@ -22,7 +22,7 @@
 - **Light should feel like outdoor daylight.** Even when shot under the awning. Lean toward 5000-5400K, never cooler than 5800K.
 - **Dirt and imperfection are features.** Soil on carrots, a slightly bruised pear, Konrad's weathered hand reaching into a bin. Do not smooth, do not retouch, do not make this look like a supermarket.
 
-## 2. Crops for this client
+## 2. Crops and CSS slot mapping
 
 Default three crops from the master guide still apply (16:9 hero, 4:3 card, 3:4 portrait). Plus:
 
@@ -30,6 +30,39 @@ Default three crops from the master guide still apply (16:9 hero, 4:3 card, 3:4 
 - **Produce close-ups** (berries, tomatoes, single bin shots): prefer **portrait 3:4**. Vertical fills mobile screens and the gallery grid likes the variety.
 - **Storefront / awning / Konrad working shots:** **16:9 hero only** - these are atmosphere, not tiles.
 - **Subject fill:** produce close-ups should fill **80-90%** of the frame (tighter than the 70-85% default). Tight equals appetizing.
+
+### CSS slot constraints (enforced in index.html)
+
+Every photo slot has an `aspect-ratio` lock. The photo must suit the slot's ratio or it will be center-cropped by `object-fit: cover`. Do NOT override with `object-fit: contain` - that creates letterboxed padding and looks broken.
+
+| Slot class | CSS aspect-ratio | Best photo type | Notes |
+|---|---|---|---|
+| `.season-photo` | 4/3 landscape | Produce bins, wide stand shots | Locked in CSS |
+| `.callout-photo` | 3/4 portrait | Tight produce close-ups | Locked in CSS |
+| `.weekend-photo-card img` | 3/4 portrait | Any produce or sign photo | Locked in CSS |
+| `.gallery-item` (hero row) | 16/9 | Storefront, awning, wide shots | Locked in CSS |
+
+**HTML `width` + `height` attributes MUST match actual pixel dimensions.** The browser uses these before CSS loads to reserve space. Wrong values cause aspect ratio jank. Always check with `python3 -c "from PIL import Image; print(Image.open('photo.jpg').size)"`
+
+### The `featured` class rule
+
+`.weekend-photo-card.featured` spans 2 columns. Only use it for:
+- Landscape (wider than tall) photos
+- Produce shots where you want hero prominence
+
+Do NOT use `featured` on portrait sign photos or casual Konrad snapshots - equal-size 4-up tile grid looks better for those.
+
+### Photo type vs. slot
+
+When Konrad sends photos, match them to slots before placing:
+
+| Photo type | Right slot | Notes |
+|---|---|---|
+| Tight produce close-up (peaches, tomatoes) | `.callout-photo` + `.weekend-photo-card` | The money shot |
+| Stand sign ("GEORGIA PEACHES") | `.weekend-photo-card` (no featured) | Atmosphere, 4-up grid |
+| Stand-wide / awning / Konrad working | `.gallery-item` hero row | 16:9 crop first |
+| Casual context shot (stand from distance) | `.weekend-photo-card` or reject | Needs tight crop |
+| Any photo with price tags visible | Crop out or reject | See section 3 |
 
 ## 3. Text / price removal (IMPORTANT for this client)
 
