@@ -422,9 +422,9 @@
       text-align: center; font-family: 'Inter', sans-serif; font-size: 14px;
       color: rgba(245,237,216,0.38);
     }
-    /* MOTHER'S DAY CALLOUT */
+    /* THIS WEEK CALLOUT */
 
-    .mothers-day-callout {
+    .this-week-callout {
       background: var(--ink);
       color: var(--cream);
       border: 2px solid var(--ink);
@@ -436,16 +436,16 @@
       gap: 32px;
       align-items: center;
     }
-    @media (max-width: 820px) { .mothers-day-callout { grid-template-columns: 1fr; } }
-    .mothers-day-callout .eyebrow { color: var(--yellow); }
-    .mothers-day-callout h2 {
+    @media (max-width: 820px) { .this-week-callout { grid-template-columns: 1fr; } }
+    .this-week-callout .eyebrow { color: var(--yellow); }
+    .this-week-callout h2 {
       font-family: 'Alfa Slab One', serif;
       font-size: clamp(26px, 4vw, 42px);
       line-height: 1.1;
       margin: 8px 0 16px;
     }
-    .mothers-day-callout p { font-size: 17px; line-height: 1.7; margin-bottom: 16px; opacity: 0.9; }
-    .mothers-day-callout .callout-cta {
+    .this-week-callout p { font-size: 17px; line-height: 1.7; margin-bottom: 16px; opacity: 0.9; }
+    .this-week-callout .callout-cta {
       display: inline-block;
       background: var(--yellow);
       color: var(--ink);
@@ -460,8 +460,8 @@
       text-decoration: none;
       box-shadow: 2px 2px 0 rgba(245,237,216,0.22);
     }
-    .mothers-day-callout .callout-cta:hover,
-    .mothers-day-callout .callout-cta:focus { background: var(--red); color: var(--cream); }
+    .this-week-callout .callout-cta:hover,
+    .this-week-callout .callout-cta:focus { background: var(--red); color: var(--cream); }
     .callout-photo-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 18px; }
     @media (max-width: 540px) { .callout-photo-grid { grid-template-columns: 1fr; } }
     .callout-photo {
@@ -472,13 +472,7 @@
       background: var(--cream);
     }
     
-    .callout-photo.mothers-day-photo { display: flex; align-items: center; justify-content: center; background: var(--cream); }
-    .callout-photo.mothers-day-photo img { width: auto; max-width: 100%; height: auto; max-height: 360px; object-fit: contain; }
-    .mothers-day-callout .callout-photo { overflow: visible; }
-    .mothers-day-callout .mothers-day-photo img { width: 100%; height: auto !important; max-height: none; object-fit: contain; }
-    .mothers-day-photo { background: #f8f1df; }
-    .gallery-grid .mothers-day-photo { height: 100%; min-height: 0; overflow: hidden; }
-    .gallery-grid .mothers-day-photo img { width: 100%; height: 100% !important; max-height: none; object-fit: contain; background: #f8f1df; padding: 6px; box-sizing: border-box; transform: none !important; }
+
     .house-stat-row { display: flex; flex-wrap: wrap; gap: 18px; }
     .house-stat { font-family: 'Oswald', sans-serif; }
     .house-stat .num { display: block; color: var(--cream); font-size: 21px; font-weight: 700; line-height: 1; text-transform: uppercase; }
@@ -549,99 +543,7 @@
     /* Gallery: ensure <picture> wrappers fill their tile */
     .gallery-item picture { display: block; width: 100%; height: 100%; }
   
-    /* Mother's Day photos: show the original portrait photos uncropped. */
-    .mothers-day-photo {
-      aspect-ratio: auto !important;
-      min-height: 0 !important;
-      background: #fff7e8;
-      padding: clamp(0.5rem, 1.5vw, 1rem);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
 
-    .mothers-day-photo img {
-      width: 100% !important;
-      height: auto !important;
-      max-height: none !important;
-      object-fit: contain !important;
-      object-position: center center !important;
-      display: block;
-      border-radius: 18px;
-    }
-
-  
-    /* Mother's Day sale photos: show the whole original image. No crop. */
-    .gallery-item.mothers-day-photo {
-      height: auto !important;
-      min-height: 0 !important;
-      aspect-ratio: auto !important;
-      background: #fff8ec;
-      padding: clamp(0.5rem, 1.5vw, 0.9rem);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .gallery-item.mothers-day-photo img {
-      width: 100% !important;
-      height: auto !important;
-      max-height: none !important;
-      object-fit: contain !important;
-      object-position: center center !important;
-      display: block;
-      border-radius: 20px;
-    }
-  
-    /* Mother's Day sale photos: show the full original frame. No crop, no fixed-height card. */
-    .mothers-day-full-gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 1rem;
-      align-items: start;
-      margin: 1.25rem 0;
-    }
-
-    .mothers-day-full-card {
-      margin: 0;
-      padding: 0.5rem;
-      border-radius: 1rem;
-      background: #fff8ea;
-      border: 1px solid rgba(42, 26, 14, 0.16);
-      box-shadow: 0 10px 24px rgba(42, 26, 14, 0.10);
-    }
-
-    .mothers-day-full-card img {
-      display: block;
-      width: 100%;
-      height: auto;
-      max-height: none;
-      aspect-ratio: auto;
-      object-fit: contain;
-      object-position: center center;
-      border-radius: 0.75rem;
-      background: #fff8ea;
-    }
-  
-    /* Final media safety override: these customer-supplied sale photos must never be cropped. */
-    .callout-photo.mothers-day-photo,
-    .mothers-day-full-card {
-      height: auto !important;
-      max-height: none !important;
-      aspect-ratio: auto !important;
-      overflow: visible !important;
-    }
-
-    .callout-photo.mothers-day-photo img,
-    .mothers-day-full-card img {
-      display: block !important;
-      width: 100% !important;
-      height: auto !important;
-      max-height: none !important;
-      aspect-ratio: auto !important;
-      object-fit: contain !important;
-      object-position: center center !important;
-    }
   </style>
 </head>
 <body>
@@ -650,7 +552,7 @@
   <a class="skip-link" href="#main">Skip to main content</a>
 <!-- TODAY'S NEWS BANNER -->
   <div class="news-banner" role="region" aria-label="Today at the stand">
-    <span>🍉 <strong>Weekend update:</strong> red seeded watermelon is in, and the first green tomatoes just landed. Happy Mother's Day!</span>
+    <span>🍉 <strong>This week:</strong> red seeded watermelon in, first green tomatoes, and lots more. Taste before you buy.</span>
   </div>
 
   <main id="main">
@@ -725,25 +627,25 @@
     </section>
 
 
-    <!-- MOTHER'S DAY CALLOUT -->
-    <section id="mothers-day" class="section-pad callout-section">
+    <!-- THIS WEEK CALLOUT -->
+    <section id="this-week" class="section-pad callout-section">
       <div class="container">
-        <div class="house-callout mothers-day-callout">
+        <div class="house-callout this-week-callout">
           <div class="callout-copy">
-            <p class="eyebrow">Weekend update</p>
-            <h2>Seeded watermelon and green tomatoes are in</h2>
-            <p>Konrad just got in more red seeded watermelon and the first batch of green tomatoes. Flowers and plants are still ready for Mother's Day too.</p>
-            <a href="#visit" class="callout-cta">Come by this weekend</a>
+            <p class="eyebrow">This week from Konrad</p>
+            <h2>And lots more.</h2>
+            <p>As always, taste before you buy. You are going to love it!</p>
+            <a href="#visit" class="callout-cta">Come by this week</a>
           </div>
           <div class="callout-card">
             <div class="callout-photo-grid">
-              <div class="callout-photo mothers-day-photo"><img src="photos/weekend-update-2026-05-09/weekend-update-01.jpg?v=1" alt="Red seeded watermelon at Everyday Produce Market" loading="eager" width="1200" height="1600"></div>
-              <div class="callout-photo mothers-day-photo"><img src="photos/weekend-update-2026-05-09/weekend-update-02.jpg?v=1" alt="Green tomatoes and weekend produce at Everyday Produce Market" loading="eager" width="1200" height="1600"></div>
+              <div class="callout-photo"><img src="photos/weekly-update-2026-05-17/update-01.jpg" alt="Georgia Peaches - Juicy and Sweet at Everyday Produce Market" loading="eager" width="1600" height="1200"></div>
+              <div class="callout-photo"><img src="photos/weekly-update-2026-05-17/update-02.jpg" alt="Super Sweet Cantaloupes at Everyday Produce Market" loading="eager" width="1600" height="1200"></div>
             </div>
             <div class="house-stat-row">
               <div class="house-stat"><span class="num">Seeded</span><span class="label">watermelon</span></div>
               <div class="house-stat"><span class="num">Green</span><span class="label">tomatoes</span></div>
-              <div class="house-stat"><span class="num">Happy</span><span class="label">Mother's Day</span></div>
+              <div class="house-stat"><span class="num">Taste</span><span class="label">before you buy</span></div>
             </div>
           </div>
         </div>
@@ -777,7 +679,7 @@
         <div class="season-header">
           <p class="eyebrow">What's in season</p>
           <h2 class="section-h2">This week at the stand</h2>
-          <p class="season-lede">Right now: more red seeded watermelon just came in, and Konrad has the first batch of green tomatoes. Flowers and plants are still ready for Mother's Day.</p>
+          <p class="season-lede">Right now: red seeded watermelon, first green tomatoes, and lots more. As always, taste before you buy.</p>
         </div>
 
         <div class="season-videos">
@@ -903,57 +805,24 @@
 
         <article class="weekend-update-card" aria-labelledby="weekend-update-heading">
           <p class="eyebrow">Fresh from Konrad</p>
-          <h3 id="weekend-update-heading">A few photos from this weekend</h3>
-          <p>More red seeded watermelon came in, and the first green tomatoes are on the stand. Happy Mother's Day from Konrad.</p>
+          <h3 id="weekend-update-heading">This week at the stand</h3>
+          <p>And lots more. As always, taste before you buy. You are going to love it! &mdash; Konrad</p>
           <div class="weekend-photo-grid">
             <figure class="weekend-photo-card featured">
-              <picture>
-                <source srcset="photos/weekend-update-2026-05-09/weekend-update-01.webp?v=1" type="image/webp">
-                <img src="photos/weekend-update-2026-05-09/weekend-update-01.jpg?v=1" alt="Red seeded watermelon at Everyday Produce Market" loading="lazy" width="1350" height="1800">
-              </picture>
-              <figcaption>Red seeded watermelon</figcaption>
+              <img src="photos/weekly-update-2026-05-17/update-01.jpg" alt="Georgia Peaches - Juicy and Sweet at Everyday Produce Market" loading="lazy" width="1600" height="1200">
+              <figcaption>Georgia Peaches &mdash; Juicy &amp; Sweet</figcaption>
             </figure>
             <figure class="weekend-photo-card featured">
-              <picture>
-                <source srcset="photos/weekend-update-2026-05-09/weekend-update-02.webp?v=1" type="image/webp">
-                <img src="photos/weekend-update-2026-05-09/weekend-update-02.jpg?v=1" alt="First green tomatoes at Everyday Produce Market" loading="lazy" width="1350" height="1800">
-              </picture>
-              <figcaption>First green tomatoes</figcaption>
+              <img src="photos/weekly-update-2026-05-17/update-02.jpg" alt="Super Sweet Cantaloupes at Everyday Produce Market" loading="lazy" width="1600" height="1200">
+              <figcaption>Super Sweet Cantaloupes</figcaption>
             </figure>
             <figure class="weekend-photo-card">
-              <picture>
-                <source srcset="photos/weekend-update-2026-05-09/weekend-update-03.webp?v=1" type="image/webp">
-                <img src="photos/weekend-update-2026-05-09/weekend-update-03.jpg?v=1" alt="Weekend produce display at Everyday Produce Market" loading="lazy" width="1350" height="1800">
-              </picture>
-              <figcaption>Weekend at the stand</figcaption>
+              <img src="photos/weekly-update-2026-05-17/update-03.jpg" alt="Ice Cold Watermelon at Everyday Produce Market" loading="lazy" width="1600" height="1200">
+              <figcaption>Ice Cold Watermelon</figcaption>
             </figure>
             <figure class="weekend-photo-card">
-              <picture>
-                <source srcset="photos/weekend-update-2026-05-09/weekend-update-04.webp?v=1" type="image/webp">
-                <img src="photos/weekend-update-2026-05-09/weekend-update-04.jpg?v=1" alt="Fresh produce at Everyday Produce Market for Mother's Day weekend" loading="lazy" width="1350" height="1800">
-              </picture>
-              <figcaption>Ready for Mother's Day</figcaption>
-            </figure>
-            <figure class="weekend-photo-card">
-              <picture>
-                <source srcset="photos/weekend-update-2026-05-09/weekend-update-05.webp?v=1" type="image/webp">
-                <img src="photos/weekend-update-2026-05-09/weekend-update-05.jpg?v=1" alt="Produce display at Everyday Produce Market in Waldo" loading="lazy" width="1350" height="1800">
-              </picture>
-              <figcaption>Fresh in now</figcaption>
-            </figure>
-            <figure class="weekend-photo-card">
-              <picture>
-                <source srcset="photos/weekend-update-2026-05-09/weekend-update-06.webp?v=1" type="image/webp">
-                <img src="photos/weekend-update-2026-05-09/weekend-update-06.jpg?v=1" alt="Weekend produce at Everyday Produce Market" loading="lazy" width="1350" height="1800">
-              </picture>
-              <figcaption>Come by this weekend</figcaption>
-            </figure>
-            <figure class="weekend-photo-card">
-              <picture>
-                <source srcset="photos/weekend-update-2026-05-09/weekend-update-07.webp?v=1" type="image/webp">
-                <img src="photos/weekend-update-2026-05-09/weekend-update-07.jpg?v=1" alt="Fresh produce for Mother's Day weekend at Everyday Produce Market" loading="lazy" width="1350" height="1800">
-              </picture>
-              <figcaption>Happy Mother's Day</figcaption>
+              <img src="photos/weekly-update-2026-05-17/update-04.jpg" alt="Local Home-Grown Tomatoes at Everyday Produce Market" loading="lazy" width="1600" height="1200">
+              <figcaption>Local Home-Grown Tomatoes</figcaption>
             </figure>
           </div>
         </article>
@@ -971,14 +840,6 @@
               <img src="photos/gallery-storefront-2026-05.jpg" alt="Storefront of Everyday Produce Market in Waldo, Kansas City" loading="lazy" width="1600" height="1200">
             </picture>
           </div>        </div>
-        <div class="mothers-day-full-gallery" aria-label="Mother's Day plants and flowers at Everyday Produce">
-          <figure class="mothers-day-full-card">
-            <img src="photos/weekend-update-2026-05-09/weekend-update-01.jpg?v=1" alt="Red seeded watermelon at Everyday Produce Market" loading="eager" width="1200" height="1600">
-          </figure>
-          <figure class="mothers-day-full-card">
-            <img src="photos/weekend-update-2026-05-09/weekend-update-02.jpg?v=1" alt="Green tomatoes and weekend produce at Everyday Produce Market" loading="eager" width="1200" height="1600">
-          </figure>
-        </div>
         <div class="gallery-grid bottom-gallery">
           <div class="gallery-item">
             <img src="photos/gallery-stand-interior.jpg" alt="Inside the green-striped tent with customers shopping" loading="lazy" width="1600" height="1067">
