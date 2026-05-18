@@ -310,9 +310,11 @@
     .weekend-photo-card picture,
     .weekend-photo-card img { display: block; width: 100%; }
     .weekend-photo-card img {
+      aspect-ratio: 3 / 4;
+      width: 100%;
       height: auto;
-      object-fit: contain;
-      object-position: center center;
+      object-fit: cover;
+      object-position: center 20%;
       background: #fff8ea;
     }
     .weekend-photo-card figcaption {
@@ -470,6 +472,14 @@
       overflow: hidden;
       box-shadow: 3px 3px 0 rgba(245,237,216,0.18);
       background: var(--cream);
+      aspect-ratio: 3 / 4;
+    }
+    .callout-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 20%;
+      display: block;
     }
     
 
@@ -639,8 +649,8 @@
           </div>
           <div class="callout-card">
             <div class="callout-photo-grid">
-              <div class="callout-photo"><img src="photos/weekly-update-2026-05-17/update-01.jpg" alt="Georgia Peaches - Juicy and Sweet at Everyday Produce Market" loading="eager" width="1600" height="1200"></div>
-              <div class="callout-photo"><img src="photos/weekly-update-2026-05-17/update-02.jpg" alt="Super Sweet Cantaloupes at Everyday Produce Market" loading="eager" width="1600" height="1200"></div>
+              <div class="callout-photo"><img src="photos/weekly-update-2026-05-17/update-01.jpg" alt="Georgia Peaches - Juicy and Sweet at Everyday Produce Market" loading="eager" width="960" height="1280"></div>
+              <div class="callout-photo"><img src="photos/weekly-update-2026-05-17/update-02.jpg" alt="Super Sweet Cantaloupes at Everyday Produce Market" loading="eager" width="960" height="1280"></div>
             </div>
             <div class="house-stat-row">
               <div class="house-stat"><span class="num">Seeded</span><span class="label">watermelon</span></div>
@@ -808,20 +818,20 @@
           <h3 id="weekend-update-heading">This week at the stand</h3>
           <p>And lots more. As always, taste before you buy. You are going to love it! &mdash; Konrad</p>
           <div class="weekend-photo-grid">
-            <figure class="weekend-photo-card featured">
-              <img src="photos/weekly-update-2026-05-17/update-01.jpg" alt="Georgia Peaches - Juicy and Sweet at Everyday Produce Market" loading="lazy" width="1600" height="1200">
+            <figure class="weekend-photo-card">
+              <img src="photos/weekly-update-2026-05-17/update-01.jpg" alt="Georgia Peaches - Juicy and Sweet at Everyday Produce Market" loading="lazy" width="960" height="1280">
               <figcaption>Georgia Peaches &mdash; Juicy &amp; Sweet</figcaption>
             </figure>
-            <figure class="weekend-photo-card featured">
-              <img src="photos/weekly-update-2026-05-17/update-02.jpg" alt="Super Sweet Cantaloupes at Everyday Produce Market" loading="lazy" width="1600" height="1200">
+            <figure class="weekend-photo-card">
+              <img src="photos/weekly-update-2026-05-17/update-02.jpg" alt="Super Sweet Cantaloupes at Everyday Produce Market" loading="lazy" width="960" height="1280">
               <figcaption>Super Sweet Cantaloupes</figcaption>
             </figure>
             <figure class="weekend-photo-card">
-              <img src="photos/weekly-update-2026-05-17/update-03.jpg" alt="Ice Cold Watermelon at Everyday Produce Market" loading="lazy" width="1600" height="1200">
+              <img src="photos/weekly-update-2026-05-17/update-03.jpg" alt="Ice Cold Watermelon at Everyday Produce Market" loading="lazy" width="960" height="1280">
               <figcaption>Ice Cold Watermelon</figcaption>
             </figure>
             <figure class="weekend-photo-card">
-              <img src="photos/weekly-update-2026-05-17/update-04.jpg" alt="Local Home-Grown Tomatoes at Everyday Produce Market" loading="lazy" width="1600" height="1200">
+              <img src="photos/weekly-update-2026-05-17/update-04.jpg" alt="Local Home-Grown Tomatoes at Everyday Produce Market" loading="lazy" width="960" height="1280">
               <figcaption>Local Home-Grown Tomatoes</figcaption>
             </figure>
           </div>
