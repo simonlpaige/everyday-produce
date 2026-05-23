@@ -1,0 +1,38 @@
+{
+  "folder": "weekly-update-2026-05-17",
+  "generated": "2026-05-23T13:38:35.570Z",
+  "photos": [
+    {
+      "file": "update-01.jpg",
+      "webp": "update-01.webp",
+      "width": 960,
+      "height": 1280,
+      "slot": "callout-photo",
+      "altText": "Peaches and tomatoes displayed in a basket at Everyday Produce Market."
+    },
+    {
+      "file": "update-02.jpg",
+      "webp": "update-02.webp",
+      "width": 960,
+      "height": 1280,
+      "slot": "callout-photo",
+      "altText": "Large sign promoting cantaloupes at Everyday Produce Market."
+    },
+    {
+      "file": "update-03.jpg",
+      "webp": "update-03.webp",
+      "width": 960,
+      "height": 1280,
+      "slot": "callout-photo",
+      "altText": "Fresh watermelon and yellow produce at Everyday Produce Market."
+    },
+    {
+      "file": "update-04.jpg",
+      "webp": "update-04.webp",
+      "width": 960,
+      "height": 1280,
+      "slot": "callout-photo",
+      "altText": "Red tomatoes and \"Local Home-Grown Tomatoes\" sign at Everyday Produce Market."
+    }
+  ]
+}
