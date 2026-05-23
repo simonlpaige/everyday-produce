@@ -310,11 +310,9 @@
     .weekend-photo-card picture,
     .weekend-photo-card img { display: block; width: 100%; }
     .weekend-photo-card img {
-      aspect-ratio: 3 / 4;
       width: 100%;
       height: auto;
-      object-fit: cover;
-      object-position: center 20%;
+      display: block;
       background: #fff8ea;
     }
     .weekend-photo-card figcaption {
@@ -472,13 +470,10 @@
       overflow: hidden;
       box-shadow: 3px 3px 0 rgba(245,237,216,0.18);
       background: var(--cream);
-      aspect-ratio: 3 / 4;
     }
     .callout-photo img {
       width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center 20%;
+      height: auto;
       display: block;
     }
     
@@ -822,7 +817,7 @@
               <img src="photos/weekly-update-2026-05-23/Memorial%20day%20sign.jpg" alt="Memorial Day weekend sign at Everyday Produce Market" loading="lazy" width="413" height="500">
               <figcaption>Memorial Day Weekend</figcaption>
             </figure>
-            <figure class="weekend-photo-card featured">
+            <figure class="weekend-photo-card">
               <img src="photos/weekly-update-2026-05-23/storefront.jpg" alt="Colorful display of peaches, melons, and flowers at Everyday Produce Market" loading="lazy" width="1108" height="500">
               <figcaption>The Stand</figcaption>
             </figure>
