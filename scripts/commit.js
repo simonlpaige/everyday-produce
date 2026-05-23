@@ -251,7 +251,36 @@ async function main() {
     console.log(`\n[DRY RUN] Would commit: "${message}"`);
   }
 
-  // ---- Step 7: git push ----------------------------------------------------
+  // ---- Step 7: Send screenshot to Telegram + wait for approval -----------
+  if (!noPush && !dryRun && screenshotDir) {
+    console.log('\n[APPROVAL GATE] Sending screenshots to Simon via Telegram...');
+    const telegramSend = path.resolve(__dirname, '../../tools/telegram-send.js');
+    const desktopShot = path.join(screenshotDir, 'desktop.png');
+    const mobileShot  = path.join(screenshotDir, 'mobile.png');
+    const sendScript  = path.resolve(__dirname, '../../tools/screenshot_and_send.js');
+
+    // Send the desktop screenshot if it exists
+    if (fs.existsSync(desktopShot)) {
+      try {
+        execSync(`node "${telegramSend}" "Preview ready: ${message} — reply 'ship it' to push, or fix and re-run."`, { stdio: 'inherit', shell: true });
+        // send the actual image
+        const { execFileSync } = require('child_process');
+        execSync(`node -e "const {send}=require('${telegramSend.replace(/\\/g,'/')}');send(null,{photo:'${desktopShot.replace(/\\/g,'/')}',caption:'Desktop preview — ${message}'})"`
+          , { stdio: 'pipe', shell: true });
+      } catch (e) {
+        console.warn('Could not send Telegram preview:', e.message);
+      }
+    }
+
+    const approval = await ask('\nSimon approved? (y/N) ');
+    if (approval.toLowerCase() !== 'y') {
+      console.log('\nPush held. Commit is local — run `git push` once approved.');
+      console.log('Or re-run commit.js to redo the full gate.\n');
+      process.exit(0);
+    }
+  }
+
+  // ---- Step 8: git push ----------------------------------------------------
   if (!noPush && !dryRun) {
     console.log('\nPushing to origin...');
     try { run('git push'); }
