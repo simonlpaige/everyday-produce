@@ -293,7 +293,7 @@
     }
     .weekend-photo-grid {
       display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
       gap: 14px;
       margin-top: 22px;
       align-items: start;
@@ -304,7 +304,6 @@
       box-shadow: var(--shadow);
       border-radius: 4px;
       overflow: hidden;
-      min-height: 100%;
     }
     .weekend-photo-card.featured { grid-column: span 2; }
     .weekend-photo-card picture,
