@@ -157,59 +157,10 @@
     }
     .about-text p { font-size: 17px; line-height: 1.7; margin-bottom: 16px; color: var(--ink); }
     .about-photo {
-      width: 100%; aspect-ratio: 4/3; object-fit: cover;
-      object-position: center center;
+      width: 100%; height: auto; display: block;
       border: 2px solid var(--ink); box-shadow: 3px 3px 0 rgba(42,26,14,0.15);
       border-radius: 4px;
     }
-
-    /* SEASON */
-    #season {
-      background: var(--cream-mid);
-      border-top: 2px solid var(--ink); border-bottom: 2px solid var(--ink);
-    }
-    .season-header { margin-bottom: 40px; }
-    .season-grid {
-      display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
-    }
-    @media (max-width: 900px) { .season-grid { grid-template-columns: repeat(2,1fr); } }
-    @media (max-width: 540px)  { .season-grid { grid-template-columns: 1fr; } }
-    .season-card {
-      background: var(--cream); border: 2px solid var(--ink);
-      box-shadow: var(--shadow); border-radius: 4px; padding: 0; overflow: hidden;
-      display: flex; flex-direction: column;
-    }
-    .season-card svg { width: 72px; height: 72px; margin: 28px 24px 16px; display: block; }
-    .season-photo {
-      width: 100%; aspect-ratio: 4/3; object-fit: cover; object-position: center center; display: block;
-      border-bottom: 2px solid var(--ink);
-    }
-    .cooler-board {
-      width: 100%; aspect-ratio: 4/3; display: flex; flex-direction: column;
-      justify-content: center; padding: 20px 22px;
-      background: #1a3a2a; border-bottom: 2px solid var(--ink);
-      box-sizing: border-box;
-    }
-    .cooler-board-title {
-      font-family: 'Oswald', sans-serif; font-weight: 700; font-size: 15px;
-      text-transform: uppercase; letter-spacing: 0.12em;
-      color: #a8d8b8; margin-bottom: 12px;
-    }
-    .cooler-board-list {
-      list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 4px 16px;
-    }
-    .cooler-board-list li {
-      font-family: 'Oswald', sans-serif; font-weight: 400; font-size: 13px;
-      color: #e8f4ec; text-transform: uppercase; letter-spacing: 0.04em;
-      line-height: 1.4;
-    }
-    .season-body { padding: 20px 24px 24px; }
-    .s-name {
-      font-family: 'Oswald', sans-serif; font-weight: 700; font-size: 20px;
-      text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 4px;
-    }
-    .s-status { font-size: 15px; font-weight: 500; line-height: 1.4; margin-bottom: 4px; }
-    .s-note { font-size: 14px; font-style: italic; color: var(--ink-muted); }
 
     /* GALLERY */
     #gallery { border-top: 2px solid var(--ink); background: var(--cream); }
@@ -268,70 +219,6 @@
       .gallery-item:focus-within img { transform: none; }
     }
 
-
-    /* WEEKEND UPDATE - Konrad photo drop */
-    .weekend-update-card {
-      background: var(--cream);
-      border: 2px solid var(--ink);
-      box-shadow: var(--shadow);
-      border-radius: 4px;
-      padding: clamp(20px, 3vw, 32px);
-      margin: 0 0 40px;
-    }
-    .weekend-update-card .eyebrow { color: var(--green); }
-    .weekend-update-card h3 {
-      font-family: 'Alfa Slab One', serif;
-      font-size: clamp(24px, 3.5vw, 38px);
-      line-height: 1.12;
-      margin: 6px 0 12px;
-    }
-    .weekend-update-card p {
-      max-width: 760px;
-      font-size: 17px;
-      line-height: 1.65;
-      margin-bottom: 16px;
-    }
-    .weekend-photo-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-      gap: 14px;
-      margin-top: 22px;
-      align-items: start;
-    }
-    .weekend-photo-card {
-      background: #fff8ea;
-      border: 2px solid var(--ink);
-      box-shadow: var(--shadow);
-      border-radius: 4px;
-      overflow: hidden;
-    }
-    .weekend-photo-card.featured { grid-column: span 2; }
-    .weekend-photo-card picture,
-    .weekend-photo-card img { display: block; width: 100%; }
-    .weekend-photo-card img {
-      width: 100%;
-      height: auto;
-      display: block;
-      background: #fff8ea;
-    }
-    .weekend-photo-card figcaption {
-      border-top: 2px solid var(--ink);
-      padding: 10px 12px;
-      font-family: 'Oswald', sans-serif;
-      font-size: 12px;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      line-height: 1.35;
-      color: var(--ink);
-    }
-    @media (max-width: 900px) {
-      .weekend-photo-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-    }
-    @media (max-width: 560px) {
-      .weekend-photo-grid { grid-template-columns: 1fr; }
-      .weekend-photo-card.featured { grid-column: span 1; }
-    }
 
     /* REVIEWS */
     #reviews { border-top: 2px solid var(--ink); }
@@ -461,19 +348,15 @@
     }
     .this-week-callout .callout-cta:hover,
     .this-week-callout .callout-cta:focus { background: var(--red); color: var(--cream); }
-    .callout-photo-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 18px; }
-    @media (max-width: 540px) { .callout-photo-grid { grid-template-columns: 1fr; } }
-    .callout-photo {
+    .callout-photo-slot {
+      margin-bottom: 18px;
       border: 2px solid var(--cream);
       border-radius: 4px;
       overflow: hidden;
       box-shadow: 3px 3px 0 rgba(245,237,216,0.18);
-      background: var(--cream);
     }
-    .callout-photo img {
-      width: 100%;
-      height: auto;
-      display: block;
+    .callout-photo-slot img {
+      width: 100%; height: auto; display: block;
     }
     
 
@@ -556,7 +439,7 @@
   <a class="skip-link" href="#main">Skip to main content</a>
 <!-- TODAY'S NEWS BANNER -->
   <div class="news-banner" role="region" aria-label="Today at the stand">
-    <span>🍉 <strong>This week:</strong> red seeded watermelon in, first green tomatoes, and lots more. Taste before you buy.</span>
+    <span>🍑 <strong>Memorial Day weekend:</strong> Georgia peaches, homegrown tomatoes, cantaloupe, seedless &amp; seeded watermelon, Bing cherries, Arkansas strawberries, avocados. Taste before you buy.</span>
   </div>
 
   <main id="main">
@@ -637,14 +520,13 @@
         <div class="house-callout this-week-callout">
           <div class="callout-copy">
             <p class="eyebrow">This week from Konrad</p>
-            <h2>And lots more.</h2>
-            <p>As always, taste before you buy. You are going to love it!</p>
+            <h2>Summer kicks off this weekend.</h2>
+            <p>Ready to eat cantaloupe, homegrown tomatoes, Georgia peaches, seedless &amp; seeded watermelon, Bing cherries, Arkansas strawberries, and ripe avocados. Taste before you buy. &mdash; Konrad</p>
             <a href="#visit" class="callout-cta">Come by this week</a>
           </div>
           <div class="callout-card">
-            <div class="callout-photo-grid">
-              <div class="callout-photo"><img src="photos/weekly-update-2026-05-23/Memorial%20day%20sign.jpg" alt="Memorial Day weekend sign at Everyday Produce Market" loading="eager" width="413" height="500"></div>
-              <div class="callout-photo"><img src="photos/weekly-update-2026-05-23/storefront.jpg" alt="Colorful display of peaches, melons, and flowers at Everyday Produce Market" loading="eager" width="1108" height="500"></div>
+            <div class="callout-photo-slot">
+              <img src="photos/weekly-update-2026-05-23/storefront.jpg" alt="Colorful display of peaches, melons, and flowers at Everyday Produce Market" loading="eager" width="1108" height="500">
             </div>
             <div class="house-stat-row">
               <div class="house-stat"><span class="num">Georgia</span><span class="label">peaches</span></div>
@@ -677,128 +559,6 @@
       </div>
     </section>
 
-    <!-- WHAT'S IN SEASON -->
-    <section id="season" class="section-pad">
-      <div class="container">
-        <div class="season-header">
-          <p class="eyebrow">What's in season</p>
-          <h2 class="section-h2">This week at the stand</h2>
-          <p class="season-lede">Right now: red seeded watermelon, first green tomatoes, and lots more. As always, taste before you buy.</p>
-        </div>
-
-        <div class="season-videos">
-          <figure>
-            <video controls preload="metadata" poster="photos/poster-tomatoes-2026-05.jpg" playsinline aria-label="Video of the season's first local homegrown tomatoes">
-              <source src="videos/tomatoes-local-2026-05.mp4" type="video/mp4">
-              Video of the season's first local homegrown tomatoes at Everyday Produce Market.
-            </video>
-            <figcaption>First local tomatoes &mdash; just arrived today.</figcaption>
-          </figure>
-          <figure>
-            <video controls preload="metadata" poster="photos/poster-watermelon-2026-05.jpg" playsinline aria-label="Video of red ripe seeded watermelons available now">
-              <source src="videos/watermelon-seeded-2026-05.mp4" type="video/mp4">
-              Video of red ripe seeded watermelons available now at Everyday Produce Market.
-            </video>
-            <figcaption>Red ripe seeded watermelon &mdash; in today.</figcaption>
-          </figure>
-        </div>
-
-        <div class="season-grid">
-
-          <!-- Seeded watermelon - weekend update -->
-          <div class="season-card">
-            <picture>
-              <source srcset="photos/weekend-update-2026-05-09/weekend-update-01.webp?v=1" type="image/webp">
-              <img class="season-photo" src="photos/weekend-update-2026-05-09/weekend-update-01.jpg?v=1" alt="Red seeded watermelon at Everyday Produce Market" loading="lazy" width="1350" height="1800">
-            </picture>
-            <div class="season-body">
-              <p class="s-name">Seeded watermelon</p>
-              <p class="s-status">More just came in.</p>
-              <p class="s-note">Red, seeded, and ready for the weekend.</p>
-            </div>
-          </div>
-
-          <!-- Green tomatoes - weekend update -->
-          <div class="season-card">
-            <picture>
-              <source srcset="photos/weekend-update-2026-05-09/weekend-update-02.webp?v=1" type="image/webp">
-              <img class="season-photo" src="photos/weekend-update-2026-05-09/weekend-update-02.jpg?v=1" alt="First batch of green tomatoes at Everyday Produce Market" loading="lazy" width="1350" height="1800">
-            </picture>
-            <div class="season-body">
-              <p class="s-name">Green tomatoes</p>
-              <p class="s-status">First batch is here.</p>
-              <p class="s-note">Good for frying. Ask Konrad how ripe they are.</p>
-            </div>
-          </div>
-
-          <!-- Strawberries -->
-          <div class="season-card">
-            <img class="season-photo" src="photos/gallery-strawberries.jpg" alt="Pints of fresh red strawberries in green cartons" loading="lazy" width="1600" height="1067">
-            <div class="season-body">
-              <p class="s-name">Strawberries</p>
-              <p class="s-status">First flats of the season are in.</p>
-              <p class="s-note">Eat them this week. They don't wait.</p>
-            </div>
-          </div>
-
-          <!-- Asparagus & cool-season veg from the cooler -->
-          <div class="season-card">
-            <img class="season-photo" src="photos/gallery-zucchini.jpg" alt="Trays of zucchini, yellow squash, and peppers" loading="lazy" width="1600" height="1067">
-            <div class="season-body">
-              <p class="s-name">Asparagus &amp; spring veg</p>
-              <p class="s-status">In the cooler.</p>
-              <p class="s-note">Asparagus, broccoli, cauliflower, head lettuce, romaine, green beans, green onions.</p>
-            </div>
-          </div>
-
-          <!-- Cooler list -->
-          <div class="season-card">
-            <div class="cooler-board" aria-label="In the cooler">
-              <p class="cooler-board-title">In the Cooler</p>
-              <ul class="cooler-board-list">
-                <li>Broccoli</li>
-                <li>Cauliflower</li>
-                <li>Red Grapes</li>
-                <li>Green Grapes</li>
-                <li>Green Onions</li>
-                <li>Carrots</li>
-                <li>Green Beans</li>
-                <li>Honeycrisp Apples</li>
-                <li>Asparagus</li>
-                <li>Jalape&#241;os</li>
-                <li>Head Lettuce</li>
-                <li>Pineapple</li>
-                <li>Romaine Lettuce</li>
-                <li>Free-Range Eggs</li>
-                <li>Fresh Salsa</li>
-                <li>Yellow Squash</li>
-                <li>Red Peppers</li>
-                <li>Zucchini</li>
-                <li>Yellow Peppers</li>
-                <li>Green Peppers</li>
-              </ul>
-            </div>
-            <div class="season-body">
-              <p class="s-name">What&rsquo;s in the cooler</p>
-              <p class="s-status">Updated regularly &mdash; stock changes daily.</p>
-              <p class="s-note">Local free-range eggs, fresh salsa, and seasonal veg. Ask at the register if you don&rsquo;t see it.</p>
-            </div>
-          </div>
-
-          <!-- Honeycrisps + cooler fruit -->
-          <div class="season-card">
-            <img class="season-photo" src="photos/gallery-tomato-basket.jpg" alt="Strawberries and pineapples on display" loading="lazy" width="1600" height="1067">
-            <div class="season-body">
-              <p class="s-name">Pineapple, grapes, Honeycrisps</p>
-              <p class="s-status">In every day.</p>
-              <p class="s-note">Hand-picked. Ripe avocados too &mdash; check the tray.</p>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
     <!-- GALLERY -->
     <section id="gallery" class="section-pad" aria-label="Around the stand">
       <div class="container">
@@ -807,25 +567,6 @@
           <h2 class="section-h2">What it looks like</h2>
         </div>
 
-        <article class="weekend-update-card" aria-labelledby="weekend-update-heading">
-          <p class="eyebrow">Fresh from Konrad</p>
-          <h3 id="weekend-update-heading">This weekend kicks off summer</h3>
-          <p>Ready to eat cantaloupe, homegrown tomatoes, Georgia peaches, seedless &amp; seeded watermelon, Bing cherries, Arkansas strawberries, and ripe avocados. &mdash; Konrad</p>
-          <div class="weekend-photo-grid">
-            <figure class="weekend-photo-card">
-              <img src="photos/weekly-update-2026-05-23/Memorial%20day%20sign.jpg" alt="Memorial Day weekend sign at Everyday Produce Market" loading="lazy" width="413" height="500">
-              <figcaption>Memorial Day Weekend</figcaption>
-            </figure>
-            <figure class="weekend-photo-card">
-              <img src="photos/weekly-update-2026-05-23/storefront.jpg" alt="Colorful display of peaches, melons, and flowers at Everyday Produce Market" loading="lazy" width="1108" height="500">
-              <figcaption>The Stand</figcaption>
-            </figure>
-            <figure class="weekend-photo-card">
-              <img src="photos/weekly-update-2026-05-23/weekend%20signs.jpg" alt="Storefront with Memorial Day signs at Everyday Produce Market" loading="lazy" width="500" height="296">
-              <figcaption>Weekend Specials</figcaption>
-            </figure>
-          </div>
-        </article>
 
         <div class="gallery-grid">
           <div class="gallery-item wide">
