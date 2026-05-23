@@ -110,7 +110,36 @@ Processed images land under `web-clients/everyday-produce/site/Media/<shoot-date
 
 Source (`_raw`) stays in place - we don't delete originals.
 
-## 7. Run command for this client
+## 7. Full Workflow (step-by-step)
+
+```
+# 1. Create today's folder (opens Explorer automatically)
+node scripts/new-shoot.js
+# or with a custom name:
+node scripts/new-shoot.js --name mothers-day
+
+# 2. Drop raw photos from Konrad into the new folder
+
+# 3. Apply EP warm grade → opens _graded/ in Explorer + Photopea in browser
+node scripts/grade-photos.js --folder photos/weekly-update-YYYY-MM-DD
+
+# 4. In Photopea: drag from Explorer, crop to ratio, export with proper name:
+#    gallery-<subject>.jpg  → 16:9 (storefront, awning, wide shots)
+#    season-<subject>.jpg   → 4:3  (produce bins, wide stand)
+#    callout-<subject>.jpg  → 3:4  (tight close-up - money shot)
+#    weekend-<subject>.jpg  → 3:4  (weekly update card)
+#    Save cropped files to the PARENT folder (not _graded/)
+
+# 5. Run full pipeline - generates webp, alt text, HTML snippets
+node scripts/add-photos.js --folder photos/weekly-update-YYYY-MM-DD --no-grade
+
+# 6. Review _html-snippets.md, paste HTML into index.html
+
+# 7. Commit and deploy
+node scripts/commit.js "Add weekly-update-YYYY-MM-DD photos"
+```
+
+## 8. Run command for this client (legacy / manual)
 
 ```
 node web-clients/_docs/photo-pipeline.js `

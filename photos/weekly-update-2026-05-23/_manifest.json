@@ -1,0 +1,30 @@
+{
+  "folder": "weekly-update-2026-05-23",
+  "generated": "2026-05-23T14:06:47.103Z",
+  "photos": [
+    {
+      "file": "Memorial day sign.jpg",
+      "webp": "Memorial day sign.webp",
+      "width": 413,
+      "height": 500,
+      "slot": "weekend-photo-card",
+      "altText": "Crates of yellow, green, and red tomatoes at Everyday Produce Market."
+    },
+    {
+      "file": "storefront.jpg",
+      "webp": "storefront.webp",
+      "width": 1108,
+      "height": 500,
+      "slot": "gallery-item",
+      "altText": "Colorful display of peaches, melons, and flowers at Everyday Produce Market."
+    },
+    {
+      "file": "weekend signs.jpg",
+      "webp": "weekend signs.webp",
+      "width": 500,
+      "height": 296,
+      "slot": "gallery-item",
+      "altText": "Storefront with Memorial Day signs visible at Everyday Produce Market."
+    }
+  ]
+}
