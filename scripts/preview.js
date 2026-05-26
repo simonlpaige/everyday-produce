@@ -16,7 +16,8 @@ const path = require('path');
 const http = require('http');
 
 const args = process.argv.slice(2);
-const port = parseInt(args[args.indexOf('--port') + 1] || '8080', 10);
+const portIdx = args.indexOf('--port');
+const port = parseInt(portIdx !== -1 && args[portIdx + 1] ? args[portIdx + 1] : '8080', 10);
 const openBrowser = !args.includes('--no-browser');
 const takeScreenshot = !args.includes('--no-screenshot');
 const siteDir = process.cwd();

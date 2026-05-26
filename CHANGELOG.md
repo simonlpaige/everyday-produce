@@ -1,3 +1,10 @@
+## 2026-05-26 — Add Grassroots Greetings signs and update post-Memorial Day
+- **Author**: Simon Paige
+- **Branch**: master
+- **Audit**: PASSED
+- **Screenshots**: C:\Users\simon\code\everyday-produce\screenshots\2026-05-26T14-39-39
+- **Visual verify**: yes
+
 # Changelog - Everyday Produce Market
 
 ## 2026-05-13 - Website workflow migration
