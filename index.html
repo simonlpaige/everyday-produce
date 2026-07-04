@@ -401,42 +401,6 @@
       color: var(--ink);
     }
 
-    /* SEASON VIDEOS (today's arrivals) */
-    .season-videos {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 24px;
-      margin: 40px 0 0;
-    }
-    @media (max-width: 900px) { .season-videos { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
-    @media (max-width: 600px) { .season-videos { grid-template-columns: 1fr; gap: 16px; } }
-    .season-videos figure {
-      border: 2px solid var(--ink);
-      box-shadow: var(--shadow);
-      border-radius: 4px;
-      overflow: hidden;
-      background: var(--cream);
-      margin: 0;
-    }
-    .season-videos video {
-      display: block;
-      width: 100%;
-      height: auto;
-      aspect-ratio: 9/16;
-      object-fit: cover;
-      background: var(--cream);
-      border-bottom: 2px solid var(--ink);
-    }
-    .season-videos figcaption {
-      padding: 12px 16px;
-      font-family: 'Oswald', sans-serif;
-      font-size: 13px;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      color: var(--ink);
-      background: var(--cream);
-    }
-
     /* Gallery: ensure <picture> wrappers fill their tile */
     .gallery-item picture { display: block; width: 100%; height: 100%; }
   
@@ -449,7 +413,7 @@
   <a class="skip-link" href="#main">Skip to main content</a>
 <!-- TODAY'S NEWS BANNER -->
   <div class="news-banner" role="region" aria-label="Today at the stand">
-    <a href="#juice-truck-video"><strong>Now open:</strong> Cool off at the cold juice and chopped fruit truck!</a>
+    <a href="#this-week"><strong>Fourth of July:</strong> Open till 4:30 PM. Cold watermelon, sweet corn, peaches, and jumbo Bing cherries.</a>
   </div>
 
   <main id="main">
@@ -530,8 +494,8 @@
         <div class="house-callout this-week-callout">
           <div class="callout-copy">
             <p class="eyebrow">This week from Konrad</p>
-            <h2>Keep it simple for Dad</h2>
-            <p>Cold watermelon, Missouri peaches, sweet corn, homegrown tomatoes, and something cold to drink. Konrad tested the whole list.</p>
+            <h2>Open July 4 till 4:30</h2>
+            <p>Ice cold watermelon, Alabama sweet corn, Missouri-grown sweet peaches, and jumbo Bing cherries are moving fast. Come in and taste before you buy.</p>
             <a href="#visit" class="callout-cta">Come by this week</a>
           </div>
           <div class="callout-card">
@@ -539,50 +503,11 @@
               <img src="photos/poster-watermelon-2026-05.jpg" alt="Fresh watermelon on display at Everyday Produce Market" loading="eager" width="1108" height="500">
             </div>
             <div class="house-stat-row">
-              <div class="house-stat"><span class="num">Father's Day</span><span class="label">weekend picks</span></div>
-              <div class="house-stat"><span class="num">5 Short</span><span class="label">videos from Konrad</span></div>
-              <div class="house-stat"><span class="num">Open 7</span><span class="label">days a week</span></div>
+              <div class="house-stat"><span class="num">July 4</span><span class="label">open till 4:30 PM</span></div>
+              <div class="house-stat"><span class="num">Sweet Corn</span><span class="label">from Alabama</span></div>
+              <div class="house-stat"><span class="num">Bing Cherries</span><span class="label">jumbo size</span></div>
             </div>
           </div>
-        </div>
-      </div>
-      <div class="container">
-        <div class="season-videos" aria-label="Konrad's Father's Day weekend picks">
-          <figure id="juice-truck-video">
-            <video controls playsinline preload="metadata" poster="photos/fathers-day-2026/pink-lemonade.jpg" aria-label="Konrad holding a cold drink beside the juice and chopped fruit truck's specials board">
-              <source src="videos/fathers-day-2026/pink-lemonade.mp4" type="video/mp4">
-              <track kind="captions" src="videos/fathers-day-2026/pink-lemonade.vtt" srclang="en" label="English" default>
-            </video>
-            <figcaption>Cold juice and chopped fruit truck now open</figcaption>
-          </figure>
-          <figure>
-            <video controls playsinline preload="metadata" poster="photos/fathers-day-2026/cold-watermelon.jpg" aria-label="Konrad cutting open and serving a cold watermelon">
-              <source src="videos/fathers-day-2026/cold-watermelon.mp4" type="video/mp4">
-              <track kind="captions" src="videos/fathers-day-2026/cold-watermelon.vtt" srclang="en" label="English" default>
-            </video>
-            <figcaption>Cold watermelon keeps Father's Day easy</figcaption>
-          </figure>
-          <figure>
-            <video controls playsinline preload="metadata" poster="photos/fathers-day-2026/missouri-peaches.jpg" aria-label="Konrad tasting a Missouri-grown peach at the stand">
-              <source src="videos/fathers-day-2026/missouri-peaches.mp4" type="video/mp4">
-              <track kind="captions" src="videos/fathers-day-2026/missouri-peaches.vtt" srclang="en" label="English" default>
-            </video>
-            <figcaption>Missouri-grown peaches</figcaption>
-          </figure>
-          <figure>
-            <video controls playsinline preload="metadata" poster="photos/fathers-day-2026/sweet-corn.jpg" aria-label="Konrad checking and tasting an ear of sweet corn">
-              <source src="videos/fathers-day-2026/sweet-corn.mp4" type="video/mp4">
-              <track kind="captions" src="videos/fathers-day-2026/sweet-corn.vtt" srclang="en" label="English" default>
-            </video>
-            <figcaption>Sweet corn fresh off the truck</figcaption>
-          </figure>
-          <figure>
-            <video controls playsinline preload="metadata" poster="photos/fathers-day-2026/homegrown-tomato.jpg" aria-label="Konrad slicing an old-fashioned homegrown tomato">
-              <source src="videos/fathers-day-2026/homegrown-tomato.mp4" type="video/mp4">
-              <track kind="captions" src="videos/fathers-day-2026/homegrown-tomato.vtt" srclang="en" label="English" default>
-            </video>
-            <figcaption>An old-fashioned homegrown tomato</figcaption>
-          </figure>
         </div>
       </div>
     </section>
@@ -791,6 +716,9 @@
         const now = new Date();
         if (!inSeason(now)) {
           return { open: false, text: 'Closed for the season' };
+        }
+        if (now.getMonth() === 6 && now.getDate() === 4) {
+          return { open: true, text: '8:30 am - 4:30 pm \u00b7 Fourth of July' };
         }
         return { open: true, text: '8:30 am - 6:30 pm \u00b7 7 days a week' };
       }
