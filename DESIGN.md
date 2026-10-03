@@ -408,3 +408,7 @@ Renders byte-identically to the original in librsvg (and any compliant
 renderer) but works everywhere — no style block to strip.
 
 #
+
+## October 3 typography refinement
+
+Simon requested less cramped, lighter website headings. Use Oswald 500 with a 1.25 line-height for page and section headings. Keep the outlined Alfa Slab One identity in the approved logo and illustrations. Sentence case headings remain unchanged.

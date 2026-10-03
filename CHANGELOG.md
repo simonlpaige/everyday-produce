@@ -1,3 +1,7 @@
+## 2026-10-03 - Give headings room to breathe
+- Switched homepage and About page headings to Oswald 500 with 1.25 line spacing, following Simon's feedback.
+- Preserved the approved logo.
+
 ## 2026-10-03 - Halloween decor and hardy mums
 - Added Konrad's weekly update and five full-frame, warm-graded photos.
 - Shortened the hero and added navigation to the update, photos, hours, and story.
