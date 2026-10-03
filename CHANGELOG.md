@@ -1,3 +1,7 @@
+## 2026-10-03 - Show the full About page sign
+- Removed the forced crop from the story photos so the complete sign remains visible on mobile and desktop.
+- Corrected the sign photo dimensions and description.
+
 ## 2026-10-03 - Give headings room to breathe
 - Switched homepage and About page headings to Oswald 500 with 1.25 line spacing, following Simon's feedback.
 - Preserved the approved logo.
