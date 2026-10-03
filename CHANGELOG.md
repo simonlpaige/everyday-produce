@@ -1,3 +1,10 @@
+## 2026-10-03 - Halloween decor and hardy mums
+- Added Konrad's weekly update and five full-frame, warm-graded photos.
+- Shortened the hero and added navigation to the update, photos, hours, and story.
+- Added photo captions, clearer contrast and focus states, and reduced-motion support.
+- Updated share metadata, structured data, sitemap date, and AI-readable context.
+- Local and live verification recorded in the October 3 update report.
+
 ## 2026-05-26 — Add Grassroots Greetings signs and update post-Memorial Day
 - **Author**: Simon Paige
 - **Branch**: master

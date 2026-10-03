@@ -4,16 +4,20 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Everyday Produce Market | Fresh Local Produce in Waldo, Kansas City</title>
-  <meta name="description" content="A neighborhood produce stand at 7300 Wornall Rd in Waldo, Kansas City. Open April through October. Waldo tradition since 1985.">
-  <meta property="og:title" content="Everyday Produce Market | Waldo's Favorite Produce Stand">
-  <meta property="og:description" content="Seasonal fruit and vegetables from local growers. Open April through October at 7300 Wornall Rd, Waldo, Kansas City.">
-  <meta property="og:image" content="https://everyday-produce.com/photos/hero.jpg">
+  <meta name="description" content="Fresh produce, hardy mums, and fall decor at 7300 Wornall Rd in Waldo, Kansas City. Open daily 8:30 am - 6:30 pm, April through October.">
+  <meta property="og:title" content="Everyday Produce Market | Produce & Fall Decor in Waldo">
+  <meta property="og:description" content="Visit the Waldo stand for seasonal produce, pumpkins, fall gourds, and hardy mums. Find photos, hours, and directions.">
+  <meta property="og:image" content="https://everyday-produce.com/photos/weekly-update-2026-10-03/fall-display-on-wornall.jpg">
+  <meta property="og:image:alt" content="Pumpkins and flowering hardy mums outside the Everyday Produce Market stand in Waldo.">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:site_name" content="Everyday Produce Market">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://everyday-produce.com">
   <link rel="canonical" href="https://everyday-produce.com">
   <link rel="icon" href="assets/favicon.svg">
   <meta name="theme-color" content="#2F7A3A">
-  <link rel="preload" as="image" href="photos/hero.jpg" fetchpriority="high">
+  <link rel="preload" as="image" href="assets/logo-horizontal.svg?v=3" fetchpriority="high">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Oswald:wght@500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -29,7 +33,7 @@
       --cream:      #F5EDD8;
       --cream-mid:  #EDE4CE;
       --ink:        #2A1A0E;
-      --ink-muted:  rgba(42,26,14,0.55);
+      --ink-muted:  #69543F;
       --shadow:     2px 2px 0 rgba(42,26,14,0.18);
     }
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -106,12 +110,12 @@
 
     /* Logo image */
     .ep-logo { display: block; width: 100%; height: auto; }
-    .hero-logo { max-width: 800px; width: 100%; }
+    .hero-logo { max-width: 640px; width: 100%; }
     .footer-logo-img { max-width: 240px; width: 100%; }
 
     /* HERO */
     #hero {
-      min-height: 100svh; background: var(--cream);
+      background: var(--cream);
       display: flex; flex-direction: column; position: relative; overflow: hidden;
     }
     #hero::before {
@@ -124,7 +128,7 @@
     .hero-inner {
       flex: 1; display: flex; flex-direction: column;
       align-items: center; justify-content: center;
-      text-align: center; padding: 56px 24px 32px; gap: 28px;
+      text-align: center; padding: 32px 24px 36px; gap: 20px;
       position: relative; z-index: 1;
     }
     .hero-ctas { display: flex; flex-wrap: wrap; justify-content: center; gap: 14px; }
@@ -302,7 +306,7 @@
       color: rgba(245,237,216,0.72); text-decoration: none; display: block;
     }
     .footer-col a:hover { color: var(--cream); }
-    .footer-dim { font-size: 13px !important; opacity: 0.45; margin-top: 6px; }
+    .footer-dim { font-size: 13px !important; opacity: 0.8; margin-top: 6px; }
     .footer-bottom {
       border-top: 1px solid rgba(245,237,216,0.12); padding-top: 24px;
       text-align: center; font-family: 'Inter', sans-serif; font-size: 14px;
@@ -405,6 +409,26 @@
     .gallery-item picture { display: block; width: 100%; height: 100%; }
   
 
+
+    /* Keep seasonal photos whole, with captions that explain the display. */
+    .quick-nav { display: flex; flex-wrap: wrap; justify-content: center; gap: 4px 16px; padding: 10px 20px; border-bottom: 1px solid var(--ink); }
+    .quick-nav a { color: var(--ink); font-family: 'Oswald', sans-serif; font-size: 16px; padding: 10px 6px; text-underline-offset: 5px; }
+    a:focus-visible { outline: 3px solid var(--ink); outline-offset: 4px; }
+    .this-week-callout a:focus-visible, footer a:focus-visible { outline-color: var(--cream); }
+    .update-date { display: block; font-family: 'Inter', sans-serif; font-size: 13px; letter-spacing: 0; text-transform: none; margin-top: 6px; }
+    .callout-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 18px; }
+    .callout-link { color: var(--cream); text-underline-offset: 5px; padding: 10px 0; }
+    .house-stat-row { gap: 24px; }
+    .house-stat .label { font-size: 13px; letter-spacing: 0.06em; }
+    .gallery-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); grid-auto-rows: auto; align-items: start; }
+    .gallery-item img { height: auto; object-fit: contain; transition: none; }
+    .gallery-item:hover img, .gallery-item:focus-within img { transform: none; }
+    .gallery-item picture { height: auto; }
+    .gallery-item figcaption { padding: 14px 16px; font-size: 14px; line-height: 1.5; }
+    .bottom-gallery .gallery-item { aspect-ratio: auto; }
+    section { scroll-margin-top: 16px; }
+    @media (max-width: 760px) { .gallery-grid { grid-template-columns: 1fr; } .gallery-item { max-width: 520px; width: 100%; margin: 0 auto; } }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .btn { transition: none; } }
   </style>
 </head>
 <body>
@@ -412,9 +436,15 @@
 
   <a class="skip-link" href="#main">Skip to main content</a>
   <!-- TODAY'S NEWS BANNER -->
-  <div class="news-banner" role="region" aria-label="Today at the stand">
-    <a href="#this-week"><strong>Still coming in:</strong> Local fruit, seeded watermelons, and hardy mums this weekend.</a>
+  <header>
+  <div class="news-banner" role="region" aria-label="Latest update from the stand">
+    <a href="#this-week"><strong>Fall at the stand:</strong> Halloween decor and hardy mums. See Konrad's latest update.</a>
   </div>
+
+  <nav class="quick-nav" aria-label="Main navigation">
+    <a href="#this-week">This week</a><a href="#gallery">Photos</a><a href="#visit">Hours &amp; directions</a><a href="about.html">Our story</a>
+  </nav>
+  </header>
 
   <main id="main">
 
@@ -423,7 +453,7 @@
       <div class="hero-inner">
         <img src="assets/logo-horizontal.svg?v=3" alt="Everyday Produce Market - Waldo Tradition Since 1985" class="ep-logo hero-logo" width="920" height="400">
 
-        <div id="status-pill" class="status-pill status-open" aria-live="polite" aria-atomic="true">
+        <div id="status-pill" class="status-pill status-open" aria-live="polite" aria-atomic="true" aria-label="Seasonal hours">
           8:30 am - 6:30 pm &middot; 7 days a week
         </div>
 
@@ -489,26 +519,26 @@
 
 
     <!-- THIS WEEK CALLOUT -->
-    <section id="this-week" class="section-pad callout-section">
+    <section id="this-week" class="section-pad callout-section" aria-labelledby="weekly-heading">
       <div class="container">
         <div class="house-callout this-week-callout">
           <div class="callout-copy">
-            <p class="eyebrow">This week from Konrad</p>
-            <h2>Good fruit is still coming in.</h2>
-            <p>Lots of it is coming from nearby growers. Seeded watermelon will wind down over the next week or so. Hardy mums return this weekend for fall decorating.</p>
-            <a href="#visit" class="callout-cta">Come by this weekend</a>
+            <p class="eyebrow">This week from Konrad <time class="update-date" datetime="2026-10-03">Updated October 3, 2026</time></p>
+            <h2 id="weekly-heading">Halloween decor is in.</h2>
+            <p>Lots of Halloween decor came in today. The hardy mums are looking really nice. Pick out pumpkins, colorful gourds, and mums for your porch, or stop by to see what catches your eye.</p>
+            <div class="callout-actions"><a href="#visit" class="callout-cta">Come check it out</a><a href="#gallery" class="callout-link">See the fall photos</a></div>
           </div>
           <div class="callout-card">
             <div class="callout-photo-slot">
               <picture>
-                <source srcset="photos/weekly-update-2026-09-11/seeded-watermelons-and-cantaloupes.webp" type="image/webp">
-                <img src="photos/weekly-update-2026-09-11/seeded-watermelons-and-cantaloupes.jpg" alt="Seeded watermelons and cantaloupes lined up at the stand." loading="eager" width="760" height="570">
+                <source srcset="photos/weekly-update-2026-10-03/fall-display-on-wornall.webp" type="image/webp">
+                <img src="photos/weekly-update-2026-10-03/fall-display-on-wornall.jpg" alt="Yellow, red, and orange hardy mums line the stand in front of pumpkins under the striped awning." loading="lazy" width="600" height="450">
               </picture>
             </div>
             <div class="house-stat-row">
-              <div class="house-stat"><span class="num">Local Fruit</span><span class="label">still coming in</span></div>
-              <div class="house-stat"><span class="num">Seeded Melons</span><span class="label">about a week left</span></div>
-              <div class="house-stat"><span class="num">Hardy Mums</span><span class="label">back this weekend</span></div>
+              <div class="house-stat"><span class="num">Pumpkins</span><span class="label">for the porch</span></div>
+              <div class="house-stat"><span class="num">Fall gourds</span><span class="label">colorful shapes</span></div>
+              <div class="house-stat"><span class="num">Hardy mums</span><span class="label">looking really nice</span></div>
             </div>
           </div>
         </div>
@@ -541,43 +571,49 @@
       <div class="container">
         <div class="gallery-header">
           <p class="eyebrow">Around the stand</p>
-          <h2 class="section-h2">What it looks like</h2>
+          <h2 class="section-h2">Fall colors at the stand</h2>
+          <p class="season-lede">Pumpkins, gourds, and flowering mums, photographed at the stand for this week's update.</p>
         </div>
 
 
         <div class="gallery-grid">
-          <div class="gallery-item wide">
+          <figure class="gallery-item">
             <picture>
-              <source srcset="photos/weekly-update-2026-09-11/green-grapes.webp" type="image/webp">
-              <img class="gallery-item" src="photos/weekly-update-2026-09-11/green-grapes.jpg" alt="Green grapes piled in wooden baskets at the stand." loading="lazy" width="960" height="720">
+              <source srcset="photos/weekly-update-2026-10-03/pumpkins-at-the-stand.webp" type="image/webp">
+              <img src="photos/weekly-update-2026-10-03/pumpkins-at-the-stand.jpg" alt="Orange pumpkins and pale green gourds line the sidewalk beside the stand." loading="lazy" decoding="async" width="1350" height="1800">
             </picture>
-          </div>
-          <div class="gallery-item wide">
+            <figcaption>Pumpkins along the sidewalk.</figcaption>
+          </figure>
+          <figure class="gallery-item">
             <picture>
-              <source srcset="photos/weekly-update-2026-09-11/heirloom-tomatoes-and-watermelons.webp" type="image/webp">
-              <img src="photos/weekly-update-2026-09-11/heirloom-tomatoes-and-watermelons.jpg" alt="Heirloom tomatoes displayed beside watermelons at the stand." loading="lazy" width="960" height="720">
+              <source srcset="photos/weekly-update-2026-10-03/pumpkins-and-fall-gourds.webp" type="image/webp">
+              <img src="photos/weekly-update-2026-10-03/pumpkins-and-fall-gourds.jpg" alt="Rows of orange pumpkins and multicolored gourds under the stand's awning." loading="lazy" decoding="async" width="450" height="600">
             </picture>
-          </div>
-          <div class="gallery-item wide">
+            <figcaption>Pick out a shape and color for your porch.</figcaption>
+          </figure>
+          <figure class="gallery-item">
             <picture>
-              <source srcset="photos/weekly-update-2026-09-11/red-tomatoes.webp" type="image/webp">
-              <img src="photos/weekly-update-2026-09-11/red-tomatoes.jpg" alt="Red tomatoes piled in wooden trays under the stand's awning." loading="lazy" width="960" height="720">
+              <source srcset="photos/weekly-update-2026-10-03/hardy-mums-along-the-stand.webp" type="image/webp">
+              <img src="photos/weekly-update-2026-10-03/hardy-mums-along-the-stand.jpg" alt="Yellow and burgundy hardy mums beside pumpkins, gourds, and produce bins." loading="lazy" decoding="async" width="450" height="600">
             </picture>
-          </div>
-          <div class="gallery-item">
-            <img src="photos/gallery-tomato-crate-2026-05.jpg" alt="Crate of fresh local tomatoes at Everyday Produce Market" loading="lazy" width="1600" height="1200">
-          </div>
+            <figcaption>Hardy mums are looking really nice.</figcaption>
+          </figure>
         </div>
         <div class="gallery-grid bottom-gallery">
-          <div class="gallery-item">
-            <img src="photos/gallery-corn.jpg" alt="Konrad at the register under the Checker-Board Corn sign" loading="lazy" width="1600" height="1067">
-          </div>
-          <div class="gallery-item">
-            <img src="photos/gallery-melons.jpg" alt="Watermelons, cantaloupes, and signage at the stand entrance" loading="lazy" width="1600" height="1067">
-          </div>
-          <div class="gallery-item">
-            <img src="photos/gallery-avocados.jpg" alt="Tray of ripe California avocados" loading="lazy" width="1600" height="1067">
-          </div>
+          <figure class="gallery-item">
+            <picture>
+              <source srcset="photos/weekly-update-2026-10-03/fall-display-on-wornall.webp" type="image/webp">
+              <img src="photos/weekly-update-2026-10-03/fall-display-on-wornall.jpg" alt="Yellow, orange, and burgundy mums in front of the pumpkin display under the striped awning." loading="lazy" decoding="async" width="600" height="450">
+            </picture>
+            <figcaption>The fall display on Wornall.</figcaption>
+          </figure>
+          <figure class="gallery-item">
+            <picture>
+              <source srcset="photos/weekly-update-2026-10-03/colorful-gourds-and-mums.webp" type="image/webp">
+              <img src="photos/weekly-update-2026-10-03/colorful-gourds-and-mums.jpg" alt="Green, cream, orange, and yellow decorative gourds with flowering mums behind them." loading="lazy" decoding="async" width="600" height="450">
+            </picture>
+            <figcaption>Colorful gourds with mums behind them.</figcaption>
+          </figure>
         </div>
       </div>
     </section>
@@ -742,38 +778,77 @@
 
   <!-- Structured data -->
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "name": "Everyday Produce Market",
-    "image": "https://everyday-produce.com/photos/hero.jpg",
-    "url": "https://everyday-produce.com",
-    "telephone": "+18169426344",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "7300 Wornall Rd",
-      "addressLocality": "Kansas City",
-      "addressRegion": "MO",
-      "postalCode": "64114",
-      "addressCountry": "US"
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "GroceryStore",
+      "name": "Everyday Produce Market",
+      "image": "https://everyday-produce.com/photos/weekly-update-2026-10-03/fall-display-on-wornall.jpg",
+      "url": "https://everyday-produce.com",
+      "telephone": "+18169426344",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "7300 Wornall Rd",
+        "addressLocality": "Kansas City",
+        "addressRegion": "MO",
+        "postalCode": "64114",
+        "addressCountry": "US"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 38.9609,
+        "longitude": -94.5943
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday",
+          "Sunday"
+        ],
+        "opens": "08:30",
+        "closes": "18:30"
+      },
+      "sameAs": [
+        "https://www.facebook.com/everydayproduce",
+        "https://www.yelp.com/biz/everyday-produce-market-kansas-city-2"
+      ],
+      "description": "Fresh produce, hardy mums, and fall decor at 7300 Wornall Rd in Waldo, Kansas City. Open daily 8:30 am - 6:30 pm, April through October.",
+      "@id": "https://everyday-produce.com/#market",
+      "logo": "https://everyday-produce.com/assets/logo-horizontal.svg",
+      "foundingDate": "1985"
     },
-    "geo": {
-      "@type": "GeoCoordinates",
-      "latitude": 38.9609,
-      "longitude": -94.5943
+    {
+      "@type": "WebSite",
+      "@id": "https://everyday-produce.com/#website",
+      "url": "https://everyday-produce.com/",
+      "name": "Everyday Produce Market",
+      "publisher": {
+        "@id": "https://everyday-produce.com/#market"
+      }
     },
-    "openingHoursSpecification": {
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
-      "opens": "08:30",
-      "closes": "18:30"
-    },
-    "sameAs": [
-      "https://www.facebook.com/everydayproduce",
-      "https://www.yelp.com/biz/everyday-produce-market-kansas-city-2"
-    ],
-    "description": "A neighborhood produce stand at 7300 Wornall Rd in Waldo, Kansas City. Open April through October. Waldo tradition since 1985."
-  }
+    {
+      "@type": "WebPage",
+      "@id": "https://everyday-produce.com/#webpage",
+      "url": "https://everyday-produce.com/",
+      "name": "Everyday Produce Market | Fresh Local Produce in Waldo, Kansas City",
+      "dateModified": "2026-10-03",
+      "inLanguage": "en-US",
+      "isPartOf": {
+        "@id": "https://everyday-produce.com/#website"
+      },
+      "about": {
+        "@id": "https://everyday-produce.com/#market"
+      },
+      "description": "October 3 update from Konrad: Halloween decor is in and hardy mums are looking really nice."
+    }
+  ]
+}
   </script>
 
 </body>
