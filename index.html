@@ -416,6 +416,9 @@
     .quick-nav a { color: var(--ink); font-family: 'Oswald', sans-serif; font-size: 16px; padding: 10px 6px; text-underline-offset: 5px; }
     a:focus-visible { outline: 3px solid var(--ink); outline-offset: 4px; }
     .this-week-callout a:focus-visible, footer a:focus-visible { outline-color: var(--cream); }
+    .market-video { max-width: 440px; margin: 0 auto 36px; }
+    .market-video video { display: block; width: 100%; height: auto; background: #15251a; }
+    .market-video figcaption { padding: 14px 0; font-size: 15px; line-height: 1.5; }
     .update-date { display: block; font-family: 'Inter', sans-serif; font-size: 13px; letter-spacing: 0; text-transform: none; margin-top: 6px; }
     .callout-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 18px; }
     .callout-link { color: var(--cream); text-underline-offset: 5px; padding: 10px 0; }
@@ -578,6 +581,14 @@
           <p class="season-lede">Perfectly ripe Missouri tomatoes, pumpkins, hardy mums, and lots of fall color. Come have a taste before you buy.</p>
         </div>
 
+
+        <figure class="market-video">
+          <video controls playsinline preload="none" poster="photos/weekly-update-2026-10-17/watermelon-video-poster.jpg" width="360" height="640" aria-label="A visit to Everyday Produce, including watermelon being cut at the stand" aria-describedby="market-video-caption">
+            <source src="videos/market-walkthrough-2026-10-17.mp4" type="video/mp4">
+            <a href="videos/market-walkthrough-2026-10-17.mp4">Watch the video from the stand</a>.
+          </video>
+          <figcaption id="market-video-caption">A little look around the stand, with watermelon cut for a taste. Press play to watch.</figcaption>
+        </figure>
 
         <div class="gallery-grid">
           <figure class="gallery-item">
