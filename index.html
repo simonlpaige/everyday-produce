@@ -433,6 +433,18 @@
     section { scroll-margin-top: 16px; }
     @media (max-width: 760px) { .gallery-grid { grid-template-columns: 1fr; } .gallery-item { max-width: 520px; width: 100%; margin: 0 auto; } }
     @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .btn { transition: none; } }
+    /* A quiet community notice alongside the visit information. */
+    .community-notice { padding: 36px 0; border-top: 1px solid var(--ink-muted); border-bottom: 1px solid var(--ink-muted); background: var(--cream-mid); }
+    .community-layout { display: grid; grid-template-columns: minmax(0, 1fr) 220px; gap: 32px; align-items: center; }
+    .community-copy h2 { font-family: 'Oswald', sans-serif; font-size: clamp(26px, 4vw, 36px); font-weight: 500; line-height: 1.2; margin: 10px 0 16px; }
+    .community-copy p + p { margin-top: 12px; }
+    .community-notice a { color: var(--ink); text-underline-offset: 4px; }
+    .community-photo { width: 220px; height: auto; border-radius: 3px; }
+    .community-notice details { margin-top: 22px; }
+    .community-notice summary { cursor: pointer; padding: 8px 0; font-weight: 600; }
+    .cooler-photos { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; margin-top: 16px; }
+    .cooler-photos img { width: 100%; height: auto; }
+    @media (max-width: 600px) { .community-layout { grid-template-columns: 1fr; gap: 20px; } .community-photo { width: 100%; max-width: 260px; } .cooler-photos { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; } }
   </style>
 </head>
 <body>
@@ -692,6 +704,33 @@
       </div>
     </section>
 
+    <!-- COMMUNITY DONATION -->
+    <section id="cooler-donation" class="community-notice" aria-labelledby="cooler-heading">
+      <div class="container">
+        <div class="community-layout">
+          <div class="community-copy">
+            <p class="eyebrow">From the stand, for the community <time class="update-date" datetime="2026-10-18">Posted October 18, 2026</time></p>
+            <h2 id="cooler-heading">A cooler for a good cause.</h2>
+            <p>We’d like to donate our walk-in cooler to a good cause. Know an organization or community effort that could put it to use? We’d love to hear from you.</p>
+            <p>It’s in good working order. <strong>Come by through October 28 to see it running.</strong> The recipient will need to arrange pickup and pay for transport.</p>
+            <p>Interested, or know someone in need? <a href="tel:+18169426344">Call the stand at 816-942-6344</a> or <a href="#visit">stop by at 7300 Wornall Road</a>.</p>
+          </div>
+          <a href="photos/cooler-donation-2026-10-18/cooler-front.jpg" aria-label="View the cooler exterior photo"><img class="community-photo" src="photos/cooler-donation-2026-10-18/cooler-front.jpg" alt="White walk-in cooler with its entry door and access ramp." loading="lazy" decoding="async" width="675" height="900"></a>
+        </div>
+        <details>
+          <summary>See all 6 cooler photos</summary>
+          <div class="cooler-photos">
+              <a href="photos/cooler-donation-2026-10-18/cooler-front.jpg"><img src="photos/cooler-donation-2026-10-18/cooler-front.jpg" alt="White walk-in cooler with its entry door and access ramp." loading="lazy" decoding="async" width="675" height="900"></a>
+              <a href="photos/cooler-donation-2026-10-18/cooler-interior.jpg"><img src="photos/cooler-donation-2026-10-18/cooler-interior.jpg" alt="Interior refrigeration unit above boxes of watermelon in the cooler." loading="lazy" decoding="async" width="675" height="900"></a>
+              <a href="photos/cooler-donation-2026-10-18/cooler-door.jpg"><img src="photos/cooler-donation-2026-10-18/cooler-door.jpg" alt="Front view of the cooler door, latch, and access ramp." loading="lazy" decoding="async" width="675" height="900"></a>
+              <a href="photos/cooler-donation-2026-10-18/cooler-rear-equipment.jpg"><img src="photos/cooler-donation-2026-10-18/cooler-rear-equipment.jpg" alt="Exterior corner showing refrigeration equipment and electrical connections." loading="lazy" decoding="async" width="675" height="900"></a>
+              <a href="photos/cooler-donation-2026-10-18/cooler-side.jpg"><img src="photos/cooler-donation-2026-10-18/cooler-side.jpg" alt="Side panels and corner of the walk-in cooler." loading="lazy" decoding="async" width="675" height="900"></a>
+              <a href="photos/cooler-donation-2026-10-18/cooler-back.jpg"><img src="photos/cooler-donation-2026-10-18/cooler-back.jpg" alt="Full exterior wall with refrigeration equipment above it." loading="lazy" decoding="async" width="675" height="900"></a>
+          </div>
+        </details>
+      </div>
+    </section>
+
     <!-- VISIT -->
     <section id="visit" class="section-pad">
       <div class="container">
@@ -881,7 +920,7 @@
       "@id": "https://everyday-produce.com/#webpage",
       "url": "https://everyday-produce.com/",
       "name": "Everyday Produce Market | Fresh Local Produce in Waldo, Kansas City",
-      "dateModified": "2026-10-17",
+      "dateModified": "2026-10-18",
       "inLanguage": "en-US",
       "isPartOf": {
         "@id": "https://everyday-produce.com/#website"
