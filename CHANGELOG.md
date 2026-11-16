@@ -1,3 +1,10 @@
+## 2026-11-16 — Mark Everyday Produce closed for the season
+- **Author**: Simon Paige
+- **Branch**: master
+- **Audit**: PASSED. WCAG2AA scan also passed for homepage and About page with 0 issues. All six viewport checks found no overflow, broken images, or missing anchor targets.
+- **Screenshots**: Captured homepage and About page at 390, 768, and 1440px in screenshots/2026-11-16T21-12-15; checked desktop homepage and mobile About page.
+- **Visual verify**: yes
+
 ## 2026-10-03 - Show the full About page sign
 - Removed the forced crop from the story photos so the complete sign remains visible on mobile and desktop.
 - Corrected the sign photo dimensions and description.
